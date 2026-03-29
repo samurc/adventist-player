@@ -12,6 +12,8 @@
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Hls.js for HLS streams (.m3u8) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -28,7 +30,7 @@
                         <ion-icon name="home-outline"></ion-icon>
                         <span>Inicio</span>
                     </li>
-                    <li class="c-nav-item" id="nav-search">
+                    <li class="c-nav-item" id="nav-search-sidebar">
                         <ion-icon name="search-outline"></ion-icon>
                         <span>Buscar</span>
                     </li>
@@ -44,7 +46,7 @@
                         <ion-icon name="add-circle-outline"></ion-icon>
                         <span>Crear lista</span>
                     </li>
-                    <li class="c-nav-item">
+                    <li class="c-nav-item" id="nav-favorites-sidebar">
                         <ion-icon name="heart-outline"></ion-icon>
                         <span>Tus me gusta</span>
                     </li>
@@ -57,11 +59,18 @@
             <header class="c-app-header" id="header">
                 <div class="c-header-nav">
                     <button class="c-icon-button"><ion-icon name="chevron-back-outline"></ion-icon></button>
-                    <button class="c-icon-button"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+                    <button class="c-icon-button u-margin-left-10"><ion-icon name="chevron-forward-outline"></ion-icon></button>
                 </div>
+                
+                <!-- Search Bar -->
+                <div class="c-search-bar">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" id="station-search" placeholder="¿Qué quieres escuchar?">
+                </div>
+
                 <div class="c-user-menu">
                     <button class="c-button c-button--premium u-letter-spacing">Explorar Premium</button>
-                    <button class="c-user-profile" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.7); color: white; border: none; padding: 4px 12px; border-radius: 20px; cursor: pointer;">
+                    <button class="c-user-button">
                         <ion-icon name="person-circle-outline"></ion-icon>
                         <span>Usuario</span>
                     </button>
@@ -70,66 +79,75 @@
 
             <section class="c-hero" id="hero-section">
                 <div class="c-hero__content">
-                    <small class="c-hero__label u-letter-spacing">Playlist Recomendada</small>
-                    <h1 class="c-hero__title">Mix Diario</h1>
+                    <small class="c-hero__label u-letter-spacing">Señal Original</small>
+                    <h1 class="c-hero__title" id="hero-title">Red Nuevo Tiempo</h1>
                     <div class="c-hero__actions">
-                        <button class="c-button c-button--primary" id="hero-play-btn">Reproducir</button>
-                        <button class="c-button c-button--outline" id="hero-save-btn" style="margin-left: 12px;">Seguir</button>
+                        <button class="c-button c-button--primary" id="hero-play-btn">Escuchar Ahora</button>
+                        <button class="c-button c-button--outline u-margin-left-12" id="hero-fav-btn"><ion-icon name="heart-outline"></ion-icon></button>
                     </div>
                 </div>
             </section>
 
-            <section class="u-padding-32" style="padding: 32px;">
-                <h2 class="c-section-title" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Lo más escuchado</h2>
-                <div class="o-main-grid" id="trending-grid">
-                    <!-- Cards will be injected by JS -->
+            <!-- Favorites Section (Hidden by default) -->
+            <section class="u-padding-32" id="favorites-section" style="display: none;">
+                <h2 class="c-section-title">Tus Favoritos</h2>
+                <div class="o-main-grid" id="favorites-grid">
+                    <!-- Fav cards injected by JS -->
                 </div>
             </section>
 
-            <section class="u-padding-32" style="padding: 32px;">
-                <h2 class="c-section-title" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Nuevos Lanzamientos</h2>
-                <div class="o-main-grid" id="new-releases-grid">
-                    <!-- Cards will be injected by JS -->
+            <section class="u-padding-32" id="all-stations-section">
+                <h2 class="c-section-title" id="all-stations-title">Todas las Radios</h2>
+                
+                <!-- Language Filters -->
+                <div class="c-filter-group" id="language-filters">
+                    <!-- Chips injected by JS -->
+                </div>
+
+                <div class="o-main-grid" id="all-stations-grid">
+                    <p class="u-text-muted">Cargando estaciones...</p>
                 </div>
             </section>
         </main>
 
         <!-- Player Bar -->
         <footer class="c-player-bar">
+            <audio id="audio-player"></audio>
+
             <div class="c-player-bar__now-playing">
                 <div class="c-player-bar__mini-cover" id="current-cover"></div>
                 <div class="c-player-bar__track-info">
-                    <h4 class="u-font-small" id="current-title" style="margin: 0; font-weight: 600;">Cargando...</h4>
-                    <p class="u-font-small u-text-muted" id="current-artist" style="margin: 0;">Artista</p>
+                    <h4 class="u-font-small u-font-bold u-margin-0" id="current-title">Selecciona una radio</h4>
+                    <p class="u-font-small u-text-muted u-margin-0" id="current-artist">Artista</p>
                 </div>
-                <button class="c-icon-button" style="font-size: 1.25rem;"><ion-icon name="heart-outline"></ion-icon></button>
+                <button class="c-icon-button u-margin-left-10" id="player-fav-btn"><ion-icon name="heart-outline"></ion-icon></button>
             </div>
 
             <div class="c-player-bar__controls">
-                <div class="c-control-buttons" style="display: flex; align-items: center; gap: 24px;">
+                <div class="c-control-buttons">
                     <button class="c-icon-button"><ion-icon name="shuffle-outline"></ion-icon></button>
                     <button class="c-icon-button"><ion-icon name="play-skip-back"></ion-icon></button>
-                    <button class="c-icon-button c-icon-button--large" id="main-play-toggle" style="color: white; font-size: 2.5rem;">
+                    <button class="c-icon-button c-icon-button--large is-playing-trigger" id="main-play-toggle">
                         <ion-icon name="play-circle"></ion-icon>
                     </button>
                     <button class="c-icon-button"><ion-icon name="play-skip-forward"></ion-icon></button>
                     <button class="c-icon-button"><ion-icon name="repeat-outline"></ion-icon></button>
                 </div>
-                <div class="c-playback-bar" style="width: 100%; max-width: 500px; display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-muted);">
-                    <span>1:23</span>
-                    <div class="c-progress-bar" style="flex: 1; height: 4px; background: var(--bg-highlight); border-radius: 2px; cursor: pointer; position: relative;">
-                        <div class="c-progress-bar__fill" style="height: 100%; background: white; border-radius: 2px; width: 30%;"></div>
+                <div class="c-playback-bar">
+                    <span id="current-time">0:00</span>
+                    <div class="c-progress-bar" id="progress-container">
+                        <div class="c-progress-bar__fill" id="progress-fill"></div>
                     </div>
-                    <span>3:45</span>
+                    <span id="duration">Live</span>
                 </div>
             </div>
 
-            <div class="c-volume-controls" style="display: flex; justify-content: flex-end; align-items: center; gap: 12px; color: var(--text-muted);">
+            <div class="c-volume-controls">
                 <ion-icon name="mic-outline"></ion-icon>
                 <ion-icon name="list-outline"></ion-icon>
                 <ion-icon name="volume-medium-outline"></ion-icon>
-                <div class="c-volume-bar" style="width: 100px; height: 4px; background: var(--bg-highlight); border-radius: 2px;">
-                    <div class="c-volume-bar__fill" style="height: 100%; background: var(--text-main); border-radius: 2px; width: 70%;"></div>
+                <div class="c-volume-bar">
+                    <div class="c-volume-bar__fill" style="width: 70%;"></div>
                 </div>
             </div>
         </footer>
