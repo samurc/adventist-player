@@ -1,0 +1,319 @@
+/* --- 1. SETTINGS --- */
+:root {
+    --bg-base: #000000;
+    --bg-surface: #121212;
+    --bg-elevated: #181818;
+    --bg-highlight: #282828;
+    --primary: #1DB954;
+    --text-main: #FFFFFF;
+    --text-muted: #b3b3b3;
+    --glass: rgba(18, 18, 18, 0.7);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- 2. GENERIC --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--bg-highlight);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* --- 3. BASE --- */
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 0.5em;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* --- 4. OBJECTS --- */
+.o-app-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 1fr 90px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.o-main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+/* --- 5. COMPONENTS --- */
+
+/* --- Sidebar --- */
+.c-sidebar {
+    background-color: var(--bg-base);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.c-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.c-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.c-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.c-nav-item:hover, .c-nav-item.is-active {
+    color: var(--text-main);
+}
+
+/* --- Main Content Area --- */
+.c-main-content {
+    background: linear-gradient(to bottom, #2a2a2a 0%, var(--bg-surface) 100%);
+    overflow-y: auto;
+    position: relative;
+}
+
+/* --- App Header --- */
+.c-app-header {
+    position: sticky;
+    top: 0;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    z-index: 100;
+    background: transparent;
+}
+
+.c-app-header.is-scrolled {
+    background-color: var(--bg-surface);
+}
+
+/* --- Hero --- */
+.c-hero {
+    height: 400px;
+    padding: 80px 32px 32px;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.c-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+.c-hero__content {
+    position: relative;
+    z-index: 1;
+}
+
+.c-hero__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.c-hero__title {
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+/* --- Card --- */
+.c-card {
+    background: var(--bg-elevated);
+    padding: 16px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.c-card:hover {
+    background: var(--bg-highlight);
+}
+
+.c-card__image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    background-size: cover;
+    background-position: center;
+}
+
+.c-card__title {
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.c-card__description {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.c-card__play-button {
+    position: absolute;
+    right: 24px;
+    bottom: 80px;
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.c-card:hover .c-card__play-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Player Bar --- */
+.c-player-bar {
+    grid-column: 1 / -1;
+    background-color: var(--bg-elevated);
+    border-top: 1px solid var(--bg-highlight);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 200;
+}
+
+.c-player-bar__now-playing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.c-player-bar__mini-cover {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    background-size: cover;
+}
+
+.c-player-bar__track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-player-bar__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Buttons/Actions --- */
+.c-button {
+    padding: 12px 32px;
+    border-radius: 500px;
+    font-weight: 700;
+}
+
+.c-button--primary {
+    background: var(--primary);
+    color: white;
+}
+
+.c-button--outline {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-main);
+}
+
+.c-button--premium {
+    background: var(--text-main);
+    color: var(--bg-base);
+    font-size: 0.875rem;
+    padding: 8px 16px;
+}
+
+.c-icon-button {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-icon-button:hover {
+    color: var(--text-main);
+    transform: scale(1.1);
+}
+
+/* --- 6. UTILITIES --- */
+.u-text-muted { color: var(--text-muted) !important; }
+.u-font-small { font-size: 0.75rem !important; }
+.u-margin-auto-top { margin-top: auto !important; }
+.u-letter-spacing { letter-spacing: 0.1em !important; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .o-app-layout {
+        grid-template-columns: 1fr;
+    }
+    .c-sidebar {
+        display: none;
+    }
+    .c-hero__title {
+        font-size: 3rem;
+    }
+}

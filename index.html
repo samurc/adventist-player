@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventist Player | Siente la Música</title>
+    <meta name="description" content="Bienvenido a Adventist Player, tu plataforma de streaming favorita con los mejores hits del momento.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="o-app-layout">
+        <!-- Sidebar -->
+        <aside class="c-sidebar" id="sidebar">
+            <div class="c-logo">
+                <ion-icon name="musical-notes"></ion-icon>
+                <span>Adventist</span>
+            </div>
+            <nav>
+                <ul class="c-nav-list">
+                    <li class="c-nav-item is-active" id="nav-home">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <span>Inicio</span>
+                    </li>
+                    <li class="c-nav-item" id="nav-search">
+                        <ion-icon name="search-outline"></ion-icon>
+                        <span>Buscar</span>
+                    </li>
+                    <li class="c-nav-item" id="nav-library">
+                        <ion-icon name="library-outline"></ion-icon>
+                        <span>Tu Biblioteca</span>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="u-margin-auto-top">
+                <ul class="c-nav-list">
+                    <li class="c-nav-item">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                        <span>Crear lista</span>
+                    </li>
+                    <li class="c-nav-item">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <span>Tus me gusta</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="c-main-content" id="main-content">
+            <header class="c-app-header" id="header">
+                <div class="c-header-nav">
+                    <button class="c-icon-button"><ion-icon name="chevron-back-outline"></ion-icon></button>
+                    <button class="c-icon-button"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+                </div>
+                <div class="c-user-menu">
+                    <button class="c-button c-button--premium u-letter-spacing">Explorar Premium</button>
+                    <button class="c-user-profile" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.7); color: white; border: none; padding: 4px 12px; border-radius: 20px; cursor: pointer;">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <span>Usuario</span>
+                    </button>
+                </div>
+            </header>
+
+            <section class="c-hero" id="hero-section">
+                <div class="c-hero__content">
+                    <small class="c-hero__label u-letter-spacing">Playlist Recomendada</small>
+                    <h1 class="c-hero__title">Mix Diario</h1>
+                    <div class="c-hero__actions">
+                        <button class="c-button c-button--primary" id="hero-play-btn">Reproducir</button>
+                        <button class="c-button c-button--outline" id="hero-save-btn" style="margin-left: 12px;">Seguir</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="u-padding-32" style="padding: 32px;">
+                <h2 class="c-section-title" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Lo más escuchado</h2>
+                <div class="o-main-grid" id="trending-grid">
+                    <!-- Cards will be injected by JS -->
+                </div>
+            </section>
+
+            <section class="u-padding-32" style="padding: 32px;">
+                <h2 class="c-section-title" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Nuevos Lanzamientos</h2>
+                <div class="o-main-grid" id="new-releases-grid">
+                    <!-- Cards will be injected by JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Player Bar -->
+        <footer class="c-player-bar">
+            <div class="c-player-bar__now-playing">
+                <div class="c-player-bar__mini-cover" id="current-cover"></div>
+                <div class="c-player-bar__track-info">
+                    <h4 class="u-font-small" id="current-title" style="margin: 0; font-weight: 600;">Cargando...</h4>
+                    <p class="u-font-small u-text-muted" id="current-artist" style="margin: 0;">Artista</p>
+                </div>
+                <button class="c-icon-button" style="font-size: 1.25rem;"><ion-icon name="heart-outline"></ion-icon></button>
+            </div>
+
+            <div class="c-player-bar__controls">
+                <div class="c-control-buttons" style="display: flex; align-items: center; gap: 24px;">
+                    <button class="c-icon-button"><ion-icon name="shuffle-outline"></ion-icon></button>
+                    <button class="c-icon-button"><ion-icon name="play-skip-back"></ion-icon></button>
+                    <button class="c-icon-button c-icon-button--large" id="main-play-toggle" style="color: white; font-size: 2.5rem;">
+                        <ion-icon name="play-circle"></ion-icon>
+                    </button>
+                    <button class="c-icon-button"><ion-icon name="play-skip-forward"></ion-icon></button>
+                    <button class="c-icon-button"><ion-icon name="repeat-outline"></ion-icon></button>
+                </div>
+                <div class="c-playback-bar" style="width: 100%; max-width: 500px; display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-muted);">
+                    <span>1:23</span>
+                    <div class="c-progress-bar" style="flex: 1; height: 4px; background: var(--bg-highlight); border-radius: 2px; cursor: pointer; position: relative;">
+                        <div class="c-progress-bar__fill" style="height: 100%; background: white; border-radius: 2px; width: 30%;"></div>
+                    </div>
+                    <span>3:45</span>
+                </div>
+            </div>
+
+            <div class="c-volume-controls" style="display: flex; justify-content: flex-end; align-items: center; gap: 12px; color: var(--text-muted);">
+                <ion-icon name="mic-outline"></ion-icon>
+                <ion-icon name="list-outline"></ion-icon>
+                <ion-icon name="volume-medium-outline"></ion-icon>
+                <div class="c-volume-bar" style="width: 100px; height: 4px; background: var(--bg-highlight); border-radius: 2px;">
+                    <div class="c-volume-bar__fill" style="height: 100%; background: var(--text-main); border-radius: 2px; width: 70%;"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
