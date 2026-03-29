@@ -449,6 +449,30 @@ button {
     color: var(--text-main);
 }
 
+.c-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#hero-fav-btn {
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero-fav-btn ion-icon {
+    font-size: 1.5rem;
+}
+
+#hero-fav-btn.is-favorite {
+    color: var(--favorite);
+    border-color: var(--favorite);
+}
+
 .c-button--premium {
     background: white;
     color: black;
