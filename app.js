@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressFill = document.getElementById('progress-fill');
 
     // Sidebar Items
-    const navFavorites = document.getElementById('nav-favorites-sidebar');
+    const navReport = document.getElementById('nav-report-sidebar');
     const navHome = document.getElementById('nav-home');
 
     // --- Data Fetch ---
@@ -112,10 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             favoritesSection.style.display = 'none';
         }
-        
-        // Update total count or visual if needed (optional)
-        const favIcon = navFavorites.querySelector('ion-icon');
-        favIcon.name = favStations.length > 0 ? 'heart' : 'heart-outline';
     }
 
     function updateHero(station) {
@@ -259,12 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Sidebar navigation
-    navFavorites.addEventListener('click', () => {
-        if (favorites.length > 0) {
-            favoritesSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-
     navHome.addEventListener('click', () => {
         mainContent.scrollTo({ top: 0, behavior: 'smooth' });
     });

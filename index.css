@@ -97,12 +97,13 @@ button {
     gap: 20px;
 }
 
-.c-nav-item {
+.c-nav-item a {
     display: flex;
     align-items: center;
     gap: 16px;
     color: var(--text-muted);
     font-weight: 600;
+    text-decoration: none;
 }
 
 .c-nav-item:hover, .c-nav-item.is-active {
