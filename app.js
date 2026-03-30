@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-const API_URL = 'https://samurc.github.io/adventist-radio-api/web.json';
+const API_URL = 'https://adventistplayer.org/api/web.json';
 
 let allStations = [];
 let favorites = JSON.parse(localStorage.getItem('adventist-favs')) || [];
