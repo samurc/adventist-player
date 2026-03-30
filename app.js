@@ -4,7 +4,7 @@ let allStations = [];
 let favorites = JSON.parse(localStorage.getItem('adventist-favs')) || [];
 let currentStation = null;
 let hls = null;
-let selectedLanguage = 'Todos';
+let selectedLanguage = localStorage.getItem('adventist-last-lang') || 'Todos';
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
@@ -45,9 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
             renderLanguageFilters();
             renderAll();
 
-            // Set Initial Hero
-            if (allStations.length > 0) {
-                updateHero(allStations[0]);
+            // Restore Last Played or Use First Station
+            const lastPlayedId = localStorage.getItem('adventist-last-played');
+            let initialStation = allStations[0];
+            
+            if (lastPlayedId) {
+                const found = allStations.find(s => s.id == lastPlayedId);
+                if (found) initialStation = found;
+            }
+
+            if (initialStation) {
+                updateHero(initialStation);
+                updatePlayerUI(initialStation);
             }
         } catch (error) {
             console.error('Error fetching stations:', error);
@@ -159,21 +168,27 @@ document.addEventListener('DOMContentLoaded', () => {
         playerFavBtn.classList.toggle('is-favorite', isFav);
     }
 
-    // --- Playback Logic ---
-    function playStation(station) {
+    function updatePlayerUI(station) {
         currentStation = station;
-
-        // UI Update
         currentTitle.innerText = station.nombre;
         currentArtist.innerText = `${station.pais} | ${station.dial}`;
         currentCover.style.backgroundImage = `url('${station.imgMobile}')`;
-        updateHero(station);
         updatePlayerFavUI();
-
-        // Highlight active card
+        
+        // Highlight active card if it's rendered
         document.querySelectorAll('.c-card').forEach(card => {
             card.classList.toggle('is-playing', card.dataset.id == station.id);
         });
+    }
+
+    // --- Playback Logic ---
+    function playStation(station) {
+        // Save State
+        localStorage.setItem('adventist-last-played', station.id);
+        
+        // UI Update
+        updatePlayerUI(station);
+        updateHero(station);
 
         const streamUrl = station.medialiveUrl;
 
@@ -216,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (chip) {
             selectedLanguage = chip.dataset.lang;
+            localStorage.setItem('adventist-last-lang', selectedLanguage);
             renderLanguageFilters();
             renderAll();
             return;

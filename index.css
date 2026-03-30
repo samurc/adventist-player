@@ -1,10 +1,10 @@
 /* --- 1. SETTINGS --- */
 :root {
-    --bg-base: #000000;
+    --bg-base: #0A1F41;
     --bg-surface: #121212;
     --bg-elevated: #181818;
     --bg-highlight: #282828;
-    --primary: #1DB954;
+    --primary: #CEA356;
     --text-main: #FFFFFF;
     --text-muted: #b3b3b3;
     --favorite: #FF4B4B;
@@ -189,7 +189,7 @@ button {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
 }
 
 .c-hero__content {
