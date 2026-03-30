@@ -33,7 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const languageFilters = document.getElementById('language-filters');
 
     // UI Elements
-    const searchInput = document.getElementById('station-search');
+    const searchHeader = document.getElementById('station-search-header');
+    const searchSection = document.getElementById('station-search-section');
+    const getSearchQuery = () => {
+        return (searchHeader?.value || searchSection?.value || '').toLowerCase();
+    };
     const audio = document.getElementById('audio-player');
     const heroTitle = document.getElementById('hero-title');
     const heroSection = document.getElementById('hero-section');
@@ -94,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Render Logic ---
     function renderAll() {
         // Filter stations based on search and language
-        const query = searchInput.value.toLowerCase();
+        const query = getSearchQuery();
         const filtered = allStations.filter(s => {
             const matchesQuery = !query || 
                 s.nombre.toLowerCase().includes(query) || 
@@ -112,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getFilteredStations() {
-        const query = searchInput.value.toLowerCase();
+        const query = getSearchQuery();
         return allStations.filter(s => {
             const matchesQuery = !query || 
                 s.nombre.toLowerCase().includes(query) || 
@@ -475,9 +479,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Search Logic
-    searchInput.addEventListener('input', (e) => {
+    const handleSearchInput = (e) => {
+        const value = e.target.value;
+        if (searchHeader) searchHeader.value = value;
+        if (searchSection) searchSection.value = value;
         renderAll();
-    });
+    };
+
+    if (searchHeader) searchHeader.addEventListener('input', handleSearchInput);
+    if (searchSection) searchSection.addEventListener('input', handleSearchInput);
 
     // Sidebar navigation
     navHome.addEventListener('click', () => {

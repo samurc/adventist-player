@@ -191,6 +191,14 @@ button {
     color: var(--text-muted);
 }
 
+.c-search-bar--header {
+    display: flex; /* Default (Desktop) */
+}
+
+.c-search-bar--section {
+    display: none; /* Default (Desktop) */
+}
+
 .c-search-bar input {
     background: none;
     border: none;
@@ -765,8 +773,16 @@ button {
     }
 
     .c-search-bar {
-        display: flex;
+        display: none;
         max-width: none;
+    }
+
+    .c-search-bar--section {
+        display: flex;
+    }
+
+    .c-search-bar--header {
+        display: none;
     }
 
     .c-header-logo {
