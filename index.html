@@ -36,6 +36,36 @@
     <!-- Hls.js for HLS streams (.m3u8) -->
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link rel="stylesheet" href="index.css">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RadioStation",
+      "name": "Adventist Player",
+      "url": "https://adventistplayer.org",
+      "description": "Radio Adventista Global para todos",
+      "genre": "Religious",
+      "potentialAction": {
+        "@type": "ListenAction",
+        "target": [
+          {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://adventistplayer.org/",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/IOSPlatform",
+              "http://schema.org/AndroidPlatform"
+            ]
+          }
+        ],
+        "expectation": {
+          "@type": "SeekToAction",
+          "actionStatus": "http://schema.org/ActiveActionStatus"
+        }
+      }
+    }
+    </script>
 </head>
 <body>
     <div class="o-app-layout">
