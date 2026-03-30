@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Error fetching stations:', error);
-            trendingGrid.innerHTML = '<p class="u-text-muted">Error al cargar las estaciones.</p>';
+            allStationsGrid.innerHTML = '<p class="u-text-muted">Error al cargar las estaciones.</p>';
         }
     }
 
