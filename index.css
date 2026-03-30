@@ -180,11 +180,11 @@ button {
 }
 
 .c-search-bar {
-    flex: 1;
-    max-width: 400px;
+    width: 100%;
+    max-width: 500px;
     background: var(--bg-highlight);
     border-radius: 500px;
-    padding: 8px 16px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -436,6 +436,10 @@ button {
 .c-card__body {
     flex: 1;
     min-width: 0;
+}
+
+.c-card__swipe-indicator {
+    display: none;
 }
 
 .c-card__play-button {
@@ -725,6 +729,7 @@ button {
 .u-margin-left-12 { margin-left: 12px !important; }
 .u-margin-auto-top { margin-top: auto !important; }
 .u-letter-spacing { letter-spacing: 0.1em !important; }
+.u-margin-bottom-24 { margin-bottom: 24px !important; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -761,7 +766,8 @@ button {
     }
 
     .c-search-bar {
-        display: none;
+        display: flex;
+        max-width: none;
     }
 
     .c-header-logo {
@@ -830,6 +836,20 @@ button {
 
     .c-card__description {
         font-size: 0.8rem;
+    }
+
+    .c-card__swipe-indicator {
+        display: flex;
+        align-items: center;
+        color: var(--text-muted);
+        opacity: 0.3;
+        font-size: 1rem;
+        animation: hintSwipe 2s infinite ease-in-out;
+    }
+
+    @keyframes hintSwipe {
+        0%, 100% { transform: translateX(0); opacity: 0.3; }
+        50% { transform: translateX(-4px); opacity: 0.6; }
     }
 
     .c-progress-bar {

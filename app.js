@@ -151,12 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="c-card__play-button">
                             <ion-icon name="play" style="font-size: 24px; color: white;"></ion-icon>
                         </div>
-                        <button class="c-card__fav-button ${isFav ? 'is-favorite' : ''}" data-id="${station.id}">
-                            <ion-icon name="${isFav ? 'heart' : 'heart-outline'}"></ion-icon>
-                        </button>
                         <div class="c-card__body">
                             <h3 class="c-card__title">${station.nombre}</h3>
                             <p class="c-card__description">${station.pais} ${station.dial}</p>
+                        </div>
+                        <div class="c-card__swipe-indicator">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
                         </div>
                     </div>
                 </div>
