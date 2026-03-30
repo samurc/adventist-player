@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </button>
                     </div>
                     <div class="c-card c-swipe-content" data-id="${station.id}" role="link" aria-label="Escuchar ${station.nombre} de ${station.pais}">
-                        <div class="c-card__image" style="background-image: url('${station.imgMobile}')" role="img" aria-label="Logo de ${station.nombre}"></div>
+                        <img class="c-card__image" src="${station.imgMobile}" alt="Radio ${station.nombre} - ${station.pais}" loading="lazy">
                         <div class="c-card__play-button">
                             <ion-icon name="play" style="font-size: 24px; color: white;"></ion-icon>
                         </div>
@@ -223,7 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentStation = station;
         currentTitle.innerText = station.nombre;
         currentArtist.innerText = `${station.pais} | ${station.dial}`;
-        currentCover.style.backgroundImage = `url('${station.imgMobile}')`;
+        currentCover.src = station.imgMobile;
+        currentCover.alt = `Radio ${station.nombre} - ${station.pais}`;
         updatePlayerFavUI();
         
         // Highlight active card if it's rendered

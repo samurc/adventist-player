@@ -372,8 +372,8 @@ button {
     border-radius: 4px;
     margin-bottom: 16px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    display: block;
 }
 
 .c-card__title {
@@ -525,8 +525,7 @@ button {
     width: 56px;
     height: 56px;
     border-radius: 4px;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
 }
 
 .c-player-bar__controls {

@@ -121,6 +121,11 @@
                 <div class="c-header-logo">
                     <img src="/assets/logo.png" alt="Logo Adventist Player" width="140px">
                 </div>
+                <!-- Search Bar (Desktop only) -->
+                <div class="c-search-bar c-search-bar--header">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" id="station-search-header" placeholder="¿Qué quieres escuchar?">
+                </div>
             </header>
 
             <!-- Closed Testing Banner -->
@@ -185,13 +190,11 @@
                     <!-- Chips injected by JS -->
                 </div>
 
-                <!-- Search Bar -->
-                <div class="c-search-bar u-margin-bottom-24">
+                <!-- Search Bar (Mobile only) -->
+                <div class="c-search-bar c-search-bar--section u-margin-bottom-24">
                     <ion-icon name="search-outline"></ion-icon>
-                    <input type="text" id="station-search" placeholder="¿Qué quieres escuchar?">
+                    <input type="text" id="station-search-section" placeholder="¿Qué quieres escuchar?">
                 </div>
-
-                <div class="o-main-grid" id="all-stations-grid">
                     <p class="u-text-muted">Cargando estaciones...</p>
                 </div>
             </section>
@@ -202,7 +205,7 @@
             <audio id="audio-player"></audio>
 
             <div class="c-player-bar__now-playing">
-                <div class="c-player-bar__mini-cover" id="current-cover"></div>
+                <img class="c-player-bar__mini-cover" id="current-cover" src="" alt="Portada de estación">
                 <div class="c-player-bar__track-info">
                     <h4 class="u-font-small u-font-bold u-margin-0" id="current-title">Selecciona una radio</h4>
                     <p class="u-font-small u-text-muted u-margin-0" id="current-artist">Artista</p>
