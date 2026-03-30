@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = stations.map(station => {
             const isFav = favorites.includes(station.id);
             return `
-                <div class="c-card" data-id="${station.id}">
-                    <div class="c-card__image" style="background-image: url('${station.imgMobile}')"></div>
+                <div class="c-card" data-id="${station.id}" role="link" aria-label="Escuchar ${station.nombre} de ${station.pais}">
+                    <div class="c-card__image" style="background-image: url('${station.imgMobile}')" role="img" aria-label="Logo de ${station.nombre}"></div>
                     <div class="c-card__play-button">
                         <ion-icon name="play" style="font-size: 24px; color: white;"></ion-icon>
                     </div>
