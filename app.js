@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "REEMPLAZA_CON_TU_NUEVA_CLAVE_RESTRINGIDA",
+  apiKey: "AIzaSyDm0QzUQSAy7Gnx-gIR4R34YX49fM4ttkQ",
   authDomain: "adventist-player.firebaseapp.com",
   projectId: "adventist-player",
   storageBucket: "adventist-player.firebasestorage.app",
