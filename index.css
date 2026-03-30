@@ -63,7 +63,7 @@ button {
 .o-app-layout {
     display: grid;
     grid-template-columns: 240px 1fr;
-    grid-template-rows: 1fr 90px;
+    grid-template-rows: 1fr auto;
     height: 100vh;
     overflow: hidden;
 }
@@ -169,6 +169,10 @@ button {
     z-index: 100;
     background: var(--bg-surface);
     gap: 24px;
+}
+
+.c-header-logo {
+    display: none;
 }
 
 .c-app-header.is-scrolled {
@@ -454,6 +458,8 @@ button {
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     padding: 0 16px;
+    padding-bottom: env(safe-area-inset-bottom);
+    min-height: calc(90px + env(safe-area-inset-bottom));
     z-index: 200;
 }
 
@@ -695,10 +701,35 @@ button {
 
     .c-menu-toggle {
         display: block;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
     }
 
     .c-sidebar-close {
         display: block;
+    }
+
+    .c-search-bar {
+        display: none;
+    }
+
+    .c-header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .c-app-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 16px;
+        position: relative;
     }
     .c-hero__title {
         font-size: 3rem;
