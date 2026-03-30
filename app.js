@@ -213,8 +213,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    async function fetchTemporalStreamUrl(station) {
+        if (!station.temporal || !station.proveedor || !station.nodo || !station.pwd) return null;
+        
+        try {
+            const url = `${station.proveedor}?x=${station.nodo}&password=${station.pwd}`;
+            const response = await fetch(url);
+            if (!response.ok) return null;
+            
+            const data = await response.json();
+            return data.https?.apple || data.http?.apple || null;
+        } catch (error) {
+            console.error('Error fetching temporal URL:', error);
+            return null;
+        }
+    }
+
     // --- Playback Logic ---
-    function playStation(station) {
+    async function playStation(station, isRetry = false) {
         // Save State
         localStorage.setItem('adventist-last-played', station.id);
         
@@ -223,6 +239,17 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHero(station);
 
         const streamUrl = station.medialiveUrl;
+
+        const handleError = async () => {
+            if (station.temporal && !isRetry) {
+                console.log('Stream failed. Attempting temporal resolution...');
+                const newUrl = await fetchTemporalStreamUrl(station);
+                if (newUrl) {
+                    station.medialiveUrl = newUrl;
+                    playStation(station, true);
+                }
+            }
+        };
 
         if (hls) {
             hls.destroy();
@@ -235,12 +262,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 hls.loadSource(streamUrl);
                 hls.attachMedia(audio);
                 hls.on(Hls.Events.MANIFEST_PARSED, () => audio.play());
+                hls.on(Hls.Events.ERROR, (event, data) => {
+                    if (data.fatal) handleError();
+                });
             } else if (audio.canPlayType('application/vnd.apple.mpegurl')) {
                 audio.src = streamUrl;
+                audio.onerror = handleError;
                 audio.play();
             }
         } else {
             audio.src = streamUrl;
+            audio.onerror = handleError;
             audio.play();
         }
 
