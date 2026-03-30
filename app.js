@@ -458,7 +458,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Play/Pause
     playToggle.addEventListener('click', () => {
-        if (!audio.src && !hls) return;
+        if (!audio.src && !hls) {
+            if (currentStation) {
+                playStation(currentStation);
+            }
+            return;
+        }
         if (audio.paused) {
             audio.play();
             updatePlayToggleIcon(true);
