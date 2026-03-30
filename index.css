@@ -855,14 +855,26 @@ button {
     .c-progress-bar {
         display: none;
     }
-    #player-fav-btn, #shuffle-btn {
+    #player-fav-btn, #shuffle-btn, #prev-btn, #next-btn {
         display: none;
     }
-    .c-player-bar__track-info {
-        width: 150px;
+    .c-player-bar__now-playing {
+        flex: 1;
     }
 
     .u-padding-32 {
         padding: 16px !important;
+    }
+
+    .c-player-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(3px);
+        display: flex;
+        width: 100%;
+    }
+    .c-player-bar__controls {
+        display: block;
     }
 }
