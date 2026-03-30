@@ -343,9 +343,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updatePlayToggleIcon(isPlaying) {
+        if (playToggle.classList.contains('is-loading')) return; // Don't overwrite if loading
         playToggle.innerHTML = isPlaying 
             ? '<ion-icon name="pause-circle"></ion-icon>' 
             : '<ion-icon name="play-circle"></ion-icon>';
+    }
+
+    function setBtnLoading(isLoading) {
+        if (isLoading) {
+            playToggle.classList.add('is-loading');
+            playToggle.innerHTML = '<ion-icon name="sync-outline"></ion-icon>';
+        } else {
+            playToggle.classList.remove('is-loading');
+            updatePlayToggleIcon(!audio.paused);
+        }
     }
 
     // --- Event Listeners ---
@@ -534,6 +545,13 @@ document.addEventListener('DOMContentLoaded', () => {
             progressFill.style.width = '100%';
         }
     });
+
+    // Buffering / Loading State
+    audio.addEventListener('waiting', () => setBtnLoading(true));
+    audio.addEventListener('playing', () => setBtnLoading(false));
+    audio.addEventListener('pause', () => setBtnLoading(false));
+    audio.addEventListener('error', () => setBtnLoading(false));
+    audio.addEventListener('canplay', () => setBtnLoading(false));
 
     // Kickoff
     init();
