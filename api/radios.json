@@ -1,0 +1,35 @@
+{
+  "statusCode": 200,
+  "estaciones": [
+    {
+      "id": 7,
+      "idioma": "Español",
+      "division": "Sudamericana",
+      "nombre": "Nuevo Tiempo Perú",
+      "pais": "Peru",
+      "region": "Lima",
+      "dial": "103.3 FM",
+      "web": "https://www.nuevotiempo.org/peru/",
+      "medialiveUrl": "https://streamradio.novotempo.com/CDN-RADIO-ES/smil:rntLimaPE.smil/playlist.m3u8",
+      "imgMobile": "https://samurc.github.io/adventist-radio-api/assets/logos/redenovotempo.webp",
+      "celularContacto": "51989013278",
+      "bandera": "https://samurc.github.io/adventist-radio-api/assets/banderas/Peru.webp",
+      "temporal": false
+    },
+    {
+      "id": 24,
+      "idioma": "Español",
+      "division": "Interamericana",
+      "nombre": "Unión Radio",
+      "pais": "Guatemala",
+      "region": "Guatemala",
+      "dial": "101.5 FM",
+      "web": "https://unionradiogt.org/",
+      "medialiveUrl": "https://unionradio.radioca.st/stream",
+      "imgMobile": "https://samurc.github.io/adventist-radio-api/assets/logos/unionradio.webp",
+      "celularContacto": "50232403176",
+      "bandera": "https://samurc.github.io/adventist-radio-api/assets/banderas/Guatemala.webp",
+      "temporal": false
+    }
+  ]
+}
