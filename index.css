@@ -385,9 +385,57 @@ button {
     margin-bottom: 4px;
 }
 
-.c-card__description {
-    font-size: 0.875rem;
-    color: var(--text-muted);
+/* --- Swipe Actions --- */
+.c-swipe-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--bg-surface);
+}
+
+.c-swipe-actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none; /* Only visible on mobile */
+    align-items: center;
+    gap: 0;
+    z-index: 1;
+}
+
+.c-swipe-btn {
+    width: 70px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.c-swipe-btn--web {
+    background-color: var(--cobalt-soft);
+}
+
+.c-swipe-btn--fav {
+    background-color: var(--bg-highlight);
+}
+
+.c-swipe-btn--fav.is-favorite {
+    color: var(--favorite);
+}
+
+.c-swipe-content {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.c-card__body {
+    flex: 1;
+    min-width: 0;
 }
 
 .c-card__play-button {
@@ -734,6 +782,56 @@ button {
     .c-hero__title {
         font-size: 3rem;
     }
+
+    .o-main-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .c-swipe-actions {
+        display: flex;
+    }
+
+    .c-card {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        gap: 16px;
+        background: var(--bg-elevated);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .c-card__image {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        margin-bottom: 0;
+        border-radius: 8px;
+    }
+
+    .c-card__play-button {
+        display: none;
+    }
+
+    .c-card__fav-button {
+        position: static;
+        opacity: 1;
+        margin-left: auto;
+        background: transparent;
+        width: 40px;
+        height: 40px;
+    }
+
+    .c-card__title {
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+
+    .c-card__description {
+        font-size: 0.8rem;
+    }
+
     .c-progress-bar {
         display: none;
     }
@@ -742,5 +840,9 @@ button {
     }
     .c-player-bar__track-info {
         width: 150px;
+    }
+
+    .u-padding-32 {
+        padding: 16px !important;
     }
 }

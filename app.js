@@ -137,16 +137,28 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = stations.map(station => {
             const isFav = favorites.includes(station.id);
             return `
-                <div class="c-card" data-id="${station.id}" role="link" aria-label="Escuchar ${station.nombre} de ${station.pais}">
-                    <div class="c-card__image" style="background-image: url('${station.imgMobile}')" role="img" aria-label="Logo de ${station.nombre}"></div>
-                    <div class="c-card__play-button">
-                        <ion-icon name="play" style="font-size: 24px; color: white;"></ion-icon>
+                <div class="c-swipe-item" data-id="${station.id}">
+                    <div class="c-swipe-actions">
+                        <a href="${station.web}" target="_blank" class="c-swipe-btn c-swipe-btn--web">
+                            <ion-icon name="globe-outline"></ion-icon>
+                        </a>
+                        <button class="c-swipe-btn c-swipe-btn--fav ${isFav ? 'is-favorite' : ''}" data-id="${station.id}">
+                            <ion-icon name="${isFav ? 'heart' : 'heart-outline'}"></ion-icon>
+                        </button>
                     </div>
-                    <button class="c-card__fav-button ${isFav ? 'is-favorite' : ''}" data-id="${station.id}">
-                        <ion-icon name="${isFav ? 'heart' : 'heart-outline'}"></ion-icon>
-                    </button>
-                    <h3 class="c-card__title">${station.nombre}</h3>
-                    <p class="c-card__description">${station.pais} ${station.dial}</p>
+                    <div class="c-card c-swipe-content" data-id="${station.id}" role="link" aria-label="Escuchar ${station.nombre} de ${station.pais}">
+                        <div class="c-card__image" style="background-image: url('${station.imgMobile}')" role="img" aria-label="Logo de ${station.nombre}"></div>
+                        <div class="c-card__play-button">
+                            <ion-icon name="play" style="font-size: 24px; color: white;"></ion-icon>
+                        </div>
+                        <button class="c-card__fav-button ${isFav ? 'is-favorite' : ''}" data-id="${station.id}">
+                            <ion-icon name="${isFav ? 'heart' : 'heart-outline'}"></ion-icon>
+                        </button>
+                        <div class="c-card__body">
+                            <h3 class="c-card__title">${station.nombre}</h3>
+                            <p class="c-card__description">${station.pais} ${station.dial}</p>
+                        </div>
+                    </div>
                 </div>
             `;
         }).join('');
@@ -333,9 +345,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listeners ---
     
-    // Global delegation for Card clicks, Fav buttons and Language chips
+    // Click delegation for all cards and actions
     document.addEventListener('click', (e) => {
-        const favBtn = e.target.closest('.c-card__fav-button');
+        const favBtn = e.target.closest('.c-card__fav-button, .c-swipe-btn--fav');
+        const webBtn = e.target.closest('.c-swipe-btn--web');
         const card = e.target.closest('.c-card');
         const chip = e.target.closest('.c-filter-chip');
         
@@ -353,11 +366,83 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        if (webBtn) {
+            e.stopPropagation();
+            // Link handles itself but we stop propagation to avoid playing radio
+            return;
+        }
+
         if (card) {
+            // Only play if not currently swiped
+            if (card.style.transform === 'translateX(-140px)') {
+                card.style.transform = 'translateX(0)';
+                return;
+            }
             const station = allStations.find(s => s.id == card.dataset.id);
             if (station) playStation(station);
         }
     });
+
+    // --- Swipe Action Logic (Mobile Only) ---
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let currentSwipedEl = null;
+
+    document.addEventListener('touchstart', (e) => {
+        const swipable = e.target.closest('.c-swipe-content');
+        if (!swipable || window.innerWidth > 768) return;
+
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+
+        // Close previous if different
+        if (currentSwipedEl && currentSwipedEl !== swipable) {
+            currentSwipedEl.style.transform = 'translateX(0)';
+            currentSwipedEl = null;
+        }
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+        const swipable = e.target.closest('.c-swipe-content');
+        if (!swipable || window.innerWidth > 768) return;
+
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        const diffX = touchStartX - touchX;
+        const diffY = Math.abs(touchStartY - touchY);
+
+        // If swiping mostly horizontally
+        if (diffX > 10 && diffX < 160 && diffY < 30) {
+            swipable.style.transition = 'none';
+            // Allow swiping up to 140px (width of 2 buttons)
+            const translate = Math.min(diffX, 140);
+            swipable.style.transform = `translateX(-${translate}px)`;
+            
+            // Prevent vertical scroll if we are clearly swiping horizontal
+            if (diffX > 30) {
+                if (e.cancelable) e.preventDefault();
+            }
+        }
+    }, { passive: false });
+
+    document.addEventListener('touchend', (e) => {
+        const swipable = e.target.closest('.c-swipe-content');
+        if (!swipable || window.innerWidth > 768) return;
+
+        swipable.style.transition = '';
+        const touchEndX = e.changedTouches[0].clientX;
+        const diffX = touchStartX - touchEndX;
+
+        if (diffX > 70) {
+            // Lock Open
+            swipable.style.transform = 'translateX(-140px)';
+            currentSwipedEl = swipable;
+        } else {
+            // Close
+            swipable.style.transform = 'translateX(0)';
+            if (currentSwipedEl === swipable) currentSwipedEl = null;
+        }
+    }, { passive: true });
 
     playerFavBtn.onclick = () => {
         if (currentStation) toggleFavorite(currentStation.id);
