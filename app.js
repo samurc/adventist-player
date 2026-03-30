@@ -1,3 +1,18 @@
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDm0QzUQSAy7Gnx-gIR4R34YX49fM4ttkQ",
+  authDomain: "adventist-player.firebaseapp.com",
+  projectId: "adventist-player",
+  storageBucket: "adventist-player.firebasestorage.app",
+  messagingSenderId: "968824214640",
+  appId: "1:968824214640:web:592e9180145cc38f6550b5",
+  measurementId: "G-9Z6TV73ZKX"
+};
+
+// Initialize Firebase (Using Compat SDK)
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 const API_URL = 'https://samurc.github.io/adventist-radio-api/web.json';
 
 let allStations = [];
@@ -5,6 +20,7 @@ let favorites = JSON.parse(localStorage.getItem('adventist-favs')) || [];
 let currentStation = null;
 let hls = null;
 let selectedLanguage = localStorage.getItem('adventist-last-lang') || 'Todos';
+let isShuffle = localStorage.getItem('adventist-shuffle') === 'true';
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
@@ -29,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentCover = document.getElementById('current-cover');
     const playerFavBtn = document.getElementById('player-fav-btn');
     const playToggle = document.getElementById('main-play-toggle');
+    const shuffleBtn = document.getElementById('shuffle-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
     const progressFill = document.getElementById('progress-fill');
 
     // Sidebar Items
@@ -44,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             renderLanguageFilters();
             renderAll();
+            updateShuffleUI();
 
             // Restore Last Played or Use First Station
             const lastPlayedId = localStorage.getItem('adventist-last-played');
@@ -82,6 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         renderGrid(allStationsGrid, filtered);
         updateFavoritesUI();
+    }
+
+    function getFilteredStations() {
+        const query = searchInput.value.toLowerCase();
+        return allStations.filter(s => {
+            const matchesQuery = !query || 
+                s.nombre.toLowerCase().includes(query) || 
+                s.pais.toLowerCase().includes(query) ||
+                s.region.toLowerCase().includes(query);
+            const matchesLang = selectedLanguage === 'Todos' || s.idioma === selectedLanguage;
+            return matchesQuery && matchesLang;
+        });
     }
 
     function renderLanguageFilters() {
@@ -215,6 +247,45 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePlayToggleIcon(true);
     }
 
+    function playNext() {
+        const list = getFilteredStations();
+        if (list.length <= 1) return;
+        
+        let nextIndex;
+        if (isShuffle) {
+            do {
+                nextIndex = Math.floor(Math.random() * list.length);
+            } while (currentStation && list[nextIndex].id === currentStation.id && list.length > 1);
+        } else {
+            const currentIndex = list.findIndex(s => s.id === currentStation?.id);
+            nextIndex = (currentIndex + 1) % list.length;
+        }
+        
+        playStation(list[nextIndex]);
+    }
+
+    function playPrev() {
+        const list = getFilteredStations();
+        if (list.length <= 1) return;
+        
+        let prevIndex;
+        if (isShuffle) {
+            do {
+                prevIndex = Math.floor(Math.random() * list.length);
+            } while (currentStation && list[prevIndex].id === currentStation.id && list.length > 1);
+        } else {
+            const currentIndex = list.findIndex(s => s.id === currentStation?.id);
+            prevIndex = (currentIndex - 1 + list.length) % list.length;
+        }
+        
+        playStation(list[prevIndex]);
+    }
+
+    function updateShuffleUI() {
+        shuffleBtn.classList.toggle('is-active', isShuffle);
+        localStorage.setItem('adventist-shuffle', isShuffle);
+    }
+
     function updatePlayToggleIcon(isPlaying) {
         playToggle.innerHTML = isPlaying 
             ? '<ion-icon name="pause-circle"></ion-icon>' 
@@ -252,6 +323,14 @@ document.addEventListener('DOMContentLoaded', () => {
     playerFavBtn.onclick = () => {
         if (currentStation) toggleFavorite(currentStation.id);
     };
+
+    shuffleBtn.onclick = () => {
+        isShuffle = !isShuffle;
+        updateShuffleUI();
+    };
+
+    nextBtn.onclick = () => playNext();
+    prevBtn.onclick = () => playPrev();
 
     // Play/Pause
     playToggle.addEventListener('click', () => {

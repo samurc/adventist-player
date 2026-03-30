@@ -1,9 +1,9 @@
 /* --- 1. SETTINGS --- */
 :root {
     --bg-base: #0A1F41;
-    --bg-surface: #121212;
-    --bg-elevated: #181818;
-    --bg-highlight: #282828;
+    --bg-surface: #0D254C;
+    --bg-elevated: #132E5E;
+    --bg-highlight: #1E4282;
     --primary: #CEA356;
     --text-main: #FFFFFF;
     --text-muted: #b3b3b3;
@@ -129,7 +129,7 @@ button {
     align-items: center;
     padding: 0 32px;
     z-index: 100;
-    background: transparent;
+    background: var(--bg-surface);
     gap: 24px;
 }
 
@@ -500,6 +500,10 @@ button {
 
 .c-icon-button.is-favorite {
     color: var(--favorite);
+}
+
+#shuffle-btn.is-active {
+    color: var(--primary);
 }
 
 /* --- 6. UTILITIES --- */

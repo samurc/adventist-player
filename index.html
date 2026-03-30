@@ -109,17 +109,21 @@
 
             <div class="c-player-bar__controls">
                 <div class="c-control-buttons">
-                    <button class="c-icon-button"><ion-icon name="shuffle-outline"></ion-icon></button>
-                    <button class="c-icon-button"><ion-icon name="play-skip-back"></ion-icon></button>
+                    <button class="c-icon-button" id="shuffle-btn"><ion-icon name="shuffle-outline"></ion-icon></button>
+                    <button class="c-icon-button" id="prev-btn"><ion-icon name="play-skip-back"></ion-icon></button>
                     <button class="c-icon-button c-icon-button--large is-playing-trigger" id="main-play-toggle">
                         <ion-icon name="play-circle"></ion-icon>
                     </button>
-                    <button class="c-icon-button"><ion-icon name="play-skip-forward"></ion-icon></button>
+                    <button class="c-icon-button" id="next-btn"><ion-icon name="play-skip-forward"></ion-icon></button>
                 </div>
             </div>
         </footer>
     </div>
 
+    <!-- Firebase Compat SDKs (Better for local file:// access) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+    
     <script src="app.js"></script>
 </body>
 </html>
