@@ -40,7 +40,11 @@
 <body>
     <div class="o-app-layout">
         <!-- Sidebar -->
+        <div class="c-sidebar-backdrop" id="sidebar-backdrop"></div>
         <aside class="c-sidebar" id="sidebar">
+            <button class="c-sidebar-close" id="mobile-menu-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
             <div class="c-logo">
                 <img src="/assets/logo.png" alt="Logo Adventist Player" width="175px">
             </div>
@@ -50,6 +54,12 @@
                         <a>
                             <ion-icon name="home-outline"></ion-icon>
                             <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="c-nav-item" id="nav-privacy">
+                        <a href="https://adventistplayer.org/privacy-policy/" target="_blank">
+                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                            <span>Política de privacidad</span>
                         </a>
                     </li>
                 </ul>
@@ -75,6 +85,9 @@
         <!-- Main Content -->
         <main class="c-main-content" id="main-content">
             <header class="c-app-header" id="header">
+                <button class="c-menu-toggle" id="mobile-menu-open">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
                 <!-- Search Bar -->
                 <div class="c-search-bar">
                     <ion-icon name="search-outline"></ion-icon>
@@ -84,7 +97,10 @@
 
             <!-- Closed Testing Banner -->
             <section class="u-padding-16">
-                <div class="c-testing-banner">
+                <div class="c-testing-banner" id="testing-banner">
+                    <button class="c-testing-banner__close" id="close-banner" aria-label="Cerrar banner">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
                     <div class="c-testing-banner__content">
                         <h2 class="c-testing-banner__title">¡Ayúdanos a lanzar Adventist Player! 🎙️</h2>
                         <p class="c-testing-banner__description">

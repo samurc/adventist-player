@@ -115,6 +115,40 @@ button {
     cursor: pointer;
 }
 
+/* --- Menu Toggle --- */
+.c-menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: var(--text-main);
+    padding: 8px;
+    line-height: 0;
+}
+
+.c-sidebar-close {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 2rem;
+    color: var(--text-main);
+}
+
+.c-sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    backdrop-filter: blur(4px);
+}
+
+.c-sidebar-backdrop.is-open {
+    display: block;
+}
+
 /* --- Main Content Area --- */
 .c-main-content {
     background: linear-gradient(to bottom, #2a2a2a 0%, var(--bg-surface) 100%);
@@ -222,6 +256,25 @@ button {
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.c-testing-banner__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    line-height: 0;
+}
+
+.c-testing-banner__close:hover {
+    color: white;
+    transform: scale(1.1);
 }
 
 .c-testing-banner__title {
@@ -625,12 +678,38 @@ button {
         grid-template-columns: 1fr;
     }
     .c-sidebar {
-        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 280px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+    }
+
+    .c-sidebar.is-open {
+        transform: translateX(0);
+    }
+
+    .c-menu-toggle {
+        display: block;
+    }
+
+    .c-sidebar-close {
+        display: block;
     }
     .c-hero__title {
         font-size: 3rem;
     }
     .c-progress-bar {
         display: none;
+    }
+    #player-fav-btn, #shuffle-btn {
+        display: none;
+    }
+    .c-player-bar__track-info {
+        width: 150px;
     }
 }

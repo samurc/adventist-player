@@ -53,6 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sidebar Items
     const navReport = document.getElementById('nav-report-sidebar');
     const navHome = document.getElementById('nav-home');
+    const testingBanner = document.getElementById('testing-banner');
+    const closeBannerBtn = document.getElementById('close-banner');
+
+    const sidebar = document.getElementById('sidebar');
+    const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    const mobileMenuOpen = document.getElementById('mobile-menu-open');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
 
     // --- Data Fetch ---
     async function init() {
@@ -384,6 +391,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sidebar navigation
     navHome.addEventListener('click', () => {
         mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    if (closeBannerBtn && testingBanner) {
+        closeBannerBtn.onclick = () => {
+            testingBanner.closest('section').style.display = 'none';
+        }
+    }
+
+    // Mobile Sidebar Toggle
+    const toggleSidebar = (show) => {
+        sidebar.classList.toggle('is-open', show);
+        sidebarBackdrop.classList.toggle('is-open', show);
+    };
+
+    if (mobileMenuOpen) mobileMenuOpen.onclick = () => toggleSidebar(true);
+    if (mobileMenuClose) mobileMenuClose.onclick = () => toggleSidebar(false);
+    if (sidebarBackdrop) sidebarBackdrop.onclick = () => toggleSidebar(false);
+
+    // Auto-close on nav click (mobile)
+    document.querySelectorAll('.c-nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) toggleSidebar(false);
+        });
     });
 
     // Header scroll
