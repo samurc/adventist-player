@@ -877,4 +877,25 @@ button {
     .c-player-bar__controls {
         display: block;
     }
+
+    .c-filter-group {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 8px; /* space for scrollbar */
+        margin-right: -16px; /* Negate the parent padding */
+        padding-right: 16px; /* Add it back so scrolling doesn't cut off */
+        -webkit-overflow-scrolling: touch; /* smooth scrolling */
+    }
+    
+    .c-filter-group::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for cleaner look if preferred, or remove this to show it */
+    }
+    .c-testing-banner__actions ion-icon.md.hydrated {
+        display: none;
+    }
+    .c-testing-banner__actions .c-button{
+        text-align: left;
+        justify-content: flex-start;
+    }
+        
 }
