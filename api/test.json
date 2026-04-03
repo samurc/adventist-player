@@ -1,0 +1,80 @@
+{
+  "statusCode": 200,
+  "estaciones": [
+    {
+      "id": 1,
+      "idioma": "Español",
+      "division": "Sudamericana",
+      "nombre": "Oxígeno",
+      "pais": "Perú",
+      "region": "Lima",
+      "dial": "102.1 FM",
+      "web": "https://www.oxigeno.com.pe/",
+      "medialiveUrl": "https://mdstrm.com/audio/5fab0687bcd6c2389ee9480c/icecast.audio",
+      "imgMobile": "https://eaudioplayer.radio-grpp.io/audioplayer-app-assets/estaciones/ic_oxigeno_square.png",
+      "celularContacto": "51987654321",
+      "bandera": "https://adventistplayer.org/assets/banderas/Peru.webp",
+      "temporal": false
+    },
+    {
+      "id": 2,
+      "idioma": "Español",
+      "division": "Sudamericana",
+      "nombre": "Radio Disney",
+      "pais": "Perú",
+      "region": "Lima",
+      "dial": "94.3 FM",
+      "web": "https://pe.radiodisney.com/",
+      "medialiveUrl": "https://mdstrm.com/audio/5faee885eb830d06cf22ed4a/icecast.audio",
+      "imgMobile": "https://eaudioplayer.radio-grpp.io/audioplayer-app-assets/estaciones/ic_radiodisney_square.png",
+      "celularContacto": "",
+      "bandera": "https://adventistplayer.org/assets/banderas/Peru.webp",
+      "temporal": false
+    },
+    {
+      "id": 3,
+      "idioma": "Español",
+      "division": "Sudamericana",
+      "nombre": "Studio 92",
+      "pais": "Perú",
+      "region": "Lima",
+      "dial": "99.1 FM",
+      "web": "https://www.studio92.com/",
+      "medialiveUrl": "https://mdstrm.com/audio/5fada553978fe1080e3ac5ea/icecast.audio",
+      "imgMobile": "https://eaudioplayer.radio-grpp.io/audioplayer-app-assets/estaciones/ic_studio92_square.png",
+      "celularContacto": "",
+      "bandera": "https://adventistplayer.org/assets/banderas/Peru.webp",
+      "temporal": false
+    },
+    {
+      "id": 4,
+      "idioma": "Español",
+      "division": "Sudamericana",
+      "nombre": "Radio Mágica",
+      "pais": "Perú",
+      "region": "Lima",
+      "dial": "88.3 FM",
+      "web": "https://www.oigo.com/magica/radioenvivo/",
+      "medialiveUrl": "https://mdstrm.com/audio/6839e28eb3fdc597ac2e2e43/live.m3u8",
+      "imgMobile": "https://mmo.aiircdn.com/766/64637f9984614.png",
+      "celularContacto": "",
+      "bandera": "https://adventistplayer.org/assets/banderas/Peru.webp",
+      "temporal": false
+    },
+    {
+      "id": 5,
+      "idioma": "Español",
+      "division": "Sudamericana",
+      "nombre": "Radio Planeta",
+      "pais": "Perú",
+      "region": "Lima",
+      "dial": "107.7 FM",
+      "web": "https://www.oigo.com/planeta/radioenvivo/",
+      "medialiveUrl": "https://mdstrm.com/audio/6839e274f40e6b9832e37633/live.m3u8",
+      "imgMobile": "https://mmo.aiircdn.com/766/644bc609cd5a1.png",
+      "celularContacto": "",
+      "bandera": "https://adventistplayer.org/assets/banderas/Peru.webp",
+      "temporal": false
+    }
+  ]
+}
