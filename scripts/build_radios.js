@@ -3,6 +3,7 @@ const path = require('path');
 
 const RAW_FILE = path.join(__dirname, '../api/radios_list.json');
 const OUTPUT_FILE = path.join(__dirname, '../api/radios.json');
+const WEB_OUTPUT_FILE = path.join(__dirname, '../api/web.json');
 
 try {
   // Read the raw list of radio stations
@@ -56,7 +57,9 @@ try {
       id: finalSlug,
       ...station,
     };
-  });
+  }).sort((a, b) => 
+    a.pais.localeCompare(b.pais) || a.nombre.localeCompare(b.nombre)
+  );
 
   // Create the final structure
   const result = {
@@ -64,10 +67,11 @@ try {
     estaciones: updatedEstaciones,
   };
 
-  // Write the result to radios.json
+  // Write the results
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2), 'utf8');
+  fs.writeFileSync(WEB_OUTPUT_FILE, JSON.stringify(result, null, 2), 'utf8');
 
-  console.log(`Successfully built ${OUTPUT_FILE} with ${updatedEstaciones.length} stations.`);
+  console.log(`Successfully built ${OUTPUT_FILE} and ${WEB_OUTPUT_FILE} with ${updatedEstaciones.length} stations.`);
 } catch (error) {
   console.error('An error occurred during the build process:', error.message);
   process.exit(1);

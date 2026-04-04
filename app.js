@@ -19,7 +19,8 @@ let allStations = [];
 let favorites = JSON.parse(localStorage.getItem('adventist-favs')) || [];
 let currentStation = null;
 let hls = null;
-let selectedLanguage = localStorage.getItem('adventist-last-lang') || 'Todos';
+let selectedLanguage = localStorage.getItem('adventist-last-lang');
+if (!selectedLanguage || selectedLanguage === 'Todos') selectedLanguage = 'Español';
 let isShuffle = localStorage.getItem('adventist-shuffle') === 'true';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -72,6 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(API_URL);
             const data = await response.json();
             allStations = data.estaciones;
+
+            // Ensure selectedLanguage is valid
+            const validLanguages = [...new Set(allStations.map(s => s.idioma))];
+            if (!validLanguages.includes(selectedLanguage)) {
+                selectedLanguage = validLanguages[0] || 'Español';
+                localStorage.setItem('adventist-last-lang', selectedLanguage);
+            }
             
             renderLanguageFilters();
             renderAll();
@@ -105,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 s.nombre.toLowerCase().includes(query) || 
                 s.pais.toLowerCase().includes(query) ||
                 s.region.toLowerCase().includes(query);
-            const matchesLang = selectedLanguage === 'Todos' || s.idioma === selectedLanguage;
+            const matchesLang = s.idioma === selectedLanguage;
             return matchesQuery && matchesLang;
         });
 
@@ -123,13 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 s.nombre.toLowerCase().includes(query) || 
                 s.pais.toLowerCase().includes(query) ||
                 s.region.toLowerCase().includes(query);
-            const matchesLang = selectedLanguage === 'Todos' || s.idioma === selectedLanguage;
+            const matchesLang = s.idioma === selectedLanguage;
             return matchesQuery && matchesLang;
         });
     }
 
     function renderLanguageFilters() {
-        const languages = ['Todos', ...new Set(allStations.map(s => s.idioma))];
+        const languages = [...new Set(allStations.map(s => s.idioma))].sort((a, b) => a.localeCompare(b));
         languageFilters.innerHTML = languages.map(lang => `
             <button class="c-filter-chip ${selectedLanguage === lang ? 'is-active' : ''}" data-lang="${lang}">
                 ${lang}
@@ -528,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Auto-close on nav click (mobile)
     document.querySelectorAll('.c-nav-item').forEach(item => {
         item.addEventListener('click', () => {
-            if (window.innerWidth <= 768) toggleSidebar(false);
+            toggleSidebar(false);
         });
     });
 

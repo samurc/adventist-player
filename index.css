@@ -62,7 +62,7 @@ button {
 /* --- 4. OBJECTS --- */
 .o-app-layout {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     height: 100vh;
     overflow: hidden;
@@ -83,6 +83,19 @@ button {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.c-sidebar.is-open {
+    transform: translateX(0);
 }
 
 .c-logo {
@@ -117,15 +130,16 @@ button {
 
 /* --- Menu Toggle --- */
 .c-menu-toggle {
-    display: none;
+    display: block;
     font-size: 2rem;
     color: var(--text-main);
     padding: 8px;
     line-height: 0;
+    z-index: 10;
 }
 
 .c-sidebar-close {
-    display: none;
+    display: block;
     position: absolute;
     top: 24px;
     right: 24px;
@@ -172,7 +186,10 @@ button {
 }
 
 .c-header-logo {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .c-app-header.is-scrolled {
@@ -794,34 +811,14 @@ button {
     .o-app-layout {
         grid-template-columns: 1fr;
     }
-    .c-sidebar {
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 280px;
-        z-index: 1000;
-        transform: translateX(-100%);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        display: flex;
-    }
-
-    .c-sidebar.is-open {
-        transform: translateX(0);
-    }
+    /* Sidebar styles moved to main definition */
 
     .c-menu-toggle {
-        display: block;
-        position: absolute;
-        left: 16px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
+        position: static;
+        transform: none;
     }
 
-    .c-sidebar-close {
-        display: block;
-    }
+    /* Sidebar styles moved to main definition */
 
     .c-search-bar {
         display: none;
@@ -847,7 +844,7 @@ button {
     .c-app-header {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         padding: 0 16px;
         position: relative;
     }

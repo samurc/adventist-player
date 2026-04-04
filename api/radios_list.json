@@ -905,7 +905,7 @@
     "pais": "Francia",
     "region": "",
     "dial": "",
-    "web": "https://adventlife.fr/adventradio/Adventradio.php",
+    "web": "",
     "medialiveUrl": "https://adventmedia.fr/stream",
     "imgMobile": "https://adventistplayer.org/assets/logos/adventlife.webp",
     "celularContacto": "",
@@ -1122,7 +1122,7 @@
   },
   {
     "idioma": "Español",
-    "nombre": "Radio Buscando Esperanza - Uruguay",
+    "nombre": "Radio Buscando Esperanza",
     "pais": "Uruguay",
     "region": "",
     "dial": "108.1 FM",
