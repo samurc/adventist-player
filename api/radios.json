@@ -4,7 +4,6 @@
     {
       "id": 1,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Red Nuevo Tiempo",
       "pais": "Internet",
       "region": "Señal original",
@@ -19,7 +18,6 @@
     {
       "id": 2,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Nuevo Tiempo Argentina",
       "pais": "Argentina",
       "region": "Buenos Aires",
@@ -34,7 +32,6 @@
     {
       "id": 3,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Nuevo Tiempo Bolivia",
       "pais": "Bolivia",
       "region": "La Paz",
@@ -49,7 +46,6 @@
     {
       "id": 4,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Nuevo Tiempo Chile",
       "pais": "Chile",
       "region": "Chillán",
@@ -64,7 +60,6 @@
     {
       "id": 5,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Nuevo Tiempo Ecuador",
       "pais": "Ecuador",
       "region": "Quito y Machachi",
@@ -79,7 +74,6 @@
     {
       "id": 6,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Nuevo Tiempo Paraguay",
       "pais": "Paraguay",
       "region": "Asunción",
@@ -94,7 +88,6 @@
     {
       "id": 7,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Nuevo Tiempo Perú",
       "pais": "Peru",
       "region": "Lima",
@@ -109,7 +102,6 @@
     {
       "id": 8,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Nuevo Tiempo Uruguay",
       "pais": "Uruguay",
       "region": "Montevideo",
@@ -124,7 +116,6 @@
     {
       "id": 9,
       "idioma": "Español",
-      "division": "Sudamericana",
       "nombre": "Radio UNACH",
       "pais": "Chile",
       "region": "Chillán",
@@ -139,7 +130,6 @@
     {
       "id": 10,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Esperanza Colombia",
       "pais": "Colombia",
       "region": "Bogotá",
@@ -157,7 +147,6 @@
     {
       "id": 11,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "AWR Colombia",
       "pais": "Colombia",
       "region": "Medellín",
@@ -172,7 +161,6 @@
     {
       "id": 12,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "7ma estación",
       "pais": "Venezuela",
       "region": "Santa Barbara de Barinas",
@@ -187,7 +175,6 @@
     {
       "id": 13,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Esperanza",
       "pais": "Venezuela",
       "region": "Maracaibo",
@@ -202,7 +189,6 @@
     {
       "id": 14,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "La Voz",
       "pais": "Venezuela",
       "region": "Acarigua",
@@ -217,7 +203,6 @@
     {
       "id": 15,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "La Voz Internacional",
       "pais": "Venezuela",
       "region": "Punto Fijo",
@@ -232,7 +217,6 @@
     {
       "id": 16,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "La Voz Internacional",
       "pais": "Venezuela",
       "region": "Guasdualito",
@@ -247,7 +231,6 @@
     {
       "id": 17,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "La Voz Pinal",
       "pais": "Venezuela",
       "region": "El piñal",
@@ -262,7 +245,6 @@
     {
       "id": 18,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Orión",
       "pais": "Venezuela",
       "region": "La Victoria",
@@ -277,7 +259,6 @@
     {
       "id": 19,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio La Voz",
       "pais": "Venezuela",
       "region": "Boconó",
@@ -292,7 +273,6 @@
     {
       "id": 20,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Refugio",
       "pais": "Venezuela",
       "region": "El tigre",
@@ -307,7 +287,6 @@
     {
       "id": 21,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Viene",
       "pais": "Venezuela",
       "region": "Barinas",
@@ -322,7 +301,6 @@
     {
       "id": 22,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Viene",
       "pais": "Venezuela",
       "region": "Socopó",
@@ -337,7 +315,6 @@
     {
       "id": 23,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Viene",
       "pais": "Venezuela",
       "region": "Mantecal",
@@ -352,7 +329,6 @@
     {
       "id": 24,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Unión Radio",
       "pais": "Guatemala",
       "region": "Guatemala",
@@ -367,7 +343,6 @@
     {
       "id": 25,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Orion Stereo",
       "pais": "Guatemala",
       "region": "Quiché",
@@ -382,7 +357,6 @@
     {
       "id": 26,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Lira",
       "pais": "Costa Rica",
       "region": "Alajuela",
@@ -397,7 +371,6 @@
     {
       "id": 27,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Adventista 96.5",
       "pais": "El Salvador",
       "region": "San Salvador",
@@ -412,7 +385,6 @@
     {
       "id": 28,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Stereo Adventista",
       "pais": "El Salvador",
       "region": "San Miguel",
@@ -427,7 +399,6 @@
     {
       "id": 29,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Hope Radio Honduras Atlantica",
       "pais": "Honduras",
       "region": "Atlántida",
@@ -442,7 +413,6 @@
     {
       "id": 30,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Stereo Fe",
       "pais": "Honduras",
       "region": "Tegucigalpa",
@@ -457,7 +427,6 @@
     {
       "id": 31,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Advent Hope Radio",
       "pais": "Honduras",
       "region": "Roatán",
@@ -472,7 +441,6 @@
     {
       "id": 32,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Advent Stereo",
       "pais": "Nicaragua",
       "region": "Managua",
@@ -487,7 +455,6 @@
     {
       "id": 33,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Adventista El Centinela",
       "pais": "Nicaragua",
       "region": "León",
@@ -502,7 +469,6 @@
     {
       "id": 34,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Nuevo Tiempo",
       "pais": "Nicaragua",
       "region": "Diriamba",
@@ -517,7 +483,6 @@
     {
       "id": 35,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Nuevo Tiempo",
       "pais": "Nicaragua",
       "region": "Matagalpa",
@@ -532,7 +497,6 @@
     {
       "id": 36,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Hope Radio Panamá",
       "pais": "Panamá",
       "region": "Panamá",
@@ -547,7 +511,6 @@
     {
       "id": 37,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Paraíso",
       "pais": "Puerto Rico",
       "region": "Mayaguez",
@@ -562,7 +525,6 @@
     {
       "id": 38,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Sol",
       "pais": "Puerto Rico",
       "region": "San Juán",
@@ -577,7 +539,6 @@
     {
       "id": 39,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Radio Amanecer",
       "pais": "República Dominicana",
       "region": "Santo Domingo",
@@ -592,7 +553,6 @@
     {
       "id": 40,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "Esperanza México",
       "pais": "México",
       "region": "Monterrey",
@@ -607,7 +567,6 @@
     {
       "id": 41,
       "idioma": "Español",
-      "division": "Interamericana",
       "nombre": "UMedia Radio (Universidad de Montemorelos)",
       "pais": "México",
       "region": "Montemorelos",
@@ -622,7 +581,6 @@
     {
       "id": 42,
       "idioma": "Español",
-      "division": "Intereuropea",
       "nombre": "Radio Adventista",
       "pais": "España",
       "region": "",
@@ -637,7 +595,6 @@
     {
       "id": 43,
       "idioma": "Español",
-      "division": "Intereuropea",
       "nombre": "Radio Adventista",
       "pais": "España",
       "region": "Alicante",
@@ -652,7 +609,6 @@
     {
       "id": 44,
       "idioma": "Español",
-      "division": "Intereuropea",
       "nombre": "Radio Adventista",
       "pais": "España",
       "region": "Denia",
@@ -667,7 +623,6 @@
     {
       "id": 45,
       "idioma": "Español",
-      "division": "Norteamericana",
       "nombre": "Radio 3ABN Latino",
       "pais": "Estados Unidos",
       "region": "",
@@ -682,7 +637,6 @@
     {
       "id": 46,
       "idioma": "Español",
-      "division": "Norteamericana",
       "nombre": "Radio Esperanza New York",
       "pais": "Estados Unidos",
       "region": "New York",
@@ -697,7 +651,6 @@
     {
       "id": 47,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "Rede Novo Tempo",
       "pais": "Internet",
       "region": "Sinal Original",
@@ -712,7 +665,6 @@
     {
       "id": 48,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Afonso Cláudio",
       "pais": "Brasil",
       "region": "Espirito Santo",
@@ -727,7 +679,6 @@
     {
       "id": 49,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Belém",
       "pais": "Brasil",
       "region": "Pará",
@@ -742,7 +693,6 @@
     {
       "id": 50,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Campinas",
       "pais": "Brasil",
       "region": "São Paulo",
@@ -757,7 +707,6 @@
     {
       "id": 51,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Campo Grande",
       "pais": "Brasil",
       "region": "Mato Grosso do Sul",
@@ -772,7 +721,6 @@
     {
       "id": 52,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Curitiba",
       "pais": "Brasil",
       "region": "Paraná",
@@ -787,7 +735,6 @@
     {
       "id": 53,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Florianópolis",
       "pais": "Brasil",
       "region": "Santa Catarina",
@@ -802,7 +749,6 @@
     {
       "id": 54,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Gobernador Valadres",
       "pais": "Brasil",
       "region": "Minas Gerais",
@@ -817,7 +763,6 @@
     {
       "id": 55,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Londrina",
       "pais": "Brasil",
       "region": "Paraná",
@@ -832,7 +777,6 @@
     {
       "id": 56,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Maringá",
       "pais": "Brasil",
       "region": "Paraná",
@@ -847,7 +791,6 @@
     {
       "id": 57,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Nova Venécia",
       "pais": "Brasil",
       "region": "Espirito Santo",
@@ -862,7 +805,6 @@
     {
       "id": 58,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Poços de Caldas",
       "pais": "Brasil",
       "region": "Minas Gerais",
@@ -877,7 +819,6 @@
     {
       "id": 59,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Porto Alegre",
       "pais": "Brasil",
       "region": "Rio Grande do Sul",
@@ -892,7 +833,6 @@
     {
       "id": 60,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Rio de Janeiro",
       "pais": "Brasil",
       "region": "Rio de Janeiro",
@@ -907,7 +847,6 @@
     {
       "id": 61,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Salvador",
       "pais": "Brasil",
       "region": "Bahía",
@@ -922,7 +861,6 @@
     {
       "id": 62,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT São José do Rio Preto",
       "pais": "Brasil",
       "region": "São Paulo",
@@ -937,7 +875,6 @@
     {
       "id": 63,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Teresópolis",
       "pais": "Brasil",
       "region": "Rio de Janeiro",
@@ -952,7 +889,6 @@
     {
       "id": 64,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Vale do Paraíba",
       "pais": "Brasil",
       "region": "São Paulo",
@@ -967,7 +903,6 @@
     {
       "id": 65,
       "idioma": "Portugués",
-      "division": "Sudamericana",
       "nombre": "NT Vitória",
       "pais": "Brasil",
       "region": "Espirito Santo",
@@ -982,7 +917,6 @@
     {
       "id": 66,
       "idioma": "Inglés",
-      "division": " Pacífico Sur",
       "nombre": "Faith FM",
       "pais": "Australia",
       "region": "",
@@ -994,11 +928,9 @@
       "bandera": "https://adventistplayer.org/assets/banderas/Australia.webp",
       "temporal": false
     },
-    
     {
       "id": 67,
       "idioma": "Inglés",
-      "division": "Africana del Sur y del Océano Índico",
       "nombre": "AWR SID Media",
       "pais": "Sudáfrica",
       "region": "",
@@ -1013,7 +945,6 @@
     {
       "id": 68,
       "idioma": "Inglés",
-      "division": "Transeuropea",
       "nombre": "Hope FM UK",
       "pais": "Reino Unido",
       "region": "",
@@ -1028,7 +959,6 @@
     {
       "id": 69,
       "idioma": "Inglés",
-      "division": "Norteamericana",
       "nombre": "Joy FM",
       "pais": "Estados unidos",
       "region": "Guam",
@@ -1043,7 +973,6 @@
     {
       "id": 70,
       "idioma": "Inglés",
-      "division": "Norteamericana",
       "nombre": "3ABN Radio",
       "pais": "Estados unidos",
       "region": "",
@@ -1058,7 +987,6 @@
     {
       "id": 71,
       "idioma": "Inglés",
-      "division": "Norteamericana",
       "nombre": "3ABN Radio Music Channel",
       "pais": "Estados unidos",
       "region": "",
@@ -1073,7 +1001,6 @@
     {
       "id": 72,
       "idioma": "Inglés",
-      "division": " Pacífico Sur",
       "nombre": "3ABN Australia Radio",
       "pais": "Australia",
       "region": "",
@@ -1088,7 +1015,6 @@
     {
       "id": 73,
       "idioma": "Ruso",
-      "division": "Euroasiática",
       "nombre": "3ABN Russia Radio Network",
       "pais": "Rusia",
       "region": "",
