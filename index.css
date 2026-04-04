@@ -208,6 +208,10 @@ button {
     font-size: 0.875rem;
 }
 
+.c-search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 /* --- User Menu --- */
 .c-user-button {
     display: inline-flex;
@@ -267,9 +271,9 @@ button {
     display: none; /* Hidden on mobile */
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .c-hero {
-        height: 550px;
+        height: 300px;
         align-items: center;
         justify-content: space-between;
         padding: 0 80px;
@@ -293,7 +297,7 @@ button {
     }
 
     .c-hero__title {
-        font-size: 4.5rem;
+        font-size: 3.5rem;
         line-height: 1.1;
     }
 
@@ -304,11 +308,11 @@ button {
     }
 
     #hero-image {
-        width: 380px;
-        height: 380px;
+        width: 240px;
+        height: 240px;
         object-fit: cover;
-        border-radius: 32px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: var(--transition);
     }
@@ -378,7 +382,7 @@ button {
     flex-wrap: wrap;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .c-testing-banner__content {
         flex-direction: row;
         align-items: center;
