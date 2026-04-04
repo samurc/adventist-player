@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('audio-player');
     const heroTitle = document.getElementById('hero-title');
     const heroSection = document.getElementById('hero-section');
+    const heroImage = document.getElementById('hero-image');
     const heroPlayBtn = document.getElementById('hero-play-btn');
     const heroFavBtn = document.getElementById('hero-fav-btn');
 
@@ -180,7 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateHero(station) {
         heroTitle.innerText = station.nombre;
-        heroSection.style.backgroundImage = `url('${station.imgMobile}')`;
+        const imgUrl = `url('${station.imgMobile}')`;
+        heroSection.style.backgroundImage = imgUrl;
+        heroSection.style.setProperty('--hero-bg', imgUrl);
+        if (heroImage) heroImage.src = station.imgMobile;
         heroPlayBtn.onclick = () => playStation(station);
         
         const isFav = favorites.includes(station.id);
