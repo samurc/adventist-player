@@ -1,0 +1,22 @@
+{
+  "name": "Adventist Player",
+  "short_name": "Adv Player",
+  "description": "Escucha Radio Adventista en Vivo Online",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1F41",
+  "theme_color": "#0A1F41",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/ic_launcher.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/ic_launcher.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
