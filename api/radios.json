@@ -2,7 +2,7 @@
   "statusCode": 200,
   "estaciones": [
     {
-      "id": 1,
+      "id": "red-nuevo-tiempo-senal-original",
       "idioma": "Español",
       "nombre": "Red Nuevo Tiempo",
       "pais": "Internet",
@@ -16,7 +16,7 @@
       "temporal": false
     },
     {
-      "id": 2,
+      "id": "nuevo-tiempo-argentina-buenos-aires-929-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Argentina",
       "pais": "Argentina",
@@ -30,7 +30,7 @@
       "temporal": false
     },
     {
-      "id": 3,
+      "id": "nuevo-tiempo-bolivia-la-paz-9460-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Bolivia",
       "pais": "Bolivia",
@@ -44,7 +44,7 @@
       "temporal": false
     },
     {
-      "id": 4,
+      "id": "nuevo-tiempo-chile-chillan-971-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Chile",
       "pais": "Chile",
@@ -58,7 +58,7 @@
       "temporal": false
     },
     {
-      "id": 5,
+      "id": "nuevo-tiempo-ecuador-quito-y-machachi-921-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Ecuador",
       "pais": "Ecuador",
@@ -72,7 +72,7 @@
       "temporal": false
     },
     {
-      "id": 6,
+      "id": "nuevo-tiempo-paraguay-asuncion-979-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Paraguay",
       "pais": "Paraguay",
@@ -86,7 +86,7 @@
       "temporal": false
     },
     {
-      "id": 7,
+      "id": "nuevo-tiempo-peru-lima-1033-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Perú",
       "pais": "Peru",
@@ -100,7 +100,7 @@
       "temporal": false
     },
     {
-      "id": 8,
+      "id": "nuevo-tiempo-uruguay-montevideo-1013-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Uruguay",
       "pais": "Uruguay",
@@ -114,7 +114,7 @@
       "temporal": false
     },
     {
-      "id": 9,
+      "id": "radio-unach-chillan-1069-fm",
       "idioma": "Español",
       "nombre": "Radio UNACH",
       "pais": "Chile",
@@ -128,7 +128,7 @@
       "temporal": false
     },
     {
-      "id": 10,
+      "id": "esperanza-colombia-bogota-963-fm",
       "idioma": "Español",
       "nombre": "Esperanza Colombia",
       "pais": "Colombia",
@@ -145,7 +145,7 @@
       "pwd": "9G56deBmhc2cQ6MW"
     },
     {
-      "id": 11,
+      "id": "awr-colombia-medellin-1470-am",
       "idioma": "Español",
       "nombre": "AWR Colombia",
       "pais": "Colombia",
@@ -159,7 +159,7 @@
       "temporal": false
     },
     {
-      "id": 12,
+      "id": "7ma-estacion-santa-barbara-de-barinas-953-fm",
       "idioma": "Español",
       "nombre": "7ma estación",
       "pais": "Venezuela",
@@ -173,7 +173,7 @@
       "temporal": false
     },
     {
-      "id": 13,
+      "id": "esperanza-maracaibo-1059-fm",
       "idioma": "Español",
       "nombre": "Esperanza",
       "pais": "Venezuela",
@@ -187,7 +187,7 @@
       "temporal": false
     },
     {
-      "id": 14,
+      "id": "la-voz-acarigua-1063-fm",
       "idioma": "Español",
       "nombre": "La Voz",
       "pais": "Venezuela",
@@ -201,7 +201,7 @@
       "temporal": false
     },
     {
-      "id": 15,
+      "id": "la-voz-internacional-punto-fijo-1013-fm",
       "idioma": "Español",
       "nombre": "La Voz Internacional",
       "pais": "Venezuela",
@@ -215,7 +215,7 @@
       "temporal": false
     },
     {
-      "id": 16,
+      "id": "la-voz-internacional-guasdualito-1069-fm",
       "idioma": "Español",
       "nombre": "La Voz Internacional",
       "pais": "Venezuela",
@@ -229,7 +229,7 @@
       "temporal": false
     },
     {
-      "id": 17,
+      "id": "la-voz-pinal-el-pinal-895-fm",
       "idioma": "Español",
       "nombre": "La Voz Pinal",
       "pais": "Venezuela",
@@ -243,7 +243,7 @@
       "temporal": false
     },
     {
-      "id": 18,
+      "id": "orion-la-victoria-997-fm",
       "idioma": "Español",
       "nombre": "Orión",
       "pais": "Venezuela",
@@ -257,7 +257,7 @@
       "temporal": false
     },
     {
-      "id": 19,
+      "id": "radio-la-voz-bocono-1069-fm",
       "idioma": "Español",
       "nombre": "Radio La Voz",
       "pais": "Venezuela",
@@ -271,7 +271,7 @@
       "temporal": false
     },
     {
-      "id": 20,
+      "id": "refugio-el-tigre-1077-fm",
       "idioma": "Español",
       "nombre": "Refugio",
       "pais": "Venezuela",
@@ -285,7 +285,7 @@
       "temporal": false
     },
     {
-      "id": 21,
+      "id": "viene-barinas-1023-fm",
       "idioma": "Español",
       "nombre": "Viene",
       "pais": "Venezuela",
@@ -299,7 +299,7 @@
       "temporal": false
     },
     {
-      "id": 22,
+      "id": "viene-socopo-1073-fm",
       "idioma": "Español",
       "nombre": "Viene",
       "pais": "Venezuela",
@@ -313,7 +313,7 @@
       "temporal": false
     },
     {
-      "id": 23,
+      "id": "viene-mantecal-1073-fm",
       "idioma": "Español",
       "nombre": "Viene",
       "pais": "Venezuela",
@@ -327,7 +327,7 @@
       "temporal": false
     },
     {
-      "id": 24,
+      "id": "union-radio-guatemala-1015-fm",
       "idioma": "Español",
       "nombre": "Unión Radio",
       "pais": "Guatemala",
@@ -341,7 +341,7 @@
       "temporal": false
     },
     {
-      "id": 25,
+      "id": "orion-stereo-quiche-955-fm",
       "idioma": "Español",
       "nombre": "Orion Stereo",
       "pais": "Guatemala",
@@ -355,7 +355,7 @@
       "temporal": false
     },
     {
-      "id": 26,
+      "id": "radio-lira-alajuela-887-fm",
       "idioma": "Español",
       "nombre": "Radio Lira",
       "pais": "Costa Rica",
@@ -369,7 +369,7 @@
       "temporal": false
     },
     {
-      "id": 27,
+      "id": "radio-adventista-965-san-salvador-965-fm",
       "idioma": "Español",
       "nombre": "Radio Adventista 96.5",
       "pais": "El Salvador",
@@ -383,7 +383,7 @@
       "temporal": false
     },
     {
-      "id": 28,
+      "id": "radio-stereo-adventista-san-miguel-1069-fm",
       "idioma": "Español",
       "nombre": "Radio Stereo Adventista",
       "pais": "El Salvador",
@@ -397,7 +397,7 @@
       "temporal": false
     },
     {
-      "id": 29,
+      "id": "hope-radio-honduras-atlantica-atlantida",
       "idioma": "Español",
       "nombre": "Hope Radio Honduras Atlantica",
       "pais": "Honduras",
@@ -411,7 +411,7 @@
       "temporal": false
     },
     {
-      "id": 30,
+      "id": "stereo-fe-tegucigalpa-989-fm",
       "idioma": "Español",
       "nombre": "Stereo Fe",
       "pais": "Honduras",
@@ -425,7 +425,7 @@
       "temporal": false
     },
     {
-      "id": 31,
+      "id": "advent-hope-radio-roatan-987-fm",
       "idioma": "Español",
       "nombre": "Advent Hope Radio",
       "pais": "Honduras",
@@ -439,7 +439,7 @@
       "temporal": false
     },
     {
-      "id": 32,
+      "id": "advent-stereo-managua-927-fm",
       "idioma": "Español",
       "nombre": "Advent Stereo",
       "pais": "Nicaragua",
@@ -453,7 +453,7 @@
       "temporal": false
     },
     {
-      "id": 33,
+      "id": "radio-adventista-el-centinela-leon-1005fm",
       "idioma": "Español",
       "nombre": "Radio Adventista El Centinela",
       "pais": "Nicaragua",
@@ -467,7 +467,7 @@
       "temporal": false
     },
     {
-      "id": 34,
+      "id": "radio-nuevo-tiempo-diriamba-989-fm",
       "idioma": "Español",
       "nombre": "Radio Nuevo Tiempo",
       "pais": "Nicaragua",
@@ -481,7 +481,7 @@
       "temporal": false
     },
     {
-      "id": 35,
+      "id": "radio-nuevo-tiempo-matagalpa-1033fm",
       "idioma": "Español",
       "nombre": "Radio Nuevo Tiempo",
       "pais": "Nicaragua",
@@ -495,7 +495,7 @@
       "temporal": false
     },
     {
-      "id": 36,
+      "id": "hope-radio-panama-panama-1560-am",
       "idioma": "Español",
       "nombre": "Hope Radio Panamá",
       "pais": "Panamá",
@@ -509,7 +509,7 @@
       "temporal": false
     },
     {
-      "id": 37,
+      "id": "radio-paraiso-mayaguez-929-fm",
       "idioma": "Español",
       "nombre": "Radio Paraíso",
       "pais": "Puerto Rico",
@@ -523,7 +523,7 @@
       "temporal": false
     },
     {
-      "id": 38,
+      "id": "radio-sol-san-juan-983-fm",
       "idioma": "Español",
       "nombre": "Radio Sol",
       "pais": "Puerto Rico",
@@ -537,7 +537,7 @@
       "temporal": false
     },
     {
-      "id": 39,
+      "id": "radio-amanecer-santo-domingo-981-fm",
       "idioma": "Español",
       "nombre": "Radio Amanecer",
       "pais": "República Dominicana",
@@ -551,7 +551,7 @@
       "temporal": false
     },
     {
-      "id": 40,
+      "id": "esperanza-mexico-monterrey",
       "idioma": "Español",
       "nombre": "Esperanza México",
       "pais": "México",
@@ -565,7 +565,7 @@
       "temporal": false
     },
     {
-      "id": 41,
+      "id": "umedia-radio-universidad-de-montemorelos-montemorelos",
       "idioma": "Español",
       "nombre": "UMedia Radio (Universidad de Montemorelos)",
       "pais": "México",
@@ -579,7 +579,7 @@
       "temporal": false
     },
     {
-      "id": 42,
+      "id": "radio-adventista",
       "idioma": "Español",
       "nombre": "Radio Adventista",
       "pais": "España",
@@ -593,7 +593,7 @@
       "temporal": false
     },
     {
-      "id": 43,
+      "id": "radio-adventista-alicante",
       "idioma": "Español",
       "nombre": "Radio Adventista",
       "pais": "España",
@@ -607,7 +607,7 @@
       "temporal": false
     },
     {
-      "id": 44,
+      "id": "radio-adventista-denia-1008-fm",
       "idioma": "Español",
       "nombre": "Radio Adventista",
       "pais": "España",
@@ -621,7 +621,7 @@
       "temporal": false
     },
     {
-      "id": 45,
+      "id": "radio-3abn-latino",
       "idioma": "Español",
       "nombre": "Radio 3ABN Latino",
       "pais": "Estados Unidos",
@@ -635,7 +635,7 @@
       "temporal": false
     },
     {
-      "id": 46,
+      "id": "radio-esperanza-new-york-new-york",
       "idioma": "Español",
       "nombre": "Radio Esperanza New York",
       "pais": "Estados Unidos",
@@ -649,7 +649,7 @@
       "temporal": false
     },
     {
-      "id": 47,
+      "id": "rede-novo-tempo-sinal-original",
       "idioma": "Portugués",
       "nombre": "Rede Novo Tempo",
       "pais": "Internet",
@@ -663,7 +663,7 @@
       "temporal": false
     },
     {
-      "id": 48,
+      "id": "nt-afonso-claudio-espirito-santo-939-fm",
       "idioma": "Portugués",
       "nombre": "NT Afonso Cláudio",
       "pais": "Brasil",
@@ -677,7 +677,7 @@
       "temporal": false
     },
     {
-      "id": 49,
+      "id": "nt-belem-para-1063-fm",
       "idioma": "Portugués",
       "nombre": "NT Belém",
       "pais": "Brasil",
@@ -691,7 +691,7 @@
       "temporal": false
     },
     {
-      "id": 50,
+      "id": "nt-campinas-sao-paulo-830-am",
       "idioma": "Portugués",
       "nombre": "NT Campinas",
       "pais": "Brasil",
@@ -705,7 +705,7 @@
       "temporal": false
     },
     {
-      "id": 51,
+      "id": "nt-campo-grande-mato-grosso-do-sul-973-fm",
       "idioma": "Portugués",
       "nombre": "NT Campo Grande",
       "pais": "Brasil",
@@ -719,7 +719,7 @@
       "temporal": false
     },
     {
-      "id": 52,
+      "id": "nt-curitiba-parana-1065-fm",
       "idioma": "Portugués",
       "nombre": "NT Curitiba",
       "pais": "Brasil",
@@ -733,7 +733,7 @@
       "temporal": false
     },
     {
-      "id": 53,
+      "id": "nt-florianopolis-santa-catarina-969-fm",
       "idioma": "Portugués",
       "nombre": "NT Florianópolis",
       "pais": "Brasil",
@@ -747,7 +747,7 @@
       "temporal": false
     },
     {
-      "id": 54,
+      "id": "nt-gobernador-valadres-minas-gerais-1077-fm",
       "idioma": "Portugués",
       "nombre": "NT Gobernador Valadres",
       "pais": "Brasil",
@@ -761,7 +761,7 @@
       "temporal": false
     },
     {
-      "id": 55,
+      "id": "nt-londrina-parana-1055-fm",
       "idioma": "Portugués",
       "nombre": "NT Londrina",
       "pais": "Brasil",
@@ -775,7 +775,7 @@
       "temporal": false
     },
     {
-      "id": 56,
+      "id": "nt-maringa-parana-1049-fm",
       "idioma": "Portugués",
       "nombre": "NT Maringá",
       "pais": "Brasil",
@@ -789,7 +789,7 @@
       "temporal": false
     },
     {
-      "id": 57,
+      "id": "nt-nova-venecia-espirito-santo-1003-fm",
       "idioma": "Portugués",
       "nombre": "NT Nova Venécia",
       "pais": "Brasil",
@@ -803,7 +803,7 @@
       "temporal": false
     },
     {
-      "id": 58,
+      "id": "nt-pocos-de-caldas-minas-gerais-975-fm",
       "idioma": "Portugués",
       "nombre": "NT Poços de Caldas",
       "pais": "Brasil",
@@ -817,7 +817,7 @@
       "temporal": false
     },
     {
-      "id": 59,
+      "id": "nt-porto-alegre-rio-grande-do-sul-999-fm",
       "idioma": "Portugués",
       "nombre": "NT Porto Alegre",
       "pais": "Brasil",
@@ -831,7 +831,7 @@
       "temporal": false
     },
     {
-      "id": 60,
+      "id": "nt-rio-de-janeiro-rio-de-janeiro-957-fm",
       "idioma": "Portugués",
       "nombre": "NT Rio de Janeiro",
       "pais": "Brasil",
@@ -845,7 +845,7 @@
       "temporal": false
     },
     {
-      "id": 61,
+      "id": "nt-salvador-bahia-955-fm",
       "idioma": "Portugués",
       "nombre": "NT Salvador",
       "pais": "Brasil",
@@ -859,7 +859,7 @@
       "temporal": false
     },
     {
-      "id": 62,
+      "id": "nt-sao-jose-do-rio-preto-sao-paulo-1290-am",
       "idioma": "Portugués",
       "nombre": "NT São José do Rio Preto",
       "pais": "Brasil",
@@ -873,7 +873,7 @@
       "temporal": false
     },
     {
-      "id": 63,
+      "id": "nt-teresopolis-rio-de-janeiro-961-fm",
       "idioma": "Portugués",
       "nombre": "NT Teresópolis",
       "pais": "Brasil",
@@ -887,7 +887,7 @@
       "temporal": false
     },
     {
-      "id": 64,
+      "id": "nt-vale-do-paraiba-sao-paulo-1013-fm",
       "idioma": "Portugués",
       "nombre": "NT Vale do Paraíba",
       "pais": "Brasil",
@@ -901,7 +901,7 @@
       "temporal": false
     },
     {
-      "id": 65,
+      "id": "nt-vitoria-espirito-santo-959-fm-e-730-am",
       "idioma": "Portugués",
       "nombre": "NT Vitória",
       "pais": "Brasil",
@@ -915,7 +915,7 @@
       "temporal": false
     },
     {
-      "id": 66,
+      "id": "faith-fm",
       "idioma": "Inglés",
       "nombre": "Faith FM",
       "pais": "Australia",
@@ -929,7 +929,7 @@
       "temporal": false
     },
     {
-      "id": 67,
+      "id": "awr-sid-media",
       "idioma": "Inglés",
       "nombre": "AWR SID Media",
       "pais": "Sudáfrica",
@@ -943,7 +943,7 @@
       "temporal": false
     },
     {
-      "id": 68,
+      "id": "hope-fm-uk",
       "idioma": "Inglés",
       "nombre": "Hope FM UK",
       "pais": "Reino Unido",
@@ -957,7 +957,7 @@
       "temporal": false
     },
     {
-      "id": 69,
+      "id": "joy-fm-guam",
       "idioma": "Inglés",
       "nombre": "Joy FM",
       "pais": "Estados unidos",
@@ -971,7 +971,7 @@
       "temporal": false
     },
     {
-      "id": 70,
+      "id": "3abn-radio",
       "idioma": "Inglés",
       "nombre": "3ABN Radio",
       "pais": "Estados unidos",
@@ -985,7 +985,7 @@
       "temporal": false
     },
     {
-      "id": 71,
+      "id": "3abn-radio-music-channel",
       "idioma": "Inglés",
       "nombre": "3ABN Radio Music Channel",
       "pais": "Estados unidos",
@@ -999,7 +999,7 @@
       "temporal": false
     },
     {
-      "id": 72,
+      "id": "3abn-australia-radio",
       "idioma": "Inglés",
       "nombre": "3ABN Australia Radio",
       "pais": "Australia",
@@ -1013,7 +1013,7 @@
       "temporal": false
     },
     {
-      "id": 73,
+      "id": "3abn-russia-radio-network",
       "idioma": "Ruso",
       "nombre": "3ABN Russia Radio Network",
       "pais": "Rusia",
