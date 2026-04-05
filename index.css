@@ -74,6 +74,27 @@ button {
     gap: 24px;
 }
 
+.o-horizontal-list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 16px;
+    padding: 8px 16px 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.o-horizontal-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+/* Ensure favorites cards don't shrink and cause the container to scroll */
+.o-horizontal-list > .c-swipe-item {
+    flex: 0 0 280px !important; /* Forces the width and prevents shrinking */
+    min-width: 280px !important;
+    scroll-snap-align: start;
+}
+
 /* --- 5. COMPONENTS --- */
 
 /* --- Sidebar --- */
@@ -477,6 +498,41 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 4px;
+}
+
+.c-card--rectangular {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 280px; /* Fixed width for consistency */
+    background: var(--bg-elevated);
+    padding: 12px;
+    border-radius: 12px;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.c-card--rectangular:hover {
+    background: var(--bg-highlight);
+    transform: translateY(-2px);
+}
+
+.c-card--rectangular .c-card__image {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    margin-bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.c-card--rectangular .c-card__play-button {
+    display: none;
+}
+
+.c-card--rectangular.is-playing {
+    border: 1px solid var(--primary);
+    background: var(--bg-highlight);
 }
 
 /* --- Swipe Actions --- */

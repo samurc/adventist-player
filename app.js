@@ -151,21 +151,33 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    function renderGrid(container, stations) {
+    function renderGrid(container, stations, style = 'normal') {
         if (!container) return;
+        const isRectangular = style === 'rectangular';
+        const cardClass = isRectangular ? 'c-card c-card--rectangular' : 'c-card c-swipe-content';
+        
         container.innerHTML = stations.map(station => {
             const isFav = favorites.includes(station.id);
+            const swipeActionsHtml = isRectangular ? '' : `
+                <div class="c-swipe-actions">
+                    <a href="${station.web}" target="_blank" class="c-swipe-btn c-swipe-btn--web">
+                        <ion-icon name="globe-outline"></ion-icon>
+                    </a>
+                    <button class="c-swipe-btn c-swipe-btn--fav ${isFav ? 'is-favorite' : ''}" data-id="${station.id}">
+                        <ion-icon name="${isFav ? 'heart' : 'heart-outline'}"></ion-icon>
+                    </button>
+                </div>
+            `;
+            const swipeIndicatorHtml = isRectangular ? '' : `
+                <div class="c-card__swipe-indicator">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </div>
+            `;
+
             return `
                 <div class="c-swipe-item" data-id="${station.id}">
-                    <div class="c-swipe-actions">
-                        <a href="${station.web}" target="_blank" class="c-swipe-btn c-swipe-btn--web">
-                            <ion-icon name="globe-outline"></ion-icon>
-                        </a>
-                        <button class="c-swipe-btn c-swipe-btn--fav ${isFav ? 'is-favorite' : ''}" data-id="${station.id}">
-                            <ion-icon name="${isFav ? 'heart' : 'heart-outline'}"></ion-icon>
-                        </button>
-                    </div>
-                    <div class="c-card c-swipe-content" data-id="${station.id}" role="link" aria-label="Escuchar ${station.nombre} de ${station.pais}">
+                    ${swipeActionsHtml}
+                    <div class="${cardClass}" data-id="${station.id}" role="link" aria-label="Escuchar ${station.nombre} de ${station.pais}">
                         <img class="c-card__image" src="${station.imgMobile}" alt="Radio ${station.nombre} - ${station.pais}" loading="lazy">
                         <div class="c-card__play-button">
                             <ion-icon name="play" style="font-size: 24px; color: white;"></ion-icon>
@@ -174,9 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3 class="c-card__title">${station.nombre}</h3>
                             <p class="c-card__description">${station.pais} ${station.dial}</p>
                         </div>
-                        <div class="c-card__swipe-indicator">
-                            <ion-icon name="chevron-back-outline"></ion-icon>
-                        </div>
+                        ${swipeIndicatorHtml}
                     </div>
                 </div>
             `;
@@ -187,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const favStations = allStations.filter(s => favorites.includes(s.id));
         if (favStations.length > 0) {
             favoritesSection.style.display = 'block';
-            renderGrid(favoritesGrid, favStations);
+            renderGrid(favoritesGrid, favStations, 'rectangular');
         } else {
             favoritesSection.style.display = 'none';
         }
@@ -565,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
 
     // Register Service Worker
-    if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js')
                 .then(registration => {
