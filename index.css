@@ -542,6 +542,7 @@ button {
     border-radius: 8px;
     background: var(--bg-surface);
     contain: paint; /* Improved clipping and performance on mobile */
+    padding-top: 2px;
 }
 
 .c-swipe-actions {
@@ -1005,6 +1006,7 @@ button {
         backdrop-filter: blur(3px);
         display: flex;
         width: 100%;
+        min-height: 70px;
     }
     .c-player-bar__controls {
         display: block;

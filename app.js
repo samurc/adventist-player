@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return (searchHeader?.value || searchSection?.value || '').toLowerCase();
     };
     const audio = document.getElementById('audio-player');
+    const heroSignal = document.getElementById('hero-signal');
     const heroTitle = document.getElementById('hero-title');
     const heroSection = document.getElementById('hero-section');
     const heroImage = document.getElementById('hero-image');
@@ -184,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="c-card__body">
                             <h3 class="c-card__title">${station.nombre}</h3>
-                            <p class="c-card__description">${station.pais} ${station.dial}</p>
+                            <p class="c-card__description">${station.dial != "" ? (station.region + " - " + station.dial) : station.pais}</p>
                         </div>
                         ${swipeIndicatorHtml}
                     </div>
@@ -204,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateHero(station) {
+        heroSignal.innerText = station.dial != "" ? (station.region + " - " + station.dial) : station.pais;
         heroTitle.innerText = station.nombre;
         const imgUrl = `url('${station.imgMobile}')`;
         heroSection.style.backgroundImage = imgUrl;
@@ -253,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updatePlayerUI(station) {
         currentStation = station;
         currentTitle.innerText = station.nombre;
-        currentArtist.innerText = `${station.pais} | ${station.dial}`;
+        currentArtist.innerText = `${station.dial != "" ? (station.region + " - " + station.dial) : station.pais}`;
         currentCover.src = station.imgMobile;
         currentCover.alt = `Radio ${station.nombre} - ${station.pais}`;
         updatePlayerFavUI();
