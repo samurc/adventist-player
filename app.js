@@ -549,15 +549,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    audio.addEventListener('timeupdate', () => {
-        if (audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
-            const percent = (audio.currentTime / audio.duration) * 100;
-            progressFill.style.width = `${percent}%`;
-        } else {
-            progressFill.style.width = '100%';
-        }
-    });
-
     // Buffering / Loading State
     audio.addEventListener('waiting', () => setBtnLoading(true));
     audio.addEventListener('playing', () => setBtnLoading(false));
