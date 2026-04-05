@@ -419,6 +419,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Only play if not currently swiped
             if (card.style.transform === 'translateX(-140px)') {
                 card.style.transform = 'translateX(0)';
+                const actions = card.parentElement.querySelector('.c-swipe-actions');
+                if (actions) {
+                    setTimeout(() => {
+                        if (card.style.transform === 'translateX(0px)' || card.style.transform === 'translateX(0)') {
+                            actions.style.visibility = 'hidden';
+                            actions.style.pointerEvents = 'none';
+                        }
+                    }, 300);
+                }
                 return;
             }
             const station = allStations.find(s => s.id == card.dataset.id);
@@ -457,6 +466,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // If swiping mostly horizontally
         if (diffX > 10 && diffX < 160 && diffY < 30) {
             swipable.style.transition = 'none';
+            // Show hidden actions
+            const actions = swipable.parentElement.querySelector('.c-swipe-actions');
+            if (actions) {
+                actions.style.visibility = 'visible';
+                actions.style.pointerEvents = 'auto';
+            }
             // Allow swiping up to 140px (width of 2 buttons)
             const translate = Math.min(diffX, 140);
             swipable.style.transform = `translateX(-${translate}px)`;
@@ -483,6 +498,15 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Close
             swipable.style.transform = 'translateX(0)';
+            const actions = swipable.parentElement.querySelector('.c-swipe-actions');
+            if (actions) {
+                setTimeout(() => {
+                    if (swipable.style.transform === 'translateX(0px)' || swipable.style.transform === 'translateX(0)') {
+                        actions.style.visibility = 'hidden';
+                        actions.style.pointerEvents = 'none';
+                    }
+                }, 300);
+            }
             if (currentSwipedEl === swipable) currentSwipedEl = null;
         }
     }, { passive: true });

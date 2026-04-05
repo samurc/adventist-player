@@ -541,6 +541,7 @@ button {
     overflow: hidden;
     border-radius: 8px;
     background: var(--bg-surface);
+    contain: paint; /* Improved clipping and performance on mobile */
 }
 
 .c-swipe-actions {
@@ -552,6 +553,7 @@ button {
     align-items: center;
     gap: 0;
     z-index: 1;
+    pointer-events: none; /* Disabled until swiped */
 }
 
 .c-swipe-btn {
@@ -903,6 +905,10 @@ button {
         margin: 0 auto;
     }
 
+    .c-main-content {
+        padding-bottom: 120px; /* Space for the fixed player bar */
+    }
+
     .c-app-header {
         display: flex;
         align-items: center;
@@ -922,6 +928,7 @@ button {
 
     .c-swipe-actions {
         display: flex;
+        visibility: hidden; /* Prevent flickering during scroll */
     }
 
     .c-card {
