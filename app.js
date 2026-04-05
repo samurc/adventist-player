@@ -654,5 +654,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('SW registration failed: ', registrationError);
                 });
         });
+
+        // Handle updates: reload when the new SW takes over
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (refreshing) return;
+            refreshing = true;
+            window.location.reload();
+        });
     }
 });

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'adventist-player-cache-v4';
+const CACHE_NAME = 'adventist-player-cache-v5';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -15,6 +15,8 @@ const ASSETS_TO_CACHE = [
 
 // Install Event
 self.addEventListener('install', (event) => {
+  // Solicitamos que el nuevo SW se active inmediatamente
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[Service Worker] Caching active assets');
@@ -25,6 +27,8 @@ self.addEventListener('install', (event) => {
 
 // Activate Event
 self.addEventListener('activate', (event) => {
+  // Aseguramos que el nuevo SW tome el control de todas las pestañas abiertas
+  event.waitUntil(clients.claim());
   event.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
