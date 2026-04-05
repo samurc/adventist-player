@@ -13,10 +13,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-const API_URL = 'https://adventistplayer.org/api/web.json';
+const API_URL = './api/web.json';
 
 let allStations = [];
-let favorites = JSON.parse(localStorage.getItem('adventist-favs')) || [];
+let favorites = (JSON.parse(localStorage.getItem('adventist-favs')) || []).filter(id => id !== null && id !== undefined && !Number.isNaN(id));
+if (favorites.some(id => typeof id === 'number')) {
+    // If we have numbers, we might want to keep them just in case, but usually they are from the old system.
+    // For now, let's keep them but strictly they won't match slugs.
+}
+localStorage.setItem('adventist-favs', JSON.stringify(favorites));
+
 let currentStation = null;
 let hls = null;
 let selectedLanguage = localStorage.getItem('adventist-last-lang');
@@ -204,9 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // --- Favorites Logic ---
     function toggleFavorite(id) {
-        id = parseInt(id);
+        if (!id) return;
+        
         const index = favorites.indexOf(id);
         if (index > -1) {
             favorites.splice(index, 1);
@@ -221,11 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentStation && currentStation.id === id) {
             updatePlayerFavUI();
         }
-        if (id === parseInt(heroFavBtn.closest('section')?.dataset?.id) || true) {
-            // simpler: re-update hero if it's the same station
-            const currentHeroStation = allStations.find(s => s.nombre === heroTitle.innerText);
-            if (currentHeroStation) updateHero(currentHeroStation);
-        }
+        
+        // Re-update hero if it's the same station
+        const currentHeroStation = allStations.find(s => s.nombre === heroTitle.innerText);
+        if (currentHeroStation) updateHero(currentHeroStation);
     }
 
     function updatePlayerFavUI() {
