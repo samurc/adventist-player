@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
             renderAll();
             updateShuffleUI();
 
-            // Restore Last Played or Use First Station
+            // Restore Last Played or Use First Spanish Station
             const lastPlayedId = localStorage.getItem('adventist-last-played');
-            let initialStation = allStations[0];
+            let initialStation = allStations.find(s => s.idioma === 'Español') || allStations[0];
             
             if (lastPlayedId) {
                 const found = allStations.find(s => s.id == lastPlayedId);
