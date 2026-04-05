@@ -220,6 +220,43 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             toggleFavorite(station.id);
         };
+
+        // WhatsApp Button Logic
+        let heroWABtn = document.getElementById('hero-wa-btn');
+        if (station.celularContacto) {
+            if (!heroWABtn) {
+                heroWABtn = document.createElement('a');
+                heroWABtn.id = 'hero-wa-btn';
+                heroWABtn.className = 'c-button c-button--outline u-margin-left-12';
+                heroWABtn.target = '_blank';
+                heroWABtn.innerHTML = '<ion-icon name="logo-whatsapp"></ion-icon>';
+                heroFavBtn.after(heroWABtn);
+            }
+            heroWABtn.href = `https://wa.me/${station.celularContacto}`;
+            heroWABtn.style.display = 'inline-flex';
+        } else if (heroWABtn) {
+            heroWABtn.style.display = 'none';
+        }
+
+        // Web Button Logic
+        let heroWebBtn = document.getElementById('hero-web-btn');
+        if (station.web) {
+            if (!heroWebBtn) {
+                heroWebBtn = document.createElement('a');
+                heroWebBtn.id = 'hero-web-btn';
+                heroWebBtn.rel = 'noopener';
+                heroWebBtn.className = 'c-button c-button--outline u-margin-left-12';
+                heroWebBtn.target = '_blank';
+                heroWebBtn.innerHTML = '<ion-icon name="globe-outline"></ion-icon>';
+                // Insert after WA if it exists, otherwise after Fav
+                const afterEl = document.getElementById('hero-wa-btn') || heroFavBtn;
+                afterEl.after(heroWebBtn);
+            }
+            heroWebBtn.href = station.web;
+            heroWebBtn.style.display = 'inline-flex';
+        } else if (heroWebBtn) {
+            heroWebBtn.style.display = 'none';
+        }
     }
 
     function toggleFavorite(id) {

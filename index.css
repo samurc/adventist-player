@@ -802,7 +802,9 @@ button {
     gap: 12px;
 }
 
-#hero-fav-btn {
+#hero-fav-btn,
+#hero-wa-btn,
+#hero-web-btn {
     padding: 12px;
     width: 48px;
     height: 48px;
@@ -811,7 +813,9 @@ button {
     justify-content: center;
 }
 
-#hero-fav-btn ion-icon {
+#hero-fav-btn ion-icon,
+#hero-wa-btn ion-icon,
+#hero-web-btn ion-icon {
     font-size: 1.5rem;
 }
 
