@@ -2019,20 +2019,6 @@
       "temporal": false
     },
     {
-      "id": "viene-barinas-1023-fm",
-      "idioma": "Español",
-      "nombre": "Viene",
-      "pais": "Venezuela",
-      "region": "Barinas",
-      "dial": "102.3 FM",
-      "web": "https://hoperadiovenezuela.com/viene1023",
-      "medialiveUrl": "https://server.hoperadiovenezuela.com:8040/vienebarinas1023.mp3",
-      "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
-      "celularContacto": "",
-      "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-      "temporal": false
-    },
-    {
       "id": "viene-socopo-1073-fm",
       "idioma": "Español",
       "nombre": "Viene",
