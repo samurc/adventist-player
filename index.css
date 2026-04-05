@@ -101,6 +101,8 @@ button {
 .c-sidebar {
     background-color: var(--bg-base);
     padding: 24px;
+    padding-top: calc(24px + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -162,7 +164,7 @@ button {
 .c-sidebar-close {
     display: block;
     position: absolute;
-    top: 24px;
+    top: calc(24px + env(safe-area-inset-top, 0px));
     right: 24px;
     font-size: 2rem;
     color: var(--text-main);
@@ -664,10 +666,11 @@ button {
     grid-column: 1 / -1;
     background-color: var(--bg-elevated);
     border-top: 1px solid var(--bg-highlight);
+    border-bottom: 1px solid var(--bg-highlight);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
-    padding: 0 16px;
+    padding: 2px 16px;
     padding-bottom: env(safe-area-inset-bottom);
     min-height: calc(90px + env(safe-area-inset-bottom));
     z-index: 200;
@@ -1017,7 +1020,7 @@ button {
         backdrop-filter: blur(3px);
         display: flex;
         width: 100%;
-        min-height: 70px;
+        min-height: 75px;
     }
     .c-player-bar__controls {
         display: block;

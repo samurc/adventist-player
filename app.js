@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarBackdrop = document.getElementById('sidebar-backdrop');
     const mobileMenuOpen = document.getElementById('mobile-menu-open');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
+    
+    // Auto-hide Closed Testing Banner if not on Android
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    if (!isAndroid && testingBanner) {
+        testingBanner.closest('section').style.display = 'none';
+    }
 
     // --- Data Fetch ---
     async function init() {
