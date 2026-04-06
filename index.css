@@ -1052,5 +1052,84 @@ button {
         text-align: left;
         justify-content: flex-start;
     }
+
+    #hero-share-btn span {
+        display: none;
+    }
+    #hero-share-btn {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
         
+}
+
+/* --- Smart Autoplay Overlay --- */
+.c-autoplay-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(10, 31, 65, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;
+    cursor: pointer;
+}
+
+.c-autoplay-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.c-autoplay-overlay__content {
+    animation: fadeInUp 0.5s ease-out;
+    max-width: 400px;
+}
+
+.c-autoplay-overlay__icon {
+    font-size: 8rem;
+    color: var(--primary);
+    margin-bottom: 24px;
+    filter: drop-shadow(0 10px 20px rgba(206, 163, 86, 0.3));
+}
+
+.c-autoplay-overlay__title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.c-autoplay-overlay__subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.c-autoplay-overlay__timer {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

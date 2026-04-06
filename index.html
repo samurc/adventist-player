@@ -171,6 +171,7 @@
                     <div class="c-hero__actions">
                         <button class="c-button c-button--primary" id="hero-play-btn">Escuchar Ahora</button>
                         <button class="c-button c-button--outline u-margin-left-12" id="hero-fav-btn"><ion-icon name="heart-outline"></ion-icon></button>
+                        <button class="c-button c-button--outline u-margin-left-12" id="hero-share-btn"><ion-icon name="share-social-outline"></ion-icon> <span>Compartir</span></button>
                     </div>
                 </div>
                 <div class="c-hero__image-container">
@@ -230,6 +231,18 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- Smart Autoplay Overlay -->
+    <div id="autoplay-overlay" class="c-autoplay-overlay">
+        <div class="c-autoplay-overlay__content">
+            <div class="c-autoplay-overlay__icon">
+                <ion-icon name="play-circle"></ion-icon>
+            </div>
+            <h2 class="c-autoplay-overlay__title">Toca para escuchar</h2>
+            <p class="c-autoplay-overlay__subtitle" id="autoplay-station-name">Radio Adventista</p>
+            <p class="c-autoplay-overlay__timer" id="autoplay-timer">Cerrando en 5...</p>
+        </div>
     </div>
 
     <!-- Firebase Compat SDKs (Better for local file:// access) -->

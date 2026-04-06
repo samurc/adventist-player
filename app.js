@@ -28,6 +28,9 @@ let hls = null;
 let selectedLanguage = localStorage.getItem('adventist-last-lang');
 if (!selectedLanguage || selectedLanguage === 'Todos') selectedLanguage = 'Español';
 let isShuffle = localStorage.getItem('adventist-shuffle') === 'true';
+let pendingStation = null;
+let currentHeroStation = null;
+let autoplayTimerInterval = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
@@ -52,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroImage = document.getElementById('hero-image');
     const heroPlayBtn = document.getElementById('hero-play-btn');
     const heroFavBtn = document.getElementById('hero-fav-btn');
+    const heroShareBtn = document.getElementById('hero-share-btn');
 
     const currentTitle = document.getElementById('current-title');
     const currentArtist = document.getElementById('current-artist');
@@ -73,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarBackdrop = document.getElementById('sidebar-backdrop');
     const mobileMenuOpen = document.getElementById('mobile-menu-open');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+    const autoplayOverlay = document.getElementById('autoplay-overlay');
+    const autoplayStationName = document.getElementById('autoplay-station-name');
+    const autoplayTimer = document.getElementById('autoplay-timer');
     
     // Auto-hide Closed Testing Banner if not on Android
     const isAndroid = /Android/i.test(navigator.userAgent);
@@ -88,10 +96,42 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             allStations = data.estaciones;
 
-            // Ensure selectedLanguage is valid
+            // Detect station and language from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const stationIdFromUrl = urlParams.get('radio');
+            const langFromUrl = urlParams.get('lang') || urlParams.get('idioma');
+            let initialStation = null;
+            let shouldAutoPlay = false;
+
+            if (langFromUrl) {
+                selectedLanguage = langFromUrl;
+                localStorage.setItem('adventist-last-lang', selectedLanguage);
+            }
+
+            if (stationIdFromUrl) {
+                initialStation = allStations.find(s => s.id === stationIdFromUrl);
+                if (initialStation) {
+                    shouldAutoPlay = true;
+                    // If no explicit lang parameter is provided, sync with the radio station's language
+                    if (!langFromUrl) {
+                        selectedLanguage = initialStation.idioma;
+                        localStorage.setItem('adventist-last-lang', selectedLanguage);
+                    }
+                }
+            }
+
+            // Fallback to localStorage or first Spanish station
+            if (!initialStation) {
+                const lastPlayedId = localStorage.getItem('adventist-last-played');
+                initialStation = allStations.find(s => s.id == lastPlayedId) || 
+                                 allStations.find(s => s.idioma === 'Español') || 
+                                 allStations[0];
+            }
+
+            // Ensure selectedLanguage is valid for filters
             const validLanguages = [...new Set(allStations.map(s => s.idioma))];
             if (!validLanguages.includes(selectedLanguage)) {
-                selectedLanguage = validLanguages[0] || 'Español';
+                selectedLanguage = initialStation?.idioma || validLanguages[0] || 'Español';
                 localStorage.setItem('adventist-last-lang', selectedLanguage);
             }
             
@@ -99,18 +139,13 @@ document.addEventListener('DOMContentLoaded', () => {
             renderAll();
             updateShuffleUI();
 
-            // Restore Last Played or Use First Spanish Station
-            const lastPlayedId = localStorage.getItem('adventist-last-played');
-            let initialStation = allStations.find(s => s.idioma === 'Español') || allStations[0];
-            
-            if (lastPlayedId) {
-                const found = allStations.find(s => s.id == lastPlayedId);
-                if (found) initialStation = found;
-            }
-
             if (initialStation) {
-                updateHero(initialStation);
-                updatePlayerUI(initialStation);
+                if (shouldAutoPlay) {
+                    playStation(initialStation);
+                } else {
+                    updateHero(initialStation);
+                    updatePlayerUI(initialStation);
+                }
             }
         } catch (error) {
             console.error('Error fetching stations:', error);
@@ -212,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateHero(station) {
+        currentHeroStation = station;
         heroSignal.innerText = station.dial != "" ? (station.region + " - " + station.dial) : station.pais;
         heroTitle.innerText = station.nombre;
         const imgUrl = `url('${station.imgMobile}')`;
@@ -326,8 +362,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const handleAutoplayFailure = (station) => {
+        if (!autoplayOverlay) return;
+        pendingStation = station;
+        if (autoplayStationName) autoplayStationName.innerText = station.nombre;
+        autoplayOverlay.classList.add('is-visible');
+
+        // 5-second countdown to auto-close
+        let timeLeft = 5;
+        const updateTimer = () => {
+            if (autoplayTimer) autoplayTimer.innerText = `Cerrando en ${timeLeft}...`;
+        };
+        
+        updateTimer();
+        clearInterval(autoplayTimerInterval);
+        autoplayTimerInterval = setInterval(() => {
+            timeLeft--;
+            updateTimer();
+            if (timeLeft <= 0) {
+                clearInterval(autoplayTimerInterval);
+                autoplayOverlay.classList.remove('is-visible');
+                pendingStation = null;
+            }
+        }, 1000);
+    };
+
     // --- Playback Logic ---
     async function playStation(station, isRetry = false) {
+        // Update URL and Title (SEO / UX)
+        const url = new URL(window.location);
+        url.searchParams.set('radio', station.id);
+        // Preserve current lang if it exists
+        if (selectedLanguage) {
+            url.searchParams.set('lang', selectedLanguage);
+        }
+        window.history.replaceState({ path: url.href }, '', url.href);
+        document.title = `Escuchando ${station.nombre} | Adventist Player`;
+
         // Save State
         localStorage.setItem('adventist-last-played', station.id);
         
@@ -336,6 +407,19 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHero(station);
 
         const streamUrl = station.medialiveUrl;
+
+        const startPlayback = async () => {
+            try {
+                await audio.play();
+                updatePlayToggleIcon(true);
+                if (autoplayOverlay) autoplayOverlay.classList.remove('is-visible');
+            } catch (error) {
+                if (error.name === 'NotAllowedError') {
+                    handleAutoplayFailure(station);
+                }
+                updatePlayToggleIcon(false);
+            }
+        };
 
         const handleError = async () => {
             if (station.temporal && !isRetry) {
@@ -358,22 +442,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 hls = new Hls();
                 hls.loadSource(streamUrl);
                 hls.attachMedia(audio);
-                hls.on(Hls.Events.MANIFEST_PARSED, () => audio.play());
+                hls.on(Hls.Events.MANIFEST_PARSED, startPlayback);
                 hls.on(Hls.Events.ERROR, (event, data) => {
                     if (data.fatal) handleError();
                 });
             } else if (audio.canPlayType('application/vnd.apple.mpegurl')) {
                 audio.src = streamUrl;
                 audio.onerror = handleError;
-                audio.play();
+                startPlayback();
             }
         } else {
             audio.src = streamUrl;
             audio.onerror = handleError;
-            audio.play();
+            startPlayback();
         }
-
-        updatePlayToggleIcon(true);
     }
 
     function playNext() {
@@ -444,6 +526,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (chip) {
             selectedLanguage = chip.dataset.lang;
             localStorage.setItem('adventist-last-lang', selectedLanguage);
+
+            // Update URL
+            const url = new URL(window.location);
+            url.searchParams.set('lang', selectedLanguage);
+            window.history.replaceState({ path: url.href }, '', url.href);
+
             renderLanguageFilters();
             renderAll();
             return;
@@ -640,6 +728,41 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.addEventListener('pause', () => setBtnLoading(false));
     audio.addEventListener('error', () => setBtnLoading(false));
     audio.addEventListener('canplay', () => setBtnLoading(false));
+
+    if (heroShareBtn) {
+        heroShareBtn.onclick = () => {
+            if (!currentHeroStation) return;
+            const shareText = `Estoy escuchando ${currentHeroStation.nombre} en AdventistPlayer.`;
+            const shareUrl = window.location.href;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Adventist Player',
+                    text: shareText,
+                    url: shareUrl
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                navigator.clipboard.writeText(`${shareText} ${shareUrl}`)
+                    .then(() => {
+                        const originalText = heroShareBtn.querySelector('span').innerText;
+                        heroShareBtn.querySelector('span').innerText = '¡Copiado!';
+                        setTimeout(() => {
+                            heroShareBtn.querySelector('span').innerText = originalText;
+                        }, 2000);
+                    })
+                    .catch(err => console.log('Error copying:', err));
+            }
+        };
+    }
+
+    if (autoplayOverlay) {
+        autoplayOverlay.onclick = () => {
+            clearInterval(autoplayTimerInterval);
+            if (pendingStation) {
+                playStation(pendingStation);
+            }
+        };
+    }
 
     // Kickoff
     init();
