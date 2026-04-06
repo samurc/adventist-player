@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Only fallback the radio filter to the path language if NO preference is saved
                 if (!localStorage.getItem('adventist-last-lang')) {
                     selectedLanguage = pathLang;
+                    localStorage.setItem('adventist-last-lang', selectedLanguage);
                 }
             }
 
@@ -263,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const allStationsTitle = document.getElementById('all-stations-title');
-        allStationsTitle.innerText = query ? 'Resultados de búsqueda' : 'Todas las Radios';
+        allStationsTitle.innerText = query ? t('sections.search_results') : t('sections.all_stations');
 
         renderGrid(allStationsGrid, filtered);
         updateFavoritesUI();
@@ -625,6 +626,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             selectedLanguage = newLang;
             localStorage.setItem('adventist-last-lang', selectedLanguage);
+
+            if (searchHeader) searchHeader.value = '';
+            if (searchSection) searchSection.value = '';
 
             renderLanguageFilters();
             renderAll();

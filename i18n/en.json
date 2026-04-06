@@ -26,6 +26,7 @@
   "sections": {
     "favorites": "Your Favorites",
     "all_stations": "All Radios",
+    "search_results": "Search Results",
     "loading": "Loading stations..."
   },
   "player": {
