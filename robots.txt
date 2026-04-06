@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /scripts/
 
 Sitemap: https://adventistplayer.org/sitemap.xml
