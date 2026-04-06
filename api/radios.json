@@ -3,7 +3,7 @@
   "estaciones": [
     {
       "id": "second-advent-radio-st-johns-1015-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Second Advent Radio",
       "pais": "Antigua y Barbuda",
       "region": "St. John's",
@@ -45,7 +45,7 @@
     },
     {
       "id": "3abn-australia-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "3ABN Australia Radio",
       "pais": "Australia",
       "region": "",
@@ -59,7 +59,7 @@
     },
     {
       "id": "faith-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Faith FM",
       "pais": "Australia",
       "region": "",
@@ -73,7 +73,7 @@
     },
     {
       "id": "faith-fm-belize",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Faith FM Belize",
       "pais": "Belice",
       "region": "",
@@ -143,7 +143,7 @@
     },
     {
       "id": "nt-afonso-claudio-espirito-santo-939-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Afonso Cláudio",
       "pais": "Brasil",
       "region": "Espirito Santo",
@@ -157,7 +157,7 @@
     },
     {
       "id": "nt-belem-para-1063-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Belém",
       "pais": "Brasil",
       "region": "Pará",
@@ -171,7 +171,7 @@
     },
     {
       "id": "nt-campinas-sao-paulo-830-am",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Campinas",
       "pais": "Brasil",
       "region": "São Paulo",
@@ -185,7 +185,7 @@
     },
     {
       "id": "nt-curitiba-parana-1065-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Curitiba",
       "pais": "Brasil",
       "region": "Paraná",
@@ -199,7 +199,7 @@
     },
     {
       "id": "nt-florianopolis-santa-catarina-969-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Florianópolis",
       "pais": "Brasil",
       "region": "Santa Catarina",
@@ -213,7 +213,7 @@
     },
     {
       "id": "nt-gobernador-valadres-minas-gerais-1077-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Gobernador Valadres",
       "pais": "Brasil",
       "region": "Minas Gerais",
@@ -227,7 +227,7 @@
     },
     {
       "id": "nt-londrina-parana-1055-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Londrina",
       "pais": "Brasil",
       "region": "Paraná",
@@ -241,7 +241,7 @@
     },
     {
       "id": "nt-maringa-parana-1049-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Maringá",
       "pais": "Brasil",
       "region": "Paraná",
@@ -255,7 +255,7 @@
     },
     {
       "id": "nt-nova-venecia-espirito-santo-1003-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Nova Venécia",
       "pais": "Brasil",
       "region": "Espirito Santo",
@@ -269,7 +269,7 @@
     },
     {
       "id": "nt-pocos-de-caldas-minas-gerais-975-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Poços de Caldas",
       "pais": "Brasil",
       "region": "Minas Gerais",
@@ -283,7 +283,7 @@
     },
     {
       "id": "nt-porto-alegre-rio-grande-do-sul-999-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Porto Alegre",
       "pais": "Brasil",
       "region": "Rio Grande do Sul",
@@ -297,7 +297,7 @@
     },
     {
       "id": "nt-rio-de-janeiro-rio-de-janeiro-957-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Rio de Janeiro",
       "pais": "Brasil",
       "region": "Rio de Janeiro",
@@ -311,7 +311,7 @@
     },
     {
       "id": "nt-salvador-bahia-955-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Salvador",
       "pais": "Brasil",
       "region": "Bahía",
@@ -325,7 +325,7 @@
     },
     {
       "id": "nt-sao-jose-do-rio-preto-sao-paulo-1290-am",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT São José do Rio Preto",
       "pais": "Brasil",
       "region": "São Paulo",
@@ -339,7 +339,7 @@
     },
     {
       "id": "nt-teresopolis-rio-de-janeiro-961-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Teresópolis",
       "pais": "Brasil",
       "region": "Rio de Janeiro",
@@ -353,7 +353,7 @@
     },
     {
       "id": "nt-vale-do-paraiba-sao-paulo-1013-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Vale do Paraíba",
       "pais": "Brasil",
       "region": "São Paulo",
@@ -367,7 +367,7 @@
     },
     {
       "id": "nt-vitoria-espirito-santo-959-fm-e-730-am",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "NT Vitória",
       "pais": "Brasil",
       "region": "Espirito Santo",
@@ -381,7 +381,7 @@
     },
     {
       "id": "radio-advento-parana-879-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "Rádio Advento",
       "pais": "Brasil",
       "region": "Paraná",
@@ -395,7 +395,7 @@
     },
     {
       "id": "rede-sete-brasil",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "Rede Sete Brasil",
       "pais": "Brasil",
       "region": "",
@@ -409,7 +409,7 @@
     },
     {
       "id": "tercero-anjo",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "Tercero Anjo",
       "pais": "Brasil",
       "region": "",
@@ -423,7 +423,7 @@
     },
     {
       "id": "kids-christian-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Kids Christian Radio",
       "pais": "Canadá",
       "region": "",
@@ -437,7 +437,7 @@
     },
     {
       "id": "lighthouse-voar-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Lighthouse VOAR-FM",
       "pais": "Canadá",
       "region": "",
@@ -451,7 +451,7 @@
     },
     {
       "id": "loud-cry-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Loud Cry Radio",
       "pais": "Canadá",
       "region": "",
@@ -479,7 +479,7 @@
     },
     {
       "id": "native-christian-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Native Christian Radio",
       "pais": "Canadá",
       "region": "",
@@ -493,7 +493,7 @@
     },
     {
       "id": "natural-healing-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Natural Healing Radio",
       "pais": "Canadá",
       "region": "",
@@ -507,7 +507,7 @@
     },
     {
       "id": "sda-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "SDA Radio",
       "pais": "Canadá",
       "region": "",
@@ -760,7 +760,7 @@
     },
     {
       "id": "3abn-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "3ABN Radio",
       "pais": "Estados unidos",
       "region": "",
@@ -774,7 +774,7 @@
     },
     {
       "id": "3abn-radio-music-channel",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "3ABN Radio Music Channel",
       "pais": "Estados unidos",
       "region": "",
@@ -788,7 +788,7 @@
     },
     {
       "id": "joy-fm-guam",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Joy FM",
       "pais": "Estados unidos",
       "region": "Guam",
@@ -802,7 +802,7 @@
     },
     {
       "id": "amazing-facts-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Amazing Facts Radio",
       "pais": "Estados Unidos",
       "region": "",
@@ -858,7 +858,7 @@
     },
     {
       "id": "ksgn-christmas",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "KSGN Christmas!",
       "pais": "Estados Unidos",
       "region": "",
@@ -872,7 +872,7 @@
     },
     {
       "id": "ksgn-contemporary-christian-california-897-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "KSGN Contemporary Christian",
       "pais": "Estados Unidos",
       "region": "California",
@@ -886,7 +886,7 @@
     },
     {
       "id": "ktsy-idaho-895-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "KTSY",
       "pais": "Estados Unidos",
       "region": "Idaho",
@@ -900,7 +900,7 @@
     },
     {
       "id": "life-talk-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Life Talk Radio",
       "pais": "Estados Unidos",
       "region": "",
@@ -928,7 +928,7 @@
     },
     {
       "id": "positive-life-radio",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Positive Life Radio",
       "pais": "Estados Unidos",
       "region": "",
@@ -942,7 +942,7 @@
     },
     {
       "id": "praise-901-fm-wjou-alabama-901-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Praise 90.1 FM WJOU",
       "pais": "Estados Unidos",
       "region": "Alabama",
@@ -956,7 +956,7 @@
     },
     {
       "id": "promise-fm-california-897-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Promise FM",
       "pais": "Estados Unidos",
       "region": "California",
@@ -1166,7 +1166,7 @@
     },
     {
       "id": "spokanes-shine-1049-washington-1049-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Spokane's Shine 104.9",
       "pais": "Estados Unidos",
       "region": "Washington",
@@ -1180,7 +1180,7 @@
     },
     {
       "id": "wgts-919-washington-919-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "WGTS 91.9",
       "pais": "Estados Unidos",
       "region": "Washington",
@@ -1236,7 +1236,7 @@
     },
     {
       "id": "grenada-family-network",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Grenada Family Network",
       "pais": "Granada",
       "region": "",
@@ -1404,7 +1404,7 @@
     },
     {
       "id": "rede-novo-tempo-sinal-original",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "Rede Novo Tempo",
       "pais": "Internet",
       "region": "Sinal Original",
@@ -1432,7 +1432,7 @@
     },
     {
       "id": "ncu-911fm-mandeville-911-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "NCU 91.1FM",
       "pais": "Jamaica",
       "region": "Mandeville",
@@ -1642,7 +1642,7 @@
     },
     {
       "id": "adventist-hope-radio-png-morobe-1075-fm",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Adventist Hope Radio PNG",
       "pais": "Papúa Nueva Guinea",
       "region": "Morobe",
@@ -1698,7 +1698,7 @@
     },
     {
       "id": "radio-rcs-912-fm-lisboa-912-fm",
-      "idioma": "Portugués",
+      "idioma": "Português",
       "nombre": "Radio RCS 91.2 FM",
       "pais": "Portugal",
       "region": "Lisboa",
@@ -1740,7 +1740,7 @@
     },
     {
       "id": "adventist-radio-london-londres",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Adventist Radio London",
       "pais": "Reino Unido",
       "region": "Londres",
@@ -1754,7 +1754,7 @@
     },
     {
       "id": "hope-fm-uk",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "Hope FM UK",
       "pais": "Reino Unido",
       "region": "",
@@ -1866,7 +1866,7 @@
     },
     {
       "id": "awr-sid-media",
-      "idioma": "Inglés",
+      "idioma": "English",
       "nombre": "AWR SID Media",
       "pais": "Sudáfrica",
       "region": "",
