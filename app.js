@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Auto-hide Closed Testing Banner if not on Android
     const isAndroid = /Android/i.test(navigator.userAgent);
-    if (!isAndroid && testingBanner) {
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (!isAndroid && !isLocalhost && testingBanner) {
         testingBanner.closest('section').style.display = 'none';
     }
 
@@ -598,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sidebar navigation
     navHome.addEventListener('click', () => {
-        mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     if (closeBannerBtn && testingBanner) {
@@ -625,8 +626,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Header scroll
-    mainContent.addEventListener('scroll', () => {
-        if (mainContent.scrollTop > 50) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
             header.classList.add('is-scrolled');
         } else {
             header.classList.remove('is-scrolled');

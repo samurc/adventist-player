@@ -38,13 +38,17 @@
     background: var(--text-muted);
 }
 
-/* --- 3. BASE --- */
+html,
+body {
+    height: auto;
+    overflow-x: hidden;
+    background-color: var(--bg-base);
+}
+
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-base);
     color: var(--text-main);
-    overflow-x: hidden;
-    height: 100vh;
 }
 
 h1, h2, h3, h4 {
@@ -61,11 +65,9 @@ button {
 
 /* --- 4. OBJECTS --- */
 .o-app-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
-    height: 100vh;
-    overflow: hidden;
+    display: block;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .o-main-grid {
@@ -115,6 +117,8 @@ button {
     transform: translateX(-100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     border-right: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .c-sidebar.is-open {
@@ -189,9 +193,10 @@ button {
 /* --- Main Content Area --- */
 .c-main-content {
     background: linear-gradient(to bottom, #2a2a2a 0%, var(--bg-surface) 100%);
-    overflow-y: auto;
     position: relative;
     scroll-behavior: smooth;
+    min-height: 100vh;
+    padding-bottom: 120px; /* Space for the fixed player bar on all devices */
 }
 
 /* --- App Header --- */
@@ -663,10 +668,12 @@ button {
 
 /* --- Player Bar --- */
 .c-player-bar {
-    grid-column: 1 / -1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: var(--bg-elevated);
     border-top: 1px solid var(--bg-highlight);
-    border-bottom: 1px solid var(--bg-highlight);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
