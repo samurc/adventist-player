@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Home",
+    "privacy": "Privacy Policy",
+    "add_radio": "Add radio",
+    "report_problem": "Report a problem"
+  },
+  "search": {
+    "placeholder": "What do you want to hear?"
+  },
+  "testing_banner": {
+    "title": "Help us test the APP! 🎙️",
+    "description": "Become a tester on Google Play by following these steps:",
+    "join": "1. Join",
+    "accept": "2. Accept",
+    "install": "3. Install"
+  },
+  "hero": {
+    "play": "Play now",
+    "share": "Share",
+    "signal": "Original Signal",
+    "signal_region": "Signal: {region}",
+    "signal_dial": "{region} - {dial}",
+    "listening_now": "Listening to {name} | Adventist Player"
+  },
+  "sections": {
+    "favorites": "Your Favorites",
+    "all_stations": "All Radios",
+    "loading": "Loading stations..."
+  },
+  "player": {
+    "select_radio": "Select a radio",
+    "artist_placeholder": "Artist",
+    "sharing_message": "I'm listening to {name} on AdventistPlayer."
+  },
+  "autoplay": {
+    "title": "Tap to listen",
+    "timer": "Closing in {time}..."
+  },
+  "meta": {
+    "title": "Adventist Player | Listen to Adventist Radio Live Online",
+    "description": "Tune in to Adventist Player to listen to the best adventist radio stations live. Christian music and spiritual programs."
+  }
+}

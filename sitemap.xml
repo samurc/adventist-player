@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   <!-- Root (Redirects) -->
    <url>
       <loc>https://adventistplayer.org/</loc>
-      <lastmod>2026-04-03</lastmod>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://adventistplayer.org/"/>
+      <lastmod>2026-04-06</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Spanish -->
+   <url>
+      <loc>https://adventistplayer.org/es/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/"/>
+      <lastmod>2026-04-06</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <!-- English -->
+   <url>
+      <loc>https://adventistplayer.org/en/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/"/>
+      <lastmod>2026-04-06</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <!-- Portuguese -->
+   <url>
+      <loc>https://adventistplayer.org/pt/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/"/>
+      <lastmod>2026-04-06</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>

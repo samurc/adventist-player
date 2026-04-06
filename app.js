@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-const API_URL = './api/web.json';
+const API_URL = '/api/web.json';
 
 let allStations = [];
 let favorites = (JSON.parse(localStorage.getItem('adventist-favs')) || []).filter(id => id !== null && id !== undefined && !Number.isNaN(id));
@@ -23,14 +23,56 @@ if (favorites.some(id => typeof id === 'number')) {
 }
 localStorage.setItem('adventist-favs', JSON.stringify(favorites));
 
+const ISO_LANG_MAP = {
+    'es': 'Español',
+    'en': 'English',
+    'pt': 'Português'
+};
+
+const ISO_LANG_MAP_REVERSE = {
+    'Español': 'es',
+    'English': 'en',
+    'Português': 'pt'
+};
+
+function getInitialUILanguage() {
+    const path = window.location.pathname;
+    if (path.includes('/es/')) return 'Español';
+    if (path.includes('/en/')) return 'English';
+    if (path.includes('/pt/')) return 'Português';
+
+    // 1. Browser Detection (only if no path found)
+    const browserLang = navigator.language.split('-')[0].toLowerCase();
+    if (ISO_LANG_MAP[browserLang]) return ISO_LANG_MAP[browserLang];
+
+    // 2. Default
+    return 'Español';
+}
+
+function getInitialFilterLanguage() {
+    // 1. Local Storage priority for Radio Filter
+    const saved = localStorage.getItem('adventist-last-lang');
+    if (saved && saved !== 'Todos') return saved;
+
+    // 2. Fallback to location.pathname if no saved preference
+    const path = window.location.pathname;
+    if (path.includes('/es/')) return 'Español';
+    if (path.includes('/en/')) return 'English';
+    if (path.includes('/pt/')) return 'Português';
+
+    return 'Español';
+}
+
+let uiLanguage = getInitialUILanguage();
+let selectedLanguage = getInitialFilterLanguage();
+let isShuffle = localStorage.getItem('adventist-shuffle') === 'true';
 let currentStation = null;
 let hls = null;
-let selectedLanguage = localStorage.getItem('adventist-last-lang');
-if (!selectedLanguage || selectedLanguage === 'Todos') selectedLanguage = 'Español';
-let isShuffle = localStorage.getItem('adventist-shuffle') === 'true';
 let pendingStation = null;
 let currentHeroStation = null;
 let autoplayTimerInterval = null;
+let translations = {};
+let currentLangCode = 'es';
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
@@ -81,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const autoplayOverlay = document.getElementById('autoplay-overlay');
     const autoplayStationName = document.getElementById('autoplay-station-name');
     const autoplayTimer = document.getElementById('autoplay-timer');
+    const langSelector = document.getElementById('header-lang-selector');
     
     // Auto-hide Closed Testing Banner if not on Android
     const isAndroid = /Android/i.test(navigator.userAgent);
@@ -89,6 +132,64 @@ document.addEventListener('DOMContentLoaded', () => {
         testingBanner.closest('section').style.display = 'none';
     }
 
+    // --- Internationalization (i18n) ---
+    const langMap = {
+        'Español': 'es',
+        'Inglés': 'en',
+        'English': 'en',
+        'Português': 'pt'
+    };
+
+    const t = (key, params = {}) => {
+        const keys = key.split('.');
+        let value = translations;
+        for (const k of keys) {
+            value = value?.[k];
+        }
+        if (!value) return key;
+        
+        // Replace params: {name} -> params['name']
+        Object.keys(params).forEach(p => {
+            value = value.replace(`{${p}}`, params[p]);
+        });
+        return value;
+    };
+
+    const translatePage = () => {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            el.textContent = t(key);
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            el.placeholder = t(key);
+        });
+        
+        // Update document metadata
+        document.title = t('meta.title');
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', t('meta.description'));
+    };
+
+    const loadTranslations = async (langName) => {
+        currentLangCode = langMap[langName] || 'es';
+        try {
+            const res = await fetch(`/i18n/${currentLangCode}.json`);
+            translations = await res.json();
+            translatePage();
+            
+            // Sync header selector
+            if (langSelector) langSelector.value = langName;
+
+            // If a station is already playing, update title
+            if (currentStation) {
+                document.title = t('hero.listening_now', { name: currentStation.nombre });
+            }
+        } catch (err) {
+            console.error('Error loading translations:', err);
+        }
+    };
+
     // --- Data Fetch ---
     async function init() {
         try {
@@ -96,48 +197,43 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             allStations = data.estaciones;
 
-            // Detect station and language from URL
+            // Detect selection from URL
             const urlParams = new URLSearchParams(window.location.search);
             const stationIdFromUrl = urlParams.get('radio');
-            const langFromUrl = urlParams.get('lang') || urlParams.get('idioma');
             let initialStation = null;
             let shouldAutoPlay = false;
 
-            if (langFromUrl) {
-                selectedLanguage = langFromUrl;
-                localStorage.setItem('adventist-last-lang', selectedLanguage);
-            }
+            // UI language is STRICTLY tied to the path
+            const path = window.location.pathname;
+            const pathLang = path.includes('/es/') ? 'Español' : 
+                             path.includes('/en/') ? 'English' : 
+                             path.includes('/pt/') ? 'Português' : null;
 
-            if (stationIdFromUrl) {
-                initialStation = allStations.find(s => s.id === stationIdFromUrl);
-                if (initialStation) {
-                    shouldAutoPlay = true;
-                    // If no explicit lang parameter is provided, sync with the radio station's language
-                    if (!langFromUrl) {
-                        selectedLanguage = initialStation.idioma;
-                        localStorage.setItem('adventist-last-lang', selectedLanguage);
-                    }
+            if (pathLang) {
+                uiLanguage = pathLang;
+                
+                // Only fallback the radio filter to the path language if NO preference is saved
+                if (!localStorage.getItem('adventist-last-lang')) {
+                    selectedLanguage = pathLang;
                 }
             }
 
-            // Fallback to localStorage or first Spanish station
+            renderLanguageFilters();
+            await loadTranslations(uiLanguage);
+            renderAll();
+            updateShuffleUI();
+
+            if (stationIdFromUrl) {
+                initialStation = allStations.find(s => s.id === stationIdFromUrl);
+                if (initialStation) shouldAutoPlay = true;
+            }
+
             if (!initialStation) {
                 const lastPlayedId = localStorage.getItem('adventist-last-played');
                 initialStation = allStations.find(s => s.id == lastPlayedId) || 
-                                 allStations.find(s => s.idioma === 'Español') || 
+                                 allStations.find(s => s.idioma === selectedLanguage) || 
                                  allStations[0];
             }
-
-            // Ensure selectedLanguage is valid for filters
-            const validLanguages = [...new Set(allStations.map(s => s.idioma))];
-            if (!validLanguages.includes(selectedLanguage)) {
-                selectedLanguage = initialStation?.idioma || validLanguages[0] || 'Español';
-                localStorage.setItem('adventist-last-lang', selectedLanguage);
-            }
-            
-            renderLanguageFilters();
-            renderAll();
-            updateShuffleUI();
 
             if (initialStation) {
                 if (shouldAutoPlay) {
@@ -248,7 +344,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateHero(station) {
         currentHeroStation = station;
-        heroSignal.innerText = station.dial != "" ? (station.region + " - " + station.dial) : station.pais;
+        if (station.dial !== "") {
+            heroSignal.innerText = t('hero.signal_dial', { region: station.region, dial: station.dial });
+        } else {
+            heroSignal.innerText = station.pais;
+        }
         heroTitle.innerText = station.nombre;
         const imgUrl = `url('${station.imgMobile}')`;
         heroSection.style.backgroundImage = imgUrl;
@@ -371,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 5-second countdown to auto-close
         let timeLeft = 5;
         const updateTimer = () => {
-            if (autoplayTimer) autoplayTimer.innerText = `Cerrando en ${timeLeft}...`;
+            if (autoplayTimer) autoplayTimer.innerText = t('autoplay.timer', { time: timeLeft });
         };
         
         updateTimer();
@@ -392,12 +492,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update URL and Title (SEO / UX)
         const url = new URL(window.location);
         url.searchParams.set('radio', station.id);
-        // Preserve current lang if it exists
-        if (selectedLanguage) {
-            url.searchParams.set('lang', selectedLanguage);
-        }
         window.history.replaceState({ path: url.href }, '', url.href);
-        document.title = `Escuchando ${station.nombre} | Adventist Player`;
+        document.title = t('hero.listening_now', { name: station.nombre });
 
         // Save State
         localStorage.setItem('adventist-last-played', station.id);
@@ -524,13 +620,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const chip = e.target.closest('.c-filter-chip');
         
         if (chip) {
-            selectedLanguage = chip.dataset.lang;
+            const newLang = chip.dataset.lang;
+            if (newLang === selectedLanguage) return;
+            
+            selectedLanguage = newLang;
             localStorage.setItem('adventist-last-lang', selectedLanguage);
-
-            // Update URL
-            const url = new URL(window.location);
-            url.searchParams.set('lang', selectedLanguage);
-            window.history.replaceState({ path: url.href }, '', url.href);
 
             renderLanguageFilters();
             renderAll();
@@ -732,7 +826,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroShareBtn) {
         heroShareBtn.onclick = () => {
             if (!currentHeroStation) return;
-            const shareText = `Estoy escuchando ${currentHeroStation.nombre} en AdventistPlayer.`;
+            const shareText = t('player.sharing_message', { name: currentHeroStation.nombre });
             const shareUrl = window.location.href;
             
             if (navigator.share) {
@@ -762,6 +856,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 playStation(pendingStation);
             }
         };
+    }
+
+    if (langSelector) {
+        langSelector.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            if (newLang === uiLanguage) return;
+            
+            // Redirect to the new subdirectory for SEO consistency
+            const iso = ISO_LANG_MAP_REVERSE[newLang] || 'es';
+            const currentPath = window.location.pathname;
+            
+            // Extract filename (e.g. index.html or empty)
+            const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            
+            // Important: also ensure any current params like ?radio= match
+            window.location.href = `/${iso}/${filename}${window.location.search}`;
+        });
     }
 
     // Kickoff

@@ -250,6 +250,55 @@ button {
     display: none; /* Default (Desktop) */
 }
 
+/* Language Selector */
+.c-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.c-lang-selector-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 500px;
+    padding: 8px 16px;
+    gap: 10px;
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.c-lang-selector-wrapper:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.c-lang-selector-wrapper ion-icon {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.c-lang-selector {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
+    padding-right: 4px;
+}
+
+.c-lang-selector option {
+    background: #1a1a2e; /* Darker background for readability in dropdown */
+    color: var(--text-main);
+    padding: 10px;
+}
+
 .c-search-bar input {
     background: none;
     border: none;

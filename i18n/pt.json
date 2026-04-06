@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Início",
+    "privacy": "Política de privacidade",
+    "add_radio": "Adicionar rádio",
+    "report_problem": "Relatar um problema"
+  },
+  "search": {
+    "placeholder": "O que você quer ouvir?"
+  },
+  "testing_banner": {
+    "title": "Ajude-nos a testar o APP! 🎙️",
+    "description": "Torne-se um testador no Google Play seguindo estes passos:",
+    "join": "1. Participar",
+    "accept": "2. Aceitar",
+    "install": "3. Instalar"
+  },
+  "hero": {
+    "play": "Reproduzir",
+    "share": "Compartilhar",
+    "signal": "Sinal Original",
+    "signal_region": "Sinal: {region}",
+    "signal_dial": "{region} - {dial}",
+    "listening_now": "Ouvindo {name} | Adventist Player"
+  },
+  "sections": {
+    "favorites": "Seus Favoritos",
+    "all_stations": "Todas as Rádios",
+    "loading": "Carregando estações..."
+  },
+  "player": {
+    "select_radio": "Selecione uma rádio",
+    "artist_placeholder": "Artista",
+    "sharing_message": "Estou ouvindo {name} no AdventistPlayer."
+  },
+  "autoplay": {
+    "title": "Toque para ouvir",
+    "timer": "Fechando em {time}..."
+  },
+  "meta": {
+    "title": "Adventist Player | Ouça Rádio Adventista ao Vivo Online",
+    "description": "Sintonize o Adventist Player para ouvir as melhores emissoras de rádio adventistas ao vivo. Música cristã e programas espirituais."
+  }
+}
