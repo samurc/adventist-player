@@ -500,8 +500,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function updatePlayToggleIcon(isPlaying) {
         if (playToggle.classList.contains('is-loading')) return; // Don't overwrite if loading
         playToggle.innerHTML = isPlaying 
-            ? '<ion-icon name="pause-circle"></ion-icon>' 
-            : '<ion-icon name="play-circle"></ion-icon>';
+            ? '<ion-icon name="pause"></ion-icon>' 
+            : '<ion-icon name="play"></ion-icon>';
     }
 
     function setBtnLoading(isLoading) {

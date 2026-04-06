@@ -169,7 +169,10 @@
                     <small class="c-hero__label u-letter-spacing" id="hero-signal">Señal Original</small>
                     <h1 class="c-hero__title" id="hero-title">Red Nuevo Tiempo</h1>
                     <div class="c-hero__actions">
-                        <button class="c-button c-button--primary" id="hero-play-btn">Escuchar Ahora</button>
+                        <button class="c-button c-button--primary c-button--hero-play" id="hero-play-btn" aria-label="Reproducir">
+                            <ion-icon name="play"></ion-icon>
+                            <span>Reproducir</span>
+                        </button>
                         <button class="c-button c-button--outline u-margin-left-12" id="hero-fav-btn"><ion-icon name="heart-outline"></ion-icon></button>
                         <button class="c-button c-button--outline u-margin-left-12" id="hero-share-btn"><ion-icon name="share-social-outline"></ion-icon> <span>Compartir</span></button>
                     </div>
@@ -237,7 +240,7 @@
     <div id="autoplay-overlay" class="c-autoplay-overlay">
         <div class="c-autoplay-overlay__content">
             <div class="c-autoplay-overlay__icon">
-                <ion-icon name="play-circle"></ion-icon>
+                <ion-icon name="play"></ion-icon>
             </div>
             <h2 class="c-autoplay-overlay__title">Toca para escuchar</h2>
             <p class="c-autoplay-overlay__subtitle" id="autoplay-station-name">Radio Adventista</p>
