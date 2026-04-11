@@ -870,10 +870,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!currentHeroStation) return;
             const shareText = t('player.sharing_message', { name: currentHeroStation.nombre });
             
-            // Construct share URL with station ID
-            const url = new URL(window.location.href);
-            url.searchParams.set('radio', currentHeroStation.id);
-            const shareUrl = url.href;
+            // Share current semantic URL
+            const shareUrl = window.location.href;
             
             if (navigator.share) {
                 navigator.share({
