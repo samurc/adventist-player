@@ -85,59 +85,59 @@ try {
   console.log('Generating static pages for stations...');
   
   updatedEstaciones.forEach((station) => {
-    const langCode = {
-      'Español': 'es',
-      'English': 'en',
-      'Português': 'pt'
-    }[station.idioma] || 'es';
+    langs.forEach(langCode => {
+        const template = templates[langCode];
+        if (!template) return;
 
-    const template = templates[langCode];
-    if (!template) return;
+        const stationUrl = `https://adventistplayer.org/${langCode}/${station.id}`;
+        const stationName = station.nombre;
+        const stationLocation = station.dial !== "" ? `${station.region} - ${station.dial}` : station.pais;
+        const stationFullTitle = `${stationName} | ${stationLocation} - Adventist Player`;
+        
+        let description = "";
+        if (langCode === 'es') description = `Sintoniza ${stationName} (${stationLocation}) en vivo por Adventist Player. La mejor radio adventista online.`;
+        else if (langCode === 'en') description = `Tune in to ${stationName} (${stationLocation}) live on Adventist Player. The best Adventist radio online.`;
+        else description = `Sintonize a ${stationName} (${stationLocation}) ao vivo no Adventist Player. A melhor rádio adventista online.`;
 
-    const stationUrl = `https://adventistplayer.org/${langCode}/${station.id}/`;
-    const stationName = station.nombre;
-    const stationLocation = station.dial !== "" ? `${station.region} - ${station.dial}` : station.pais;
-    const stationFullTitle = `${stationName} | ${stationLocation} - Adventist Player`;
-    
-    let description = "";
-    if (langCode === 'es') description = `Sintoniza ${stationName} (${stationLocation}) en vivo por Adventist Player. La mejor radio adventista online.`;
-    else if (langCode === 'en') description = `Tune in to ${stationName} (${stationLocation}) live on Adventist Player. The best Adventist radio online.`;
-    else description = `Sintonize a ${stationName} (${stationLocation}) ao vivo no Adventist Player. A melhor rádio adventista online.`;
+        // Simple replacement logic for meta tags
+        let html = template;
+        
+        // Replace Title
+        html = html.replace(/<title>(.*?)<\/title>/, `<title>${stationFullTitle}</title>`);
+        
+        // Replace Canonical and OG/Twitter URLs
+        html = html.replace(/rel="canonical" href="(.*?)"/, `rel="canonical" href="${stationUrl}"`);
+        html = html.replace(/property="og:url" content="(.*?)"/g, `property="og:url" content="${stationUrl}"`);
+        html = html.replace(/property="twitter:url" content="(.*?)"/g, `property="twitter:url" content="${stationUrl}"`);
+        
+        // Replace OG/Twitter Titles
+        html = html.replace(/property="og:title" content="(.*?)"/g, `property="og:title" content="${stationFullTitle}"`);
+        html = html.replace(/property="twitter:title" content="(.*?)"/g, `property="twitter:title" content="${stationFullTitle}"`);
 
-    // Simple replacement logic for meta tags
-    let html = template;
-    
-    // Replace Title
-    html = html.replace(/<title>(.*?)<\/title>/, `<title>${stationFullTitle}</title>`);
-    
-    // Replace Canonical and OG/Twitter URLs
-    html = html.replace(/rel="canonical" href="(.*?)"/, `rel="canonical" href="${stationUrl}"`);
-    html = html.replace(/property="og:url" content="(.*?)"/g, `property="og:url" content="${stationUrl}"`);
-    html = html.replace(/property="twitter:url" content="(.*?)"/g, `property="twitter:url" content="${stationUrl}"`);
-    
-    // Replace OG/Twitter Titles
-    html = html.replace(/property="og:title" content="(.*?)"/g, `property="og:title" content="${stationFullTitle}"`);
-    html = html.replace(/property="twitter:title" content="(.*?)"/g, `property="twitter:title" content="${stationFullTitle}"`);
+        // Replace Descriptions
+        html = html.replace(/name="description" content="(.*?)"/, `name="description" content="${description}"`);
+        html = html.replace(/property="og:description" content="(.*?)"/g, `property="og:description" content="${description}"`);
+        html = html.replace(/property="twitter:description" content="(.*?)"/g, `property="twitter:description" content="${description}"`);
 
-    // Replace Descriptions
-    html = html.replace(/name="description" content="(.*?)"/, `name="description" content="${description}"`);
-    html = html.replace(/property="og:description" content="(.*?)"/g, `property="og:description" content="${description}"`);
-    html = html.replace(/property="twitter:description" content="(.*?)"/g, `property="twitter:description" content="${description}"`);
+        // Inject Hreflang Alternates
+        const alternates = langs.map(l => `<link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}">`).join('\n    ');
+        html = html.replace('</head>', `    ${alternates}\n</head>`);
 
-    // Replace OG/Twitter Images
-    if (station.imgMobile) {
-        html = html.replace(/property="og:image" content="(.*?)"/g, `property="og:image" content="${station.imgMobile}"`);
-        html = html.replace(/property="twitter:image" content="(.*?)"/g, `property="twitter:image" content="${station.imgMobile}"`);
-    }
+        // Replace OG/Twitter Images
+        if (station.imgMobile) {
+            html = html.replace(/property="og:image" content="(.*?)"/g, `property="og:image" content="${station.imgMobile}"`);
+            html = html.replace(/property="twitter:image" content="(.*?)"/g, `property="twitter:image" content="${station.imgMobile}"`);
+        }
 
-    // Create directory
-    const stationDir = path.join(__dirname, `../${langCode}/${station.id}`);
-    if (!fs.existsSync(stationDir)) {
-      fs.mkdirSync(stationDir, { recursive: true });
-    }
+        // Create directory
+        const stationDir = path.join(__dirname, `../${langCode}/${station.id}`);
+        if (!fs.existsSync(stationDir)) {
+        fs.mkdirSync(stationDir, { recursive: true });
+        }
 
-    // Write index.html
-    fs.writeFileSync(path.join(stationDir, 'index.html'), html, 'utf8');
+        // Write index.html
+        fs.writeFileSync(path.join(stationDir, 'index.html'), html, 'utf8');
+    });
   });
 
   // --- NEW: Generate sitemap.xml ---
@@ -156,29 +156,40 @@ try {
       <lastmod>${date}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/"/>
    </url>
    <url>
       <loc>https://adventistplayer.org/en/</loc>
       <lastmod>${date}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/"/>
    </url>
    <url>
       <loc>https://adventistplayer.org/pt/</loc>
       <lastmod>${date}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/"/>
    </url>`;
 
   updatedEstaciones.forEach(station => {
-    const langCode = { 'Español': 'es', 'English': 'en', 'Português': 'pt' }[station.idioma] || 'es';
-    sitemap += `
+    langs.forEach(langCode => {
+        sitemap += `
    <url>
-      <loc>https://adventistplayer.org/${langCode}/${station.id}/</loc>
+      <loc>https://adventistplayer.org/${langCode}/${station.id}</loc>
       <lastmod>${date}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
+      ${langs.map(l => `<xhtml:link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}"/>`).join('\n      ')}
    </url>`;
+    });
   });
 
   sitemap += '\n</urlset>';

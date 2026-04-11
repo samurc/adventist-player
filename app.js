@@ -254,6 +254,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     updatePlayerUI(initialStation);
                 }
             }
+
+            // Handle back/forward navigation
+            window.onpopstate = (event) => {
+                const path = window.location.pathname;
+                const pathParts = path.split('/').filter(p => p);
+                
+                // Sync Language if changed in URL
+                const isoInUrl = pathParts.length > 0 ? pathParts[0] : null;
+                const pathLang = ISO_LANG_MAP[isoInUrl] || null;
+                
+                if (pathLang && pathLang !== uiLanguage) {
+                    uiLanguage = pathLang;
+                    loadTranslations(uiLanguage);
+                }
+
+                // Sync Station if changed in URL
+                if (pathParts.length >= 2) {
+                    const id = pathParts[pathParts.length - 1];
+                    const station = allStations.find(s => s.id === id);
+                    if (station && (!currentStation || currentStation.id !== id)) {
+                        playStation(station, false, true); // Added flag to avoid redundant pushState
+                    }
+                }
+            };
         } catch (error) {
             console.error('Error fetching stations:', error);
             allStationsGrid.innerHTML = '<p class="u-text-muted">Error al cargar las estaciones.</p>';
@@ -499,11 +523,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Playback Logic ---
-    async function playStation(station, isRetry = false) {
+    async function playStation(station, isRetry = false, fromHistory = false) {
         // Update URL and Title (SEO / UX)
         const langCode = ISO_LANG_MAP_REVERSE[station.idioma] || 'es';
-        const newPath = `/${langCode}/${station.id}/`;
-        window.history.replaceState({ path: newPath }, '', newPath);
+        const newPath = `/${langCode}/${station.id}`;
+        
+        if (!fromHistory) {
+            window.history.pushState({ path: newPath }, '', newPath);
+        }
+        
         document.title = t('hero.listening_now', { name: station.nombre });
 
         // Save State
@@ -881,15 +909,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const newLang = e.target.value;
             if (newLang === uiLanguage) return;
             
-            // Redirect to the new subdirectory for SEO consistency
             const iso = ISO_LANG_MAP_REVERSE[newLang] || 'es';
-            const currentPath = window.location.pathname;
+            const pathParts = window.location.pathname.split('/').filter(p => p);
             
-            // Extract filename (e.g. index.html or empty)
-            const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+            if (pathParts.length > 0 && ['es', 'en', 'pt'].includes(pathParts[0])) {
+                pathParts[0] = iso;
+            } else {
+                pathParts.unshift(iso);
+            }
             
-            // Important: also ensure any current params like ?radio= match
-            window.location.href = `/${iso}/${filename}${window.location.search}`;
+            const newPath = '/' + pathParts.join('/') + window.location.search;
+            window.history.pushState({ path: newPath }, '', newPath);
+
+            // Update App State
+            uiLanguage = newLang;
+            
+            loadTranslations(uiLanguage);
         });
     }
 
