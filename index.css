@@ -957,6 +957,25 @@ button {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .c-hero {
+        padding: 80px 16px 32px;
+    }
+    .c-hero .u-margin-left-12 {
+        margin-left: 0 !important;
+    }
+    .c-app-header {
+        gap: 8px;
+    }
+    .c-header-left {
+        gap: 8px;
+    }
+    .c-testing-banner {
+        padding: 16px 16px;
+    }
+    .c-lang-selector {
+        font-size: 0.675rem;
+    }
+
     .o-app-layout {
         grid-template-columns: 1fr;
     }
@@ -1123,14 +1142,17 @@ button {
         justify-content: flex-start;
     }
 
-    .c-button--hero-play {
-        width: 64px;
-        height: 64px;
-        min-width: 64px;
+     .c-button--hero-play {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
         padding: 0;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
         border-radius: 50%;
         box-shadow: 0 4px 15px rgba(206, 163, 86, 0.4);
+        background: var(--primary);
     }
 
     .c-button--hero-play span {
@@ -1138,8 +1160,9 @@ button {
     }
 
     .c-button--hero-play ion-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin: 0;
+        color: white;
     }
 
     #hero-fav-btn,
@@ -1152,11 +1175,16 @@ button {
         align-items: center;
         justify-content: center;
         border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     #hero-fav-btn ion-icon,
     #hero-share-btn ion-icon {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        color: white;
     }
 
     #hero-share-btn span {
