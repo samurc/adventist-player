@@ -21,6 +21,7 @@
     "signal": "Original Signal",
     "signal_region": "Signal: {region}",
     "signal_dial": "{region} - {dial}",
+    "description": "Enjoy live programming from <strong>{name}</strong> ({location}). Tune in to Christian music, messages of hope, and spiritual programs 24 hours a day. Adventist Player connects you with the best Adventist stations in the world in one place.",
     "listening_now": "Listening to {name} | Adventist Player"
   },
   "sections": {

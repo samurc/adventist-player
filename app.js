@@ -161,7 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const translatePage = () => {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            el.textContent = t(key);
+            if (key === 'hero.description' && currentHeroStation) {
+                const location = currentHeroStation.dial !== "" ? `${currentHeroStation.region} - ${currentHeroStation.dial}` : currentHeroStation.pais;
+                el.innerHTML = t(key, { name: currentHeroStation.nombre, location: location });
+            } else {
+                el.textContent = t(key);
+            }
         });
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
             const key = el.getAttribute('data-i18n-placeholder');
@@ -414,6 +419,15 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSection.style.backgroundImage = imgUrl;
         heroSection.style.setProperty('--hero-bg', imgUrl);
         if (heroImage) heroImage.src = station.imgMobile;
+
+        // Update Description
+        const heroDesc = document.querySelector('.c-hero__description');
+        if (heroDesc) {
+            const location = station.dial !== "" ? `${station.region} - ${station.dial}` : station.pais;
+            heroDesc.setAttribute('data-i18n', 'hero.description');
+            heroDesc.innerHTML = t('hero.description', { name: station.nombre, location: location });
+        }
+
         heroPlayBtn.onclick = () => playStation(station);
         
         const isFav = favorites.includes(station.id);

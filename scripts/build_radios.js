@@ -95,9 +95,11 @@ try {
         const stationFullTitle = `${stationName} | ${stationLocation} - Adventist Player`;
         
         let description = "";
-        if (langCode === 'es') description = `Sintoniza ${stationName} (${stationLocation}) en vivo por Adventist Player. La mejor radio adventista online.`;
-        else if (langCode === 'en') description = `Tune in to ${stationName} (${stationLocation}) live on Adventist Player. The best Adventist radio online.`;
-        else description = `Sintonize a ${stationName} (${stationLocation}) ao vivo no Adventist Player. A melhor rádio adventista online.`;
+        if (langCode === 'es') description = `Disfruta de la programación en vivo de <strong>${stationName}</strong> (${stationLocation}). Sintoniza música cristiana, mensajes de esperanza y programas espirituales las 24 horas del día. Adventist Player te conecta con las mejores emisoras adventistas del mundo en un solo lugar.`;
+        else if (langCode === 'en') description = `Enjoy live programming from <strong>${stationName}</strong> (${stationLocation}). Tune in to Christian music, messages of hope, and spiritual programs 24 hours a day. Adventist Player connects you with the best Adventist stations in the world in one place.`;
+        else description = `Aproveite a programação ao vivo da <strong>${stationName}</strong> (${stationLocation}). Sintonize música cristã, mensagens de esperança e programas espirituais 24 horas por dia. O Adventist Player conecta você com as melhores emissoras adventistas do mundo em um só lugar.`;
+
+        const cleanDescription = description.replace(/<\/?strong>/g, '');
 
         // Simple replacement logic for meta tags
         let html = template;
@@ -115,9 +117,18 @@ try {
         html = html.replace(/property="twitter:title" content="(.*?)"/g, `property="twitter:title" content="${stationFullTitle}"`);
 
         // Replace Descriptions
-        html = html.replace(/name="description" content="(.*?)"/, `name="description" content="${description}"`);
-        html = html.replace(/property="og:description" content="(.*?)"/g, `property="og:description" content="${description}"`);
-        html = html.replace(/property="twitter:description" content="(.*?)"/g, `property="twitter:description" content="${description}"`);
+        html = html.replace(/name="description" content="(.*?)"/, `name="description" content="${cleanDescription}"`);
+        html = html.replace(/property="og:description" content="(.*?)"/g, `property="og:description" content="${cleanDescription}"`);
+        html = html.replace(/property="twitter:description" content="(.*?)"/g, `property="twitter:description" content="${cleanDescription}"`);
+
+        // Replace H1 Title
+        html = html.replace(/<h1(.*?)id="hero-title"(.*?)>(.*?)<\/h1>/, `<h1$1id="hero-title"$2>${stationName}</h1>`);
+        
+        // Add Description Paragraph after H1
+        html = html.replace(/(<h1.*?id="hero-title".*?<\/h1>)/, `$1\n                <p class="c-hero__description" data-i18n="hero.description">${description}</p>`);
+
+        // Replace Hero Image Alt
+        html = html.replace(/id="hero-image"(.*?)alt="(.*?)"/, `id="hero-image"$1alt="${stationName}"`);
 
         // Inject Hreflang Alternates
         const alternates = langs.map(l => `<link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}">`).join('\n    ');
