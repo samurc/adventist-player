@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>La voz del 4to Ángel | Guatemala - Adventist Player</title>
+    <meta name="description" content="Sintoniza La voz del 4to Ángel (Guatemala) en vivo por Adventist Player. La mejor radio adventista online.">
+    <meta name="keywords" content="Radio Adventista, Música Cristiana, Adventist Player, Radio Online, Esperanza Colombia, Nuevo Tiempo, Fe Adventista">
+    <link rel="canonical" href="https://adventistplayer.org/es/la-voz-del-4to-angel/">
+    <link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/">
+    <link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/">
+    <link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/">
+    <link rel="alternate" hreflang="x-default" href="https://adventistplayer.org/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adventistplayer.org/es/la-voz-del-4to-angel/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="pt_BR">
+    <meta property="og:title" content="La voz del 4to Ángel | Guatemala - Adventist Player">
+    <meta property="og:description" content="Sintoniza La voz del 4to Ángel (Guatemala) en vivo por Adventist Player. La mejor radio adventista online.">
+    <meta property="og:image" content="https://adventistplayer.org/assets/logos/cuartoangel.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adventistplayer.org/es/la-voz-del-4to-angel/">
+    <meta property="twitter:title" content="La voz del 4to Ángel | Guatemala - Adventist Player">
+    <meta property="twitter:description" content="Sintoniza La voz del 4to Ángel (Guatemala) en vivo por Adventist Player. La mejor radio adventista online.">
+    <meta property="twitter:image" content="https://adventistplayer.org/assets/logos/cuartoangel.webp">
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/png" href="/assets/ic_launcher.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- iOS Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Adventist Player">
+    <link rel="apple-touch-icon" href="/assets/ic_launcher.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Sora:wght@400;600;700;800&family=Space+Grotesque:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Hls.js for HLS streams (.m3u8) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="/index.css">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RadioStation",
+      "name": "Adventist Player",
+      "url": "https://adventistplayer.org/es/",
+      "description": "Radio Adventista Global para todos",
+      "genre": "Religious",
+      "potentialAction": {
+        "@type": "ListenAction",
+        "target": [
+          {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://adventistplayer.org/es/",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/IOSPlatform",
+              "http://schema.org/AndroidPlatform"
+            ]
+          }
+        ],
+        "expectation": {
+          "@type": "SeekToAction",
+          "actionStatus": "http://schema.org/ActiveActionStatus"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Adventist Player",
+        "item": "https://adventistplayer.org/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Español",
+        "item": "https://adventistplayer.org/es/"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <div class="o-app-layout">
+        <!-- Sidebar -->
+        <div class="c-sidebar-backdrop" id="sidebar-backdrop"></div>
+        <aside class="c-sidebar" id="sidebar">
+            <button class="c-sidebar-close" id="mobile-menu-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="c-logo">
+                <img src="/assets/logo.png" alt="Logo Adventist Player" width="175px">
+            </div>
+            <nav>
+                <ul class="c-nav-list">
+                    <li class="c-nav-item is-active" id="nav-home">
+                        <a>
+                            <ion-icon name="home-outline"></ion-icon>
+                            <span data-i18n="nav.home">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="c-nav-item" id="nav-privacy">
+                        <a href="https://adventistplayer.org/privacy-policy/" target="_blank">
+                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                            <span data-i18n="nav.privacy">Política de privacidad</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="u-margin-auto-top">
+                <ul class="c-nav-list">
+                    <li class="c-nav-item">
+                        <a href="https://forms.gle/eSCQpZD5KHPCUNJr6" target="_blank">
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span data-i18n="nav.add_radio">Agregar radio</span>
+                        </a>
+                    </li>
+                    <li class="c-nav-item" id="nav-report-sidebar">
+                        <a href="https://forms.gle/aKZBQBDmGPwL5xkf9" target="_blank">
+                            <ion-icon name="alert-circle-outline"></ion-icon>
+                            <span data-i18n="nav.report_problem">Reportar un problema</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="c-main-content" id="main-content">
+            <header class="c-app-header" id="header">
+                <div class="c-header-left">
+                    <button class="c-menu-toggle" id="mobile-menu-open">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+                    <div class="c-header-logo">
+                        <img src="/assets/logo.png" alt="Logo Adventist Player" width="140px">
+                    </div>
+                </div>
+                <!-- Search Bar (Desktop only) -->
+                <div class="c-search-bar c-search-bar--header">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" id="station-search-header" data-i18n-placeholder="search.placeholder" placeholder="¿Qué quieres escuchar?">
+                </div>
+                <div class="c-header-right">
+                    <div class="c-lang-selector-wrapper">
+                        <ion-icon name="globe-outline"></ion-icon>
+                        <select class="c-lang-selector" id="header-lang-selector" aria-label="Seleccionar idioma">
+                            <option value="Español">Español</option>
+                            <option value="English">English</option>
+                            <option value="Português">Português</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Closed Testing Banner -->
+            <section class="u-padding-16">
+                <div class="c-testing-banner" id="testing-banner">
+                    <button class="c-testing-banner__close" id="close-banner" aria-label="Cerrar banner">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                    <div class="c-testing-banner__content">
+                        <div class="c-testing-banner__text">
+                            <h2 class="c-testing-banner__title" data-i18n="testing_banner.title">¡Ayúdanos a probar el APP! 🎙️</h2>
+                            <p class="c-testing-banner__description" data-i18n="testing_banner.description">Conviértete en tester en Google Play siguiendo estos pasos:</p>
+                        </div>
+                        
+                        <div class="c-testing-banner__actions">
+                            <a href="https://groups.google.com/g/adv-player" target="_blank" class="c-button c-button--minimal" data-i18n="testing_banner.join">
+                                1. Unirse
+                            </a>
+                            <a href="https://play.google.com/apps/testing/com.scusi.adventistplayer" target="_blank" class="c-button c-button--minimal" data-i18n="testing_banner.accept">
+                                2. Aceptar
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.scusi.adventistplayer" target="_blank" class="c-button c-button--minimal-play" data-i18n="testing_banner.install">
+                                3. Instalar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="c-hero" id="hero-section">
+                <div class="c-hero__content">
+                    <small class="c-hero__label u-letter-spacing" id="hero-signal" data-i18n="hero.signal">Señal Original</small>
+                    <h1 class="c-hero__title" id="hero-title">Red Nuevo Tiempo</h1>
+                    <div class="c-hero__actions">
+                        <button class="c-button c-button--primary c-button--hero-play" id="hero-play-btn" aria-label="Reproducir">
+                            <ion-icon name="play"></ion-icon>
+                            <span data-i18n="hero.play">Reproducir</span>
+                        </button>
+                        <button class="c-button c-button--outline u-margin-left-12" id="hero-fav-btn"><ion-icon name="heart-outline"></ion-icon></button>
+                        <button class="c-button c-button--outline u-margin-left-12" id="hero-share-btn"><ion-icon name="share-social-outline"></ion-icon> <span data-i18n="hero.share">Compartir</span></button>
+                    </div>
+                </div>
+                <div class="c-hero__image-container">
+                    <img id="hero-image" src="" alt="Portada Estación">
+                </div>
+            </section>
+
+            <!-- Favorites Section (Hidden by default) -->
+            <section class="u-padding-16" id="favorites-section" style="display: none;">
+                <h2 class="c-section-title" data-i18n="sections.favorites">Tus Favoritos</h2>
+                <div class="o-horizontal-list" id="favorites-grid">
+                    <!-- Fav cards injected by JS -->
+                </div>
+            </section>
+
+            <section class="u-padding-16" id="all-stations-section">
+                <h2 class="c-section-title" id="all-stations-title" data-i18n="sections.all_stations">Todas las Radios</h2>
+                
+                <!-- Language Filters -->
+                <div class="c-filter-group" id="language-filters">
+                    <!-- Chips injected by JS -->
+                </div>
+
+                <!-- Search Bar (Mobile only) -->
+                <div class="c-search-bar c-search-bar--section u-margin-bottom-24">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" id="station-search-section" data-i18n-placeholder="search.placeholder" placeholder="¿Qué quieres escuchar?">
+                </div>
+
+                <div class="o-main-grid" id="all-stations-grid">
+                    <p class="u-text-muted" data-i18n="sections.loading">Cargando estaciones...</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Player Bar -->
+        <footer class="c-player-bar">
+            <audio id="audio-player"></audio>
+
+            <div class="c-player-bar__now-playing">
+                <img class="c-player-bar__mini-cover" id="current-cover" src="" alt="Portada de estación">
+                <div class="c-player-bar__track-info">
+                    <h4 class="u-font-small u-font-bold u-margin-0" id="current-title" data-i18n="player.select_radio">Selecciona una radio</h4>
+                    <p class="u-font-small u-text-muted u-margin-0" id="current-artist" data-i18n="player.artist_placeholder">Artista</p>
+                </div>
+                <button class="c-icon-button u-margin-left-10" id="player-fav-btn"><ion-icon name="heart-outline"></ion-icon></button>
+            </div>
+
+            <div class="c-player-bar__controls">
+                <div class="c-control-buttons">
+                    <button class="c-icon-button" id="shuffle-btn"><ion-icon name="shuffle-outline"></ion-icon></button>
+                    <button class="c-icon-button" id="prev-btn"><ion-icon name="play-skip-back"></ion-icon></button>
+                    <button class="c-icon-button c-icon-button--large is-playing-trigger" id="main-play-toggle">
+                        <ion-icon name="play-circle"></ion-icon>
+                    </button>
+                    <button class="c-icon-button" id="next-btn"><ion-icon name="play-skip-forward"></ion-icon></button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Smart Autoplay Overlay -->
+    <div id="autoplay-overlay" class="c-autoplay-overlay">
+        <div class="c-autoplay-overlay__content">
+            <div class="c-autoplay-overlay__icon">
+                <ion-icon name="play"></ion-icon>
+            </div>
+            <h2 class="c-autoplay-overlay__title" data-i18n="autoplay.title">Toca para escuchar</h2>
+            <p class="c-autoplay-overlay__subtitle" id="autoplay-station-name">Radio Adventista</p>
+            <p class="c-autoplay-overlay__timer" id="autoplay-timer">Cerrando en 5...</p>
+        </div>
+    </div>
+
+    <!-- Firebase Compat SDKs (Better for local file:// access) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+    
+    <script src="/app.js"></script>
+</body>
+</html>

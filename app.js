@@ -199,7 +199,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Detect selection from URL
             const urlParams = new URLSearchParams(window.location.search);
-            const stationIdFromUrl = urlParams.get('radio');
+            let stationIdFromUrl = urlParams.get('radio');
+
+            // Support semantic paths: /es/radio-slug
+            const pathParts = window.location.pathname.split('/').filter(p => p);
+            if (!stationIdFromUrl && pathParts.length >= 2) {
+                stationIdFromUrl = pathParts[pathParts.length - 1];
+                // basic validation: ensure it's not one of the main directories
+                if (['es', 'en', 'pt', 'privacy-policy'].includes(stationIdFromUrl)) {
+                    stationIdFromUrl = null;
+                }
+            }
             let initialStation = null;
             let shouldAutoPlay = false;
 
@@ -491,9 +501,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Playback Logic ---
     async function playStation(station, isRetry = false) {
         // Update URL and Title (SEO / UX)
-        const url = new URL(window.location);
-        url.searchParams.set('radio', station.id);
-        window.history.replaceState({ path: url.href }, '', url.href);
+        const langCode = ISO_LANG_MAP_REVERSE[station.idioma] || 'es';
+        const newPath = `/${langCode}/${station.id}/`;
+        window.history.replaceState({ path: newPath }, '', newPath);
         document.title = t('hero.listening_now', { name: station.nombre });
 
         // Save State

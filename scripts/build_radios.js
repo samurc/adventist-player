@@ -71,8 +71,121 @@ try {
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2), 'utf8');
   fs.writeFileSync(WEB_OUTPUT_FILE, JSON.stringify(result, null, 2), 'utf8');
 
-  console.log(`Successfully built ${OUTPUT_FILE} and ${WEB_OUTPUT_FILE} with ${updatedEstaciones.length} stations.`);
+  // --- NEW: Generate Static Folders for SEO ---
+  const langs = ['es', 'en', 'pt'];
+  const templates = {};
+  
+  langs.forEach(lang => {
+    const templatePath = path.join(__dirname, `../${lang}/index.html`);
+    if (fs.existsSync(templatePath)) {
+      templates[lang] = fs.readFileSync(templatePath, 'utf8');
+    }
+  });
+
+  console.log('Generating static pages for stations...');
+  
+  updatedEstaciones.forEach((station) => {
+    const langCode = {
+      'Español': 'es',
+      'English': 'en',
+      'Português': 'pt'
+    }[station.idioma] || 'es';
+
+    const template = templates[langCode];
+    if (!template) return;
+
+    const stationUrl = `https://adventistplayer.org/${langCode}/${station.id}/`;
+    const stationName = station.nombre;
+    const stationLocation = station.dial !== "" ? `${station.region} - ${station.dial}` : station.pais;
+    const stationFullTitle = `${stationName} | ${stationLocation} - Adventist Player`;
+    
+    let description = "";
+    if (langCode === 'es') description = `Sintoniza ${stationName} (${stationLocation}) en vivo por Adventist Player. La mejor radio adventista online.`;
+    else if (langCode === 'en') description = `Tune in to ${stationName} (${stationLocation}) live on Adventist Player. The best Adventist radio online.`;
+    else description = `Sintonize a ${stationName} (${stationLocation}) ao vivo no Adventist Player. A melhor rádio adventista online.`;
+
+    // Simple replacement logic for meta tags
+    let html = template;
+    
+    // Replace Title
+    html = html.replace(/<title>(.*?)<\/title>/, `<title>${stationFullTitle}</title>`);
+    
+    // Replace Canonical and OG/Twitter URLs
+    html = html.replace(/rel="canonical" href="(.*?)"/, `rel="canonical" href="${stationUrl}"`);
+    html = html.replace(/property="og:url" content="(.*?)"/g, `property="og:url" content="${stationUrl}"`);
+    html = html.replace(/property="twitter:url" content="(.*?)"/g, `property="twitter:url" content="${stationUrl}"`);
+    
+    // Replace OG/Twitter Titles
+    html = html.replace(/property="og:title" content="(.*?)"/g, `property="og:title" content="${stationFullTitle}"`);
+    html = html.replace(/property="twitter:title" content="(.*?)"/g, `property="twitter:title" content="${stationFullTitle}"`);
+
+    // Replace Descriptions
+    html = html.replace(/name="description" content="(.*?)"/, `name="description" content="${description}"`);
+    html = html.replace(/property="og:description" content="(.*?)"/g, `property="og:description" content="${description}"`);
+    html = html.replace(/property="twitter:description" content="(.*?)"/g, `property="twitter:description" content="${description}"`);
+
+    // Replace OG/Twitter Images
+    if (station.imgMobile) {
+        html = html.replace(/property="og:image" content="(.*?)"/g, `property="og:image" content="${station.imgMobile}"`);
+        html = html.replace(/property="twitter:image" content="(.*?)"/g, `property="twitter:image" content="${station.imgMobile}"`);
+    }
+
+    // Create directory
+    const stationDir = path.join(__dirname, `../${langCode}/${station.id}`);
+    if (!fs.existsSync(stationDir)) {
+      fs.mkdirSync(stationDir, { recursive: true });
+    }
+
+    // Write index.html
+    fs.writeFileSync(path.join(stationDir, 'index.html'), html, 'utf8');
+  });
+
+  // --- NEW: Generate sitemap.xml ---
+  console.log('Generating sitemap.xml...');
+  const date = new Date().toISOString().split('T')[0];
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   <url>
+      <loc>https://adventistplayer.org/</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/es/</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>`;
+
+  updatedEstaciones.forEach(station => {
+    const langCode = { 'Español': 'es', 'English': 'en', 'Português': 'pt' }[station.idioma] || 'es';
+    sitemap += `
+   <url>
+      <loc>https://adventistplayer.org/${langCode}/${station.id}/</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>`;
+  });
+
+  sitemap += '\n</urlset>';
+  fs.writeFileSync(path.join(__dirname, '../sitemap.xml'), sitemap, 'utf8');
+
+  console.log(`Successfully built ${OUTPUT_FILE}, ${WEB_OUTPUT_FILE}, sitemap.xml and ${updatedEstaciones.length} station directories.`);
 } catch (error) {
-  console.error('An error occurred during the build process:', error.message);
+  console.error('An error occurred during the build process:', error);
   process.exit(1);
 }
