@@ -45,9 +45,12 @@ function getInitialUILanguage() {
     const browserLang = navigator.language.split('-')[0].toLowerCase();
     if (ISO_LANG_MAP[browserLang]) return ISO_LANG_MAP[browserLang];
 
+    const saved = localStorage.getItem('adventist-ui-lang');
+    if (saved) return saved;
     // 2. Default
     return 'Español';
 }
+
 
 function getInitialFilterLanguage() {
     // 1. Local Storage priority for Radio Filter
@@ -172,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const loadTranslations = async (langName) => {
+        localStorage.setItem('adventist-ui-lang', langName);
         currentLangCode = langMap[langName] || 'es';
         try {
             const res = await fetch(`/i18n/${currentLangCode}.json`);
@@ -221,12 +225,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (pathLang) {
                 uiLanguage = pathLang;
+                localStorage.setItem('adventist-ui-lang', uiLanguage);
                 
                 // Only fallback the radio filter to the path language if NO preference is saved
                 if (!localStorage.getItem('adventist-last-lang')) {
                     selectedLanguage = pathLang;
                     localStorage.setItem('adventist-last-lang', selectedLanguage);
                 }
+            } else {
+                // REDIRECT: If no language in URL, use saved preference or browser detection
+                const savedLang = localStorage.getItem('adventist-ui-lang');
+                const browserLang = navigator.language.split('-')[0].toLowerCase();
+                
+                let targetLangCode = 'es'; // default fallback
+                
+                if (savedLang) {
+                    const prefMap = { 'Español': 'es', 'English': 'en', 'Português': 'pt' };
+                    targetLangCode = prefMap[savedLang] || 'es';
+                } else if (ISO_LANG_MAP[browserLang]) {
+                    targetLangCode = browserLang;
+                }
+
+                // Preserving the rest of the path if it's not root
+                let cleanPath = path === '/' ? '' : path;
+                const finalUrl = '/' + targetLangCode + (cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath) + window.location.search;
+                
+                window.location.replace(finalUrl);
+                return; // Stop initialization as we are redirecting
             }
 
             renderLanguageFilters();
@@ -921,6 +946,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update App State
             uiLanguage = newLang;
+            localStorage.setItem('adventist-ui-lang', uiLanguage);
             
             loadTranslations(uiLanguage);
         });

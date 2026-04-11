@@ -10,14 +10,42 @@
             'pt': 'pt'
         };
 
+        const PREFERENCE_MAP = { 
+            'Español': 'es', 'es': 'es',
+            'English': 'en', 'en': 'en',
+            'Português': 'pt', 'pt': 'pt',
+            'Portugués': 'pt'
+        };
+
         function getRedirectLanguage() {
-            // 1. Check browser language (no longer using localStorage)
+            // 1. Check localStorage preference first
+            const savedLang = localStorage.getItem('adventist-ui-lang');
+            console.log('Detected savedLang:', savedLang);
+            
+            if (savedLang) {
+                // Case-insensitive match against our PREFERENCE_MAP
+                const normalizedKey = Object.keys(PREFERENCE_MAP).find(k => k.toLowerCase() === savedLang.toLowerCase());
+                if (normalizedKey) {
+                    const mapped = PREFERENCE_MAP[normalizedKey];
+                    console.log('Preference found, redirecting to:', mapped);
+                    return mapped;
+                }
+            }
+
+            // 2. Fallback to browser language
             const browserLang = navigator.language.split('-')[0].toLowerCase();
+            console.log('No preference, browser lang:', browserLang);
             return ISO_LANG_MAP[browserLang] || 'es';
         }
 
         const targetLang = getRedirectLanguage();
-        window.location.replace('/' + targetLang + '/' + window.location.search);
+        // Preserving pathname (for SPA cases) and search params
+        let path = window.location.pathname;
+        if (path === '/') path = '';
+        const finalUrl = '/' + targetLang + (path.startsWith('/') ? path : '/' + path) + window.location.search;
+        
+        console.log('Final redirect URL:', finalUrl);
+        window.location.replace(finalUrl);
     </script>
     <link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/">
     <link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/">
