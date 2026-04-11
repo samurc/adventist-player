@@ -124,8 +124,8 @@ try {
         // Replace H1 Title
         html = html.replace(/<h1(.*?)id="hero-title"(.*?)>(.*?)<\/h1>/, `<h1$1id="hero-title"$2>${stationName}</h1>`);
         
-        // Add Description Paragraph after H1
-        html = html.replace(/(<h1.*?id="hero-title".*?<\/h1>)/, `$1\n                <p class="c-hero__description" data-i18n="hero.description">${description}</p>`);
+        // Populate Description Paragraph
+        html = html.replace('<p class="c-hero__description" data-i18n="hero.description"></p>', `<p class="c-hero__description" data-i18n="hero.description">${description}</p>`);
 
         // Replace Hero Image Alt
         html = html.replace(/id="hero-image"(.*?)alt="(.*?)"/, `id="hero-image"$1alt="${stationName}"`);
