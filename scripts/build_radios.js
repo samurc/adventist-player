@@ -125,10 +125,13 @@ try {
         html = html.replace(/<h1(.*?)id="hero-title"(.*?)>(.*?)<\/h1>/, `<h1$1id="hero-title"$2>${stationName}</h1>`);
         
         // Populate Description Paragraph
-        html = html.replace('<p class="c-hero__description" data-i18n="hero.description"></p>', `<p class="c-hero__description" data-i18n="hero.description">${description}</p>`);
+        html = html.replace(/<p class="c-hero__description" data-i18n="hero.description">.*?<\/p>/, `<p class="c-hero__description" data-i18n="hero.description">${description}</p>`);
 
-        // Replace Hero Image Alt
-        html = html.replace(/id="hero-image"(.*?)alt="(.*?)"/, `id="hero-image"$1alt="${stationName}"`);
+        // Replace Hero Image Alt and Src
+        html = html.replace(/<img id="hero-image" src=".*?" alt=".*?">/, `<img id="hero-image" src="${station.imgMobile}" alt="${stationName}">`);
+
+        // Add Hero Background Image
+        html = html.replace(/<section class="c-hero" id="hero-section">/, `<section class="c-hero" id="hero-section" style="background-image: url('${station.imgMobile}'); --hero-bg: url('${station.imgMobile}');">`);
 
         // Inject Hreflang Alternates
         const alternates = langs.map(l => `<link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}/">`).join('\n    ');
