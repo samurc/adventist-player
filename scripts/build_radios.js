@@ -89,7 +89,7 @@ try {
         const template = templates[langCode];
         if (!template) return;
 
-        const stationUrl = `https://adventistplayer.org/${langCode}/${station.id}`;
+        const stationUrl = `https://adventistplayer.org/${langCode}/${station.id}/`;
         const stationName = station.nombre;
         const stationLocation = station.dial !== "" ? `${station.region} - ${station.dial}` : station.pais;
         const stationFullTitle = `${stationName} | ${stationLocation} - Adventist Player`;
@@ -131,7 +131,7 @@ try {
         html = html.replace(/id="hero-image"(.*?)alt="(.*?)"/, `id="hero-image"$1alt="${stationName}"`);
 
         // Inject Hreflang Alternates
-        const alternates = langs.map(l => `<link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}">`).join('\n    ');
+        const alternates = langs.map(l => `<link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}/">`).join('\n    ');
         html = html.replace('</head>', `    ${alternates}\n</head>`);
 
         // Replace OG/Twitter Images
@@ -194,11 +194,11 @@ try {
     langs.forEach(langCode => {
         sitemap += `
    <url>
-      <loc>https://adventistplayer.org/${langCode}/${station.id}</loc>
+      <loc>https://adventistplayer.org/${langCode}/${station.id}/</loc>
       <lastmod>${date}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
-      ${langs.map(l => `<xhtml:link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}"/>`).join('\n      ')}
+      ${langs.map(l => `<xhtml:link rel="alternate" hreflang="${l}" href="https://adventistplayer.org/${l}/${station.id}/"/>`).join('\n      ')}
    </url>`;
     });
   });

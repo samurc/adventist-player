@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function playStation(station, isRetry = false, fromHistory = false) {
         // Update URL and Title (SEO / UX)
         const langCode = ISO_LANG_MAP_REVERSE[uiLanguage] || 'es';
-        const newPath = `/${langCode}/${station.id}`;
+        const newPath = `/${langCode}/${station.id}/`;
         
         if (!fromHistory) {
             window.history.pushState({ path: newPath }, '', newPath);
