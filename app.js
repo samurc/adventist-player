@@ -537,28 +537,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const handleAutoplayFailure = (station) => {
-        if (!autoplayOverlay) return;
+        // Autoplay failed, user will have to manually press play.
+        // We no longer show the intrusive modal.
         pendingStation = station;
-        if (autoplayStationName) autoplayStationName.innerText = station.nombre;
-        autoplayOverlay.classList.add('is-visible');
-
-        // 5-second countdown to auto-close
-        let timeLeft = 5;
-        const updateTimer = () => {
-            if (autoplayTimer) autoplayTimer.innerText = t('autoplay.timer', { time: timeLeft });
-        };
-        
-        updateTimer();
-        clearInterval(autoplayTimerInterval);
-        autoplayTimerInterval = setInterval(() => {
-            timeLeft--;
-            updateTimer();
-            if (timeLeft <= 0) {
-                clearInterval(autoplayTimerInterval);
-                autoplayOverlay.classList.remove('is-visible');
-                pendingStation = null;
-            }
-        }, 1000);
     };
 
     // --- Playback Logic ---
