@@ -1,4 +1,4 @@
-const CACHE_NAME = 'adventist-player-cache-v8';
+const CACHE_NAME = 'adventist-player-cache-v9';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
