@@ -969,6 +969,12 @@ button {
 .u-letter-spacing { letter-spacing: 0.1em !important; }
 .u-margin-bottom-24 { margin-bottom: 24px !important; }
 
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+  #hero-share-btn {
+    display: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .c-hero {
@@ -1200,10 +1206,6 @@ button {
     #hero-share-btn span {
         display: none;
     }
-    #all-stations-section {
-        margin-bottom: 80px;
-    }
-        
 }
 
 /* --- Smart Autoplay Overlay --- */
@@ -1259,6 +1261,10 @@ button {
     color: var(--primary);
     font-weight: 600;
     opacity: 0.8;
+}
+
+#all-stations-section {
+    margin-bottom: 100px;
 }
 
 @keyframes fadeInUp {
