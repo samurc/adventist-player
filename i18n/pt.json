@@ -9,11 +9,9 @@
     "placeholder": "O que você quer ouvir?"
   },
   "testing_banner": {
-    "title": "Ajude-nos a testar o APP! 🎙️",
-    "description": "Torne-se um testador no Google Play seguindo estes passos:",
-    "join": "1. Participar",
-    "accept": "2. Aceitar",
-    "install": "3. Instalar"
+    "title": "Instale o APP no Android",
+    "description": "Faça o download e aproveite o aplicativo no seu dispositivo Android.",
+    "install": "Instalar"
   },
   "hero": {
     "play": "Reproduzir",

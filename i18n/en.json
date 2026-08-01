@@ -8,12 +8,10 @@
   "search": {
     "placeholder": "What do you want to hear?"
   },
-  "testing_banner": {
-    "title": "Help us test the APP! 🎙️",
-    "description": "Become a tester on Google Play by following these steps:",
-    "join": "1. Join",
-    "accept": "2. Accept",
-    "install": "3. Install"
+  "install_banner": {
+    "title": "Install the APP on Android",
+    "description": "Download and enjoy the app on your Android device.",
+    "install": "Install"
   },
   "hero": {
     "play": "Play now",

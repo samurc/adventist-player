@@ -8,12 +8,10 @@
   "search": {
     "placeholder": "¿Qué quieres escuchar?"
   },
-  "testing_banner": {
-    "title": "¡Ayúdanos a probar el APP! 🎙️",
-    "description": "Conviértete en tester en Google Play siguiendo estos pasos:",
-    "join": "1. Unirse",
-    "accept": "2. Aceptar",
-    "install": "3. Instalar"
+  "install_banner": {
+    "title": "Instala la APP en Android",
+    "description": "Descarga y disfruta de la aplicación en tu dispositivo Android.",
+    "install": "Instalar"
   },
   "hero": {
     "play": "Reproducir",

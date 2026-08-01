@@ -66,8 +66,6 @@ button {
 /* --- 4. OBJECTS --- */
 .o-app-layout {
     display: block;
-    min-height: 100vh;
-    min-height: 100dvh;
 }
 
 .o-main-grid {
@@ -195,8 +193,6 @@ button {
     background: linear-gradient(to bottom, #2a2a2a 0%, var(--bg-surface) 100%);
     position: relative;
     scroll-behavior: smooth;
-    min-height: 100vh;
-    padding-bottom: 120px; /* Space for the fixed player bar on all devices */
 }
 
 /* --- App Header --- */
@@ -1025,10 +1021,6 @@ button {
         justify-content: center;
         height: 100%;
         margin: 0 auto;
-    }
-
-    .c-main-content {
-        padding-bottom: 120px; /* Space for the fixed player bar */
     }
 
     .c-app-header {
