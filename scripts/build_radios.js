@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const RAW_FILE = path.join(__dirname, '../api/radios_list.json');
-const OUTPUT_FILE = path.join(__dirname, '../api/radios.json');
+const OUTPUT_FILE = path.join(__dirname, '../api/appradios.json');
 const WEB_OUTPUT_FILE = path.join(__dirname, '../api/web.json');
 
 try {
