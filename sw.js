@@ -1,8 +1,8 @@
-const CACHE_NAME = 'adventist-player-cache-v13';
+const CACHE_NAME = 'adventist-player-cache-v14';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/index.css',
+  '/index.css?v=01082026',
   '/app.js',
   '/manifest.json',
   '/assets/logo.png',
