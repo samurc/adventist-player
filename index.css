@@ -1200,6 +1200,9 @@ button {
     #hero-share-btn span {
         display: none;
     }
+    #all-stations-section {
+        margin-bottom: 80px;
+    }
         
 }
 
