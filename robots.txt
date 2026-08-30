@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+# Allow crawlers to fetch the station data the pages render from.
+# Without this, Googlebot cannot populate the main content and flags
+# station pages as Soft 404. The Allow rule is more specific than the
+# Disallow below, so it wins for this exact file.
+Allow: /api/web.json
 Disallow: /api/
 Disallow: /scripts/
 

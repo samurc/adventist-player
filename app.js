@@ -77,6 +77,23 @@ let autoplayTimerInterval = null;
 let translations = {};
 let currentLangCode = 'es';
 
+// SEO: detect if we landed directly on a specific station page (e.g. /es/some-radio-slug/).
+// On these pages the static HTML already contains a unique <title>, <meta description>
+// and <h1> generated at build time. We must NOT overwrite them with the generic
+// home-page strings, otherwise Google renders hundreds of near-identical pages and
+// flags them as Soft 404.
+function detectStationSlugFromPath() {
+    const pathParts = window.location.pathname.split('/').filter(p => p);
+    if (pathParts.length >= 2) {
+        const slug = pathParts[pathParts.length - 1];
+        if (!['es', 'en', 'pt', 'privacy-policy'].includes(slug)) {
+            return slug;
+        }
+    }
+    return null;
+}
+let isStationPage = detectStationSlugFromPath() !== null;
+
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
     const header = document.getElementById('header');
@@ -161,22 +178,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const translatePage = () => {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            if (key === 'hero.description' && currentHeroStation) {
-                const location = currentHeroStation.dial !== "" ? `${currentHeroStation.region} - ${currentHeroStation.dial}` : currentHeroStation.pais;
-                el.innerHTML = t(key, { name: currentHeroStation.nombre, location: location });
-            } else {
-                el.textContent = t(key);
+            if (key === 'hero.description') {
+                if (currentHeroStation) {
+                    const location = currentHeroStation.dial !== "" ? `${currentHeroStation.region} - ${currentHeroStation.dial}` : currentHeroStation.pais;
+                    el.innerHTML = t(key, { name: currentHeroStation.nombre, location: location });
+                }
+                // If no station is resolved yet, keep the build-time description in place
+                // instead of printing the raw template with literal {name}/{location}.
+                return;
             }
+            el.textContent = t(key);
         });
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
             const key = el.getAttribute('data-i18n-placeholder');
             el.placeholder = t(key);
         });
         
-        // Update document metadata
-        document.title = t('meta.title');
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', t('meta.description'));
+        // Update document metadata.
+        // On a specific station page the build-time HTML already carries a unique
+        // title + description; overwriting them with the generic home strings is what
+        // causes Google to treat every station URL as duplicate/Soft 404. Skip it.
+        if (!isStationPage) {
+            document.title = t('meta.title');
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.setAttribute('content', t('meta.description'));
+        }
     };
 
     const loadTranslations = async (langName) => {
@@ -190,8 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Sync header selector
             if (langSelector) langSelector.value = langName;
 
-            // If a station is already playing, update title
-            if (currentStation) {
+            // If a station is already playing, update title.
+            // Never do this on a directly-loaded station page: its build-time <title>
+            // is the SEO-relevant one Google should index.
+            if (currentStation && !isStationPage) {
                 document.title = t('hero.listening_now', { name: currentStation.nombre });
             }
         } catch (err) {
@@ -551,8 +579,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!fromHistory) {
             window.history.pushState({ path: newPath }, '', newPath);
         }
-        
-        document.title = t('hero.listening_now', { name: station.nombre });
+
+        // Keep the build-time SEO <title> when this is the station we directly landed on.
+        // Only switch to the dynamic "Escuchando..." title once the user actively
+        // navigates to a different station.
+        const landedSlug = detectStationSlugFromPath();
+        const isLandingStation = isStationPage && station.id === landedSlug && !fromHistory && document.title && !currentStation;
+        if (!isLandingStation) {
+            document.title = t('hero.listening_now', { name: station.nombre });
+            // Once we move to a dynamic title, drop the static-page protection so the
+            // rest of the SPA behaves normally.
+            isStationPage = false;
+        }
 
         // Save State
         localStorage.setItem('adventist-last-played', station.id);
