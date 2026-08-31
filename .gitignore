@@ -1,2 +1,7 @@
 .DS_Store
 
+# Node
+node_modules/
+
+# Backup que genera monitor-server.js al guardar radios
+scripts/radios_list.json.bak

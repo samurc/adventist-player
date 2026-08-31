@@ -1,0 +1,16 @@
+{
+  "name": "adventist-player",
+  "version": "1.0.0",
+  "description": "Adventist Player: sitio estático de radios adventistas, con panel de monitor/edición y build de api/web.json.",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/monitor-server.js",
+    "dev": "node scripts/dev.js",
+    "serve": "python3 -m http.server 8000",
+    "monitor": "node scripts/monitor-server.js",
+    "build": "node scripts/build_radios.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

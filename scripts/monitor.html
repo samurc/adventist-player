@@ -165,15 +165,93 @@
         }
         .detail { color: var(--muted); font-size: 12px; }
         a { color: #7fb0ff; }
-        .hidden { display: none; }
+        .hidden { display: none !important; }
+
+        button.success { background: #1e9e5a; border-color: #1e9e5a; }
+        button.success:hover:not(:disabled) { background: #178048; }
+
+        .icon-btn {
+            background: transparent; border: none; color: var(--muted);
+            font-size: 22px; line-height: 1; padding: 0 6px; cursor: pointer;
+        }
+        .icon-btn:hover { color: var(--text); }
+
+        .link-btn {
+            background: transparent; border: 1px solid var(--border);
+            padding: 5px 10px; font-size: 13px; border-radius: 6px;
+        }
+
+        .badge {
+            font-size: 12px; color: var(--muted); padding: 6px 10px;
+            border: 1px solid var(--border); border-radius: 999px;
+        }
+        .badge.ok { color: var(--ok); border-color: var(--ok); }
+        .badge.bad { color: var(--fail); border-color: var(--fail); }
+
+        /* Toast de notificaciones */
+        .toast {
+            position: fixed; top: 16px; right: 16px; z-index: 1200;
+            max-width: 420px; padding: 12px 16px; border-radius: 10px;
+            background: var(--surface-2); border: 1px solid var(--border);
+            color: var(--text); font-size: 14px; box-shadow: 0 8px 30px rgba(0,0,0,.4);
+            white-space: pre-wrap;
+        }
+        .toast.ok { border-color: var(--ok); }
+        .toast.bad { border-color: var(--fail); }
+
+        /* Modal */
+        .modal-backdrop {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(4, 12, 28, .7);
+            display: flex; align-items: flex-start; justify-content: center;
+            padding: 40px 16px; overflow-y: auto;
+        }
+        .modal {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; width: 100%; max-width: 720px;
+        }
+        .modal__header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 20px; border-bottom: 1px solid var(--border);
+        }
+        .modal__header h2 { margin: 0; font-size: 18px; }
+        .modal__body { padding: 20px; }
+        .modal__footer {
+            display: flex; align-items: center; gap: 10px; justify-content: flex-end;
+            margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);
+        }
+        .form-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+        }
+        .form-field { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--muted); }
+        .form-field--wide { grid-column: 1 / -1; }
+        .form-field--check { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 8px; color: var(--text); }
+        .form-field input[type="text"] {
+            background: var(--bg); color: var(--text);
+            border: 1px solid var(--border); border-radius: 8px;
+            padding: 9px 11px; font-size: 14px;
+        }
+        .temporal-fields {
+            margin-top: 16px; border: 1px dashed var(--border);
+            border-radius: 10px; padding: 14px 16px;
+        }
+        .temporal-fields legend { color: var(--muted); font-size: 12px; padding: 0 6px; }
+        .form-error { color: var(--fail); font-size: 13px; margin-right: auto; }
+        @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <h1>Monitor de Radios</h1>
-    <p class="subtitle">Comprueba el estado de cada stream de <code>/api/web.json</code> intentando reproducirlo en el navegador.</p>
+    <p class="subtitle">Lista y comprueba los streams de <code>radios_list.json</code>. Edita o agrega radios y pulsa <strong>Compilar</strong> para regenerar <code>api/web.json</code>.</p>
 
     <div class="toolbar">
-        <button id="check-all" class="primary">Comprobar todas</button>
+        <button id="add-radio" class="primary">+ Añadir radio</button>
+        <button id="compile" class="success">Compilar api/web.json</button>
+        <span id="server-status" class="badge">Comprobando servidor...</span>
+    </div>
+
+    <div class="toolbar">
+        <button id="check-all">Comprobar todas</button>
         <button id="stop" disabled>Detener</button>
         <button id="recheck-failed" disabled>Reintentar fallidas</button>
         <label class="field">Concurrencia
@@ -184,6 +262,8 @@
         </label>
         <input type="search" id="search" placeholder="Buscar por nombre, país...">
     </div>
+
+    <div id="toast" class="toast hidden"></div>
 
     <div class="stats" id="stats"></div>
 
@@ -199,11 +279,96 @@
                 <th data-sort="status">Estado</th>
                 <th data-sort="detail">Detalle</th>
                 <th>Stream</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody id="rows"></tbody>
     </table>
 
-    <script src="/monitor.js?v=1"></script>
+    <!-- Modal de formulario para agregar/editar una radio -->
+    <div id="modal-backdrop" class="modal-backdrop hidden">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal__header">
+                <h2 id="modal-title">Añadir radio</h2>
+                <button id="modal-close" class="icon-btn" aria-label="Cerrar">&times;</button>
+            </div>
+            <form id="radio-form" class="modal__body">
+                <input type="hidden" id="f-index" value="">
+                <div class="form-grid">
+                    <label class="form-field">
+                        <span>Nombre *</span>
+                        <input type="text" id="f-nombre" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Idioma *</span>
+                        <input type="text" id="f-idioma" list="lang-list" required>
+                        <datalist id="lang-list"></datalist>
+                    </label>
+                    <label class="form-field">
+                        <span>País *</span>
+                        <input type="text" id="f-pais" required>
+                    </label>
+                    <label class="form-field">
+                        <span>Región</span>
+                        <input type="text" id="f-region">
+                    </label>
+                    <label class="form-field">
+                        <span>Dial</span>
+                        <input type="text" id="f-dial" placeholder="107.1 FM">
+                    </label>
+                    <label class="form-field form-field--wide">
+                        <span>URL del stream (medialiveUrl) *</span>
+                        <input type="text" id="f-medialiveUrl" required placeholder="https://.../playlist.m3u8">
+                    </label>
+                    <label class="form-field form-field--wide">
+                        <span>Web</span>
+                        <input type="text" id="f-web" placeholder="https://...">
+                    </label>
+                    <label class="form-field form-field--wide">
+                        <span>Imagen (imgMobile)</span>
+                        <input type="text" id="f-imgMobile" placeholder="https://adventistplayer.org/assets/logos/....webp">
+                    </label>
+                    <label class="form-field">
+                        <span>WhatsApp (celularContacto)</span>
+                        <input type="text" id="f-celularContacto" placeholder="5215500000000">
+                    </label>
+                    <label class="form-field form-field--wide">
+                        <span>Bandera</span>
+                        <input type="text" id="f-bandera" placeholder="https://adventistplayer.org/assets/banderas/....webp">
+                    </label>
+                    <label class="form-field form-field--check">
+                        <input type="checkbox" id="f-temporal">
+                        <span>Temporal (stream que caduca y se resuelve por proveedor)</span>
+                    </label>
+                </div>
+
+                <fieldset id="temporal-fields" class="temporal-fields hidden">
+                    <legend>Datos del proveedor (solo si es temporal)</legend>
+                    <div class="form-grid">
+                        <label class="form-field form-field--wide">
+                            <span>Proveedor (URL)</span>
+                            <input type="text" id="f-proveedor" placeholder="https://api.teveo.com.co/1.1/node/stream">
+                        </label>
+                        <label class="form-field">
+                            <span>Nodo</span>
+                            <input type="text" id="f-nodo">
+                        </label>
+                        <label class="form-field">
+                            <span>Password (pwd)</span>
+                            <input type="text" id="f-pwd">
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="modal__footer">
+                    <span id="form-error" class="form-error"></span>
+                    <button type="button" id="modal-cancel">Cancelar</button>
+                    <button type="submit" class="primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/scripts/monitor.js?v=2"></script>
 </body>
 </html>

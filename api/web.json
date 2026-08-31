@@ -717,6 +717,20 @@
       "temporal": false
     },
     {
+      "id": "radio-stereo-adventista-san-miguel-1069-fm-1",
+      "idioma": "Español",
+      "nombre": "Radio Stereo Adventista",
+      "pais": "El Salvador",
+      "region": "San Miguel",
+      "dial": "106.9 FM",
+      "web": "https://www.radioadventista.org.sv/",
+      "medialiveUrl": "https://s12.myradiostream.com/19854/listen.mp3",
+      "imgMobile": "https://adventistplayer.org/assets/logos/rsa.webp",
+      "celularContacto": "50376956388",
+      "bandera": "https://adventistplayer.org/assets/banderas/El Salvador.webp",
+      "temporal": false
+    },
+    {
       "id": "radio-adventista",
       "idioma": "Español",
       "nombre": "Radio Adventista",
