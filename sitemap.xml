@@ -844,6 +844,33 @@
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/tercero-anjo/"/>
    </url>
    <url>
+      <loc>https://adventistplayer.org/es/country-gospel-radio/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/country-gospel-radio/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/country-gospel-radio/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/country-gospel-radio/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/country-gospel-radio/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/country-gospel-radio/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/country-gospel-radio/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/country-gospel-radio/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/country-gospel-radio/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/country-gospel-radio/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/country-gospel-radio/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/country-gospel-radio/"/>
+   </url>
+   <url>
       <loc>https://adventistplayer.org/es/kids-christian-radio/</loc>
       <lastmod>2026-08-31</lastmod>
       <changefreq>monthly</changefreq>
@@ -923,33 +950,6 @@
       <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/loud-cry-radio/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/loud-cry-radio/"/>
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/loud-cry-radio/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/es/lumiere-du-monde/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/lumiere-du-monde/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/lumiere-du-monde/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/lumiere-du-monde/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/en/lumiere-du-monde/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/lumiere-du-monde/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/lumiere-du-monde/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/lumiere-du-monde/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/pt/lumiere-du-monde/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/lumiere-du-monde/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/lumiere-du-monde/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/lumiere-du-monde/"/>
    </url>
    <url>
       <loc>https://adventistplayer.org/es/native-christian-radio/</loc>
@@ -2086,33 +2086,6 @@
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-maranata-global/"/>
    </url>
    <url>
-      <loc>https://adventistplayer.org/es/radio-nueva-generacion/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-nueva-generacion/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-nueva-generacion/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-nueva-generacion/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/en/radio-nueva-generacion/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-nueva-generacion/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-nueva-generacion/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-nueva-generacion/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/pt/radio-nueva-generacion/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-nueva-generacion/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-nueva-generacion/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-nueva-generacion/"/>
-   </url>
-   <url>
       <loc>https://adventistplayer.org/es/radio-nueva-generacion-adventista/</loc>
       <lastmod>2026-08-31</lastmod>
       <changefreq>monthly</changefreq>
@@ -2410,6 +2383,33 @@
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/grenada-family-network/"/>
    </url>
    <url>
+      <loc>https://adventistplayer.org/es/esperanza-radio/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/esperanza-radio/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/esperanza-radio/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/esperanza-radio/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/esperanza-radio/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/esperanza-radio/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/esperanza-radio/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/esperanza-radio/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/esperanza-radio/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/esperanza-radio/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/esperanza-radio/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/esperanza-radio/"/>
+   </url>
+   <url>
       <loc>https://adventistplayer.org/es/la-voz-de-los-tres-angeles/</loc>
       <lastmod>2026-08-31</lastmod>
       <changefreq>monthly</changefreq>
@@ -2597,6 +2597,60 @@
       <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/advent-hope-radio-roatan-987-fm/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/advent-hope-radio-roatan-987-fm/"/>
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/advent-hope-radio-roatan-987-fm/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/es/hope-radio-atlantica/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/hope-radio-atlantica/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/hope-radio-atlantica/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/hope-radio-atlantica/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/hope-radio-atlantica/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/hope-radio-atlantica/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/hope-radio-atlantica/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/hope-radio-atlantica/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/hope-radio-atlantica/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/hope-radio-atlantica/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/hope-radio-atlantica/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/hope-radio-atlantica/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/es/hope-radio-islas-islas-de-la-bahia/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/hope-radio-islas-islas-de-la-bahia/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/hope-radio-islas-islas-de-la-bahia/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/hope-radio-islas-islas-de-la-bahia/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/hope-radio-islas-islas-de-la-bahia/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/hope-radio-islas-islas-de-la-bahia/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/hope-radio-islas-islas-de-la-bahia/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/hope-radio-islas-islas-de-la-bahia/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/hope-radio-islas-islas-de-la-bahia/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/hope-radio-islas-islas-de-la-bahia/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/hope-radio-islas-islas-de-la-bahia/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/hope-radio-islas-islas-de-la-bahia/"/>
    </url>
    <url>
       <loc>https://adventistplayer.org/es/stereo-adventista/</loc>
@@ -2842,6 +2896,33 @@
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/alfa-y-omega-chiapas-1053-919-fm/"/>
    </url>
    <url>
+      <loc>https://adventistplayer.org/es/el-fuerte-pregon-chiapas-887-fm-921-fm/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/el-fuerte-pregon-chiapas-887-fm-921-fm/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/el-fuerte-pregon-chiapas-887-fm-921-fm/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/el-fuerte-pregon-chiapas-887-fm-921-fm/"/>
+   </url>
+   <url>
       <loc>https://adventistplayer.org/es/esperanza-7/</loc>
       <lastmod>2026-08-31</lastmod>
       <changefreq>monthly</changefreq>
@@ -2923,6 +3004,33 @@
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/esperanza-mexico-monterrey/"/>
    </url>
    <url>
+      <loc>https://adventistplayer.org/es/fuerte-pregon-del-sureste-chiapas/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/fuerte-pregon-del-sureste-chiapas/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/fuerte-pregon-del-sureste-chiapas/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/fuerte-pregon-del-sureste-chiapas/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/fuerte-pregon-del-sureste-chiapas/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/fuerte-pregon-del-sureste-chiapas/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/fuerte-pregon-del-sureste-chiapas/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/fuerte-pregon-del-sureste-chiapas/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/fuerte-pregon-del-sureste-chiapas/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/fuerte-pregon-del-sureste-chiapas/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/fuerte-pregon-del-sureste-chiapas/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/fuerte-pregon-del-sureste-chiapas/"/>
+   </url>
+   <url>
       <loc>https://adventistplayer.org/es/radio-conexion-adventista/</loc>
       <lastmod>2026-08-31</lastmod>
       <changefreq>monthly</changefreq>
@@ -2975,6 +3083,33 @@
       <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-stereo-mision-fm-1009-motozintla-chiapas-1009-fm/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-stereo-mision-fm-1009-motozintla-chiapas-1009-fm/"/>
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-stereo-mision-fm-1009-motozintla-chiapas-1009-fm/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/es/advent-stereo-927-fm/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/advent-stereo-927-fm/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/advent-stereo-927-fm/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/advent-stereo-927-fm/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/advent-stereo-927-fm/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/advent-stereo-927-fm/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/advent-stereo-927-fm/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/advent-stereo-927-fm/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/advent-stereo-927-fm/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/advent-stereo-927-fm/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/advent-stereo-927-fm/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/advent-stereo-927-fm/"/>
    </url>
    <url>
       <loc>https://adventistplayer.org/es/radio-adventista-el-centinela-leon-1005fm/</loc>
@@ -3083,60 +3218,6 @@
       <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/hope-radio-panama-panama-1560-am/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/hope-radio-panama-panama-1560-am/"/>
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/hope-radio-panama-panama-1560-am/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/es/stereo-fe-panama-961-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/stereo-fe-panama-961-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/stereo-fe-panama-961-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/stereo-fe-panama-961-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/en/stereo-fe-panama-961-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/stereo-fe-panama-961-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/stereo-fe-panama-961-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/stereo-fe-panama-961-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/pt/stereo-fe-panama-961-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/stereo-fe-panama-961-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/stereo-fe-panama-961-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/stereo-fe-panama-961-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/es/adventist-hope-radio-png-morobe-1075-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/adventist-hope-radio-png-morobe-1075-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/adventist-hope-radio-png-morobe-1075-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/adventist-hope-radio-png-morobe-1075-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/en/adventist-hope-radio-png-morobe-1075-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/adventist-hope-radio-png-morobe-1075-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/adventist-hope-radio-png-morobe-1075-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/adventist-hope-radio-png-morobe-1075-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/pt/adventist-hope-radio-png-morobe-1075-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/adventist-hope-radio-png-morobe-1075-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/adventist-hope-radio-png-morobe-1075-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/adventist-hope-radio-png-morobe-1075-fm/"/>
    </url>
    <url>
       <loc>https://adventistplayer.org/es/nuevo-tiempo-paraguay-asuncion-979-fm/</loc>
@@ -3650,33 +3731,6 @@
       <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-buscando-esperanza-montevideo-1081-fm/"/>
       <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-buscando-esperanza-montevideo-1081-fm/"/>
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-buscando-esperanza-montevideo-1081-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/es/7ma-estacion-santa-barbara-de-barinas-953-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/en/7ma-estacion-santa-barbara-de-barinas-953-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-   </url>
-   <url>
-      <loc>https://adventistplayer.org/pt/7ma-estacion-santa-barbara-de-barinas-953-fm/</loc>
-      <lastmod>2026-08-31</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/7ma-estacion-santa-barbara-de-barinas-953-fm/"/>
    </url>
    <url>
       <loc>https://adventistplayer.org/es/esperanza-maracaibo-1059-fm/</loc>

@@ -422,6 +422,18 @@
       "temporal": false
     },
     {
+      "id": "country-gospel-radio",
+      "idioma": "English",
+      "nombre": "Country Gospel Radio",
+      "pais": "Canadá",
+      "region": "",
+      "dial": "",
+      "web": "https://countrygospelradio.org/",
+      "medialiveUrl": "https://usa18.fastcast4u.com/proxy/loudcrymedia1?mp=/1",
+      "imgMobile": "https://adventistplayer.org/assets/logos/countrygospelradio.webp",
+      "temporal": false
+    },
+    {
       "id": "kids-christian-radio",
       "idioma": "English",
       "nombre": "Kids Christian Radio",
@@ -461,20 +473,6 @@
       "imgMobile": "https://adventistplayer.org/assets/logos/loudcryradio.webp",
       "celularContacto": "",
       "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-      "temporal": false
-    },
-    {
-      "id": "lumiere-du-monde",
-      "idioma": "Francés",
-      "nombre": "Lumiere Du Monde",
-      "pais": "Canadá",
-      "region": "",
-      "dial": "",
-      "web": "https://fastcast4u.com/player/loudcrymedia-loudcrymedia10/",
-      "medialiveUrl": "https://usa15.fastcast4u.com/proxy/loudcrymedia10?mp=/1",
-      "imgMobile": "https://adventistplayer.org/assets/logos/lumiere.webp",
-      "celularContacto": "",
-      "bandera": "https://adventistplayer.org/assets/banderas/Canadá.webp",
       "temporal": false
     },
     {
@@ -1081,20 +1079,6 @@
       "temporal": false
     },
     {
-      "id": "radio-nueva-generacion",
-      "idioma": "Español",
-      "nombre": "Radio Nueva Generación",
-      "pais": "Estados Unidos",
-      "region": "",
-      "dial": "",
-      "web": "https://radionuevageneracion.com/",
-      "medialiveUrl": "https://cloudstream2032.conectarhosting.com/8046/stream",
-      "imgMobile": "https://adventistplayer.org/assets/logos/radionuevageneracion.webp",
-      "celularContacto": "",
-      "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-      "temporal": false
-    },
-    {
       "id": "radio-nueva-generacion-adventista",
       "idioma": "Español",
       "nombre": "Radio Nueva Generación Adventista",
@@ -1249,6 +1233,19 @@
       "temporal": false
     },
     {
+      "id": "esperanza-radio",
+      "idioma": "Español",
+      "nombre": "Esperanza Radio",
+      "pais": "Guatemala",
+      "region": "",
+      "dial": "",
+      "web": "https://www.medios.gt/esperanzaradiogt",
+      "medialiveUrl": "https://stream-175.surfernetwork.com/ae7ghbd83mruv",
+      "imgMobile": "https://adventistplayer.org/assets/logos/esperanzaguatemala.webp",
+      "celularContacto": "50231272192",
+      "temporal": false
+    },
+    {
       "id": "la-voz-de-los-tres-angeles",
       "idioma": "Español",
       "nombre": "La Voz De Los Tres Angeles",
@@ -1344,6 +1341,31 @@
       "imgMobile": "https://adventistplayer.org/assets/logos/hopehonduras.webp",
       "celularContacto": "",
       "bandera": "https://adventistplayer.org/assets/banderas/Honduras.webp",
+      "temporal": false
+    },
+    {
+      "id": "hope-radio-atlantica",
+      "idioma": "Español",
+      "nombre": "Hope Radio - Atlantica",
+      "pais": "Honduras",
+      "region": "",
+      "dial": "",
+      "web": "https://www.hopemedia.hn/radioatlantica/",
+      "medialiveUrl": "https://sc10.conectarhosting.com/proxy/hoperadi/stream",
+      "imgMobile": "https://adventistplayer.org/assets/logos/hoperadiohonduras.webp",
+      "celularContacto": "50495947194",
+      "temporal": false
+    },
+    {
+      "id": "hope-radio-islas-islas-de-la-bahia",
+      "idioma": "Español",
+      "nombre": "Hope Radio – Islas",
+      "pais": "Honduras",
+      "region": "Islas de la Bahía",
+      "dial": "",
+      "web": "https://www.hopemedia.hn/hope-radio-islas/",
+      "medialiveUrl": "https://cloudstream2030.conectarhosting.com/9966/stream",
+      "imgMobile": "https://adventistplayer.org/assets/logos/hoperadiohonduras.webp",
       "temporal": false
     },
     {
@@ -1472,6 +1494,18 @@
       "temporal": false
     },
     {
+      "id": "el-fuerte-pregon-chiapas-887-fm-921-fm",
+      "idioma": "Español",
+      "nombre": "El Fuerte Pregón",
+      "pais": "México",
+      "region": "Chiapas",
+      "dial": "88.7 FM & 92.1 FM",
+      "web": "https://fuertepregon.com.mx/",
+      "medialiveUrl": "https://mediastreamm.com/8302/stream",
+      "imgMobile": "https://adventistplayer.org/assets/logos/fuertepregon.webp",
+      "temporal": false
+    },
+    {
       "id": "esperanza-7",
       "idioma": "Español",
       "nombre": "Esperanza 7",
@@ -1514,6 +1548,18 @@
       "temporal": false
     },
     {
+      "id": "fuerte-pregon-del-sureste-chiapas",
+      "idioma": "Español",
+      "nombre": "Fuerte Pregón del Sureste",
+      "pais": "México",
+      "region": "Chiapas",
+      "dial": "",
+      "web": "https://www.facebook.com/radiofuertepregondelsureste/",
+      "medialiveUrl": "https://stream-178.surfernetwork.com/cevz2h1rkm0uv",
+      "imgMobile": "https://adventistplayer.org/assets/logos/fuertepregon.webp",
+      "temporal": false
+    },
+    {
       "id": "radio-conexion-adventista",
       "idioma": "Español",
       "nombre": "Radio Conexión Adventista",
@@ -1539,6 +1585,19 @@
       "imgMobile": "https://adventistplayer.org/assets/logos/stereomision.webp",
       "celularContacto": "",
       "bandera": "https://adventistplayer.org/assets/banderas/México.webp",
+      "temporal": false
+    },
+    {
+      "id": "advent-stereo-927-fm",
+      "idioma": "Español",
+      "nombre": "Advent Stereo",
+      "pais": "Nicaragua",
+      "region": "",
+      "dial": "92.7 FM",
+      "web": "http://adventstereofm.org/",
+      "medialiveUrl": "https://s12.myradiostream.com/18108/listen.mp3",
+      "imgMobile": "https://adventistplayer.org/assets/logos/adventstereo.webp",
+      "celularContacto": "50587034686",
       "temporal": false
     },
     {
@@ -1595,34 +1654,6 @@
       "imgMobile": "https://adventistplayer.org/assets/logos/hopepanama.webp",
       "celularContacto": "",
       "bandera": "https://adventistplayer.org/assets/banderas/Panamá.webp",
-      "temporal": false
-    },
-    {
-      "id": "stereo-fe-panama-961-fm",
-      "idioma": "Español",
-      "nombre": "Stereo Fe",
-      "pais": "Panamá",
-      "region": "Panamá",
-      "dial": "96.1 FM",
-      "web": "https://www.stereoferadio.com/",
-      "medialiveUrl": "https://www.streaming507.net:8016/stream",
-      "imgMobile": "https://adventistplayer.org/assets/logos/stereofe.webp",
-      "celularContacto": "+50766112228",
-      "bandera": "https://adventistplayer.org/assets/banderas/Panamá.webp",
-      "temporal": false
-    },
-    {
-      "id": "adventist-hope-radio-png-morobe-1075-fm",
-      "idioma": "English",
-      "nombre": "Adventist Hope Radio PNG",
-      "pais": "Papúa Nueva Guinea",
-      "region": "Morobe",
-      "dial": "107.5 FM",
-      "web": "https://adventisthopefmpng.webradiosite.com/pwa/#/home",
-      "medialiveUrl": "https://servidor30-3.brlogic.com:7020/live",
-      "imgMobile": "https://adventistplayer.org/assets/logos/png.webp",
-      "celularContacto": "",
-      "bandera": "https://adventistplayer.org/assets/banderas/Papúa Nueva Guinea.webp",
       "temporal": false
     },
     {
@@ -1889,20 +1920,6 @@
       "imgMobile": "https://adventistplayer.org/assets/logos/buscandoesperanza.webp",
       "celularContacto": "",
       "bandera": "https://adventistplayer.org/assets/banderas/Uruguay.webp",
-      "temporal": false
-    },
-    {
-      "id": "7ma-estacion-santa-barbara-de-barinas-953-fm",
-      "idioma": "Español",
-      "nombre": "7ma estación",
-      "pais": "Venezuela",
-      "region": "Santa Barbara de Barinas",
-      "dial": "95.3 FM",
-      "web": "https://hoperadiovenezuela.com/7maestacion953",
-      "medialiveUrl": "https://server.hoperadiovenezuela.com:8010/7maestacionsantabarbara953.mp3",
-      "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
-      "celularContacto": "",
-      "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
       "temporal": false
     },
     {
