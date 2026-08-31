@@ -1560,6 +1560,19 @@
       "temporal": false
     },
     {
+      "id": "radio-adventista-en-linea",
+      "idioma": "Español",
+      "nombre": "Radio Adventista En Línea",
+      "pais": "México",
+      "region": "",
+      "dial": "",
+      "web": "https://ral7.org/",
+      "medialiveUrl": "https://server2.ejeserver.com:8086/live?1788143886546",
+      "imgMobile": "https://ral7.org/wp-content/uploads/2024/07/logorav-300x300.png",
+      "celularContacto": "5215571227213",
+      "temporal": false
+    },
+    {
       "id": "radio-conexion-adventista",
       "idioma": "Español",
       "nombre": "Radio Conexión Adventista",

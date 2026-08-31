@@ -2055,5 +2055,18 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hoperadiohonduras.webp",
     "temporal": false,
     "desactivar": false
+  },
+  {
+    "idioma": "Español",
+    "nombre": "Radio Adventista En Línea",
+    "pais": "México",
+    "region": "",
+    "dial": "",
+    "web": "https://ral7.org/",
+    "medialiveUrl": "https://server2.ejeserver.com:8086/live?1788143886546",
+    "imgMobile": "https://ral7.org/wp-content/uploads/2024/07/logorav-300x300.png",
+    "celularContacto": "5215571227213",
+    "temporal": false,
+    "desactivar": false
   }
 ]

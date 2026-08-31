@@ -3031,6 +3031,33 @@
       <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/fuerte-pregon-del-sureste-chiapas/"/>
    </url>
    <url>
+      <loc>https://adventistplayer.org/es/radio-adventista-en-linea/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-adventista-en-linea/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-adventista-en-linea/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-adventista-en-linea/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/en/radio-adventista-en-linea/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-adventista-en-linea/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-adventista-en-linea/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-adventista-en-linea/"/>
+   </url>
+   <url>
+      <loc>https://adventistplayer.org/pt/radio-adventista-en-linea/</loc>
+      <lastmod>2026-08-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="es" href="https://adventistplayer.org/es/radio-adventista-en-linea/"/>
+      <xhtml:link rel="alternate" hreflang="en" href="https://adventistplayer.org/en/radio-adventista-en-linea/"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://adventistplayer.org/pt/radio-adventista-en-linea/"/>
+   </url>
+   <url>
       <loc>https://adventistplayer.org/es/radio-conexion-adventista/</loc>
       <lastmod>2026-08-31</lastmod>
       <changefreq>monthly</changefreq>
