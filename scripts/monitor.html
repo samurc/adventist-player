@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Radios - Adventist Player</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/assets/ic_launcher.png">
+    <!-- Hls.js para streams .m3u8 (misma versión que usa la app) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        :root {
+            --bg: #0a1f41;
+            --surface: #12294f;
+            --surface-2: #183566;
+            --border: #24437f;
+            --text: #eaf0fb;
+            --muted: #9fb2d4;
+            --ok: #2ecc71;
+            --fail: #e74c3c;
+            --pending: #f1c40f;
+            --checking: #3498db;
+            --skip: #95a5a6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 24px;
+        }
+        h1 { margin: 0 0 4px; font-size: 22px; }
+        .subtitle { color: var(--muted); margin: 0 0 20px; font-size: 14px; }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        button {
+            background: var(--surface-2);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 9px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background .15s;
+        }
+        button:hover:not(:disabled) { background: var(--border); }
+        button:disabled { opacity: .5; cursor: not-allowed; }
+        button.primary { background: #2f6bff; border-color: #2f6bff; }
+        button.primary:hover:not(:disabled) { background: #245ce0; }
+
+        label.field {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+        input[type="number"], input[type="search"] {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 14px;
+        }
+        input[type="search"] { width: 240px; }
+        input[type="number"] { width: 70px; }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .chip.is-active { outline: 2px solid #2f6bff; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .dot.ok { background: var(--ok); }
+        .dot.fail { background: var(--fail); }
+        .dot.pending { background: var(--pending); }
+        .dot.checking { background: var(--checking); }
+        .dot.skip { background: var(--skip); }
+
+        .progress-wrap {
+            height: 6px;
+            background: var(--surface);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: #2f6bff;
+            transition: width .2s;
+        }
+
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        thead th {
+            text-align: left;
+            padding: 10px 12px;
+            color: var(--muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--surface-2);
+            vertical-align: middle;
+        }
+        tbody tr:hover { background: var(--surface); }
+        .name { display: flex; align-items: center; gap: 10px; }
+        .name img {
+            width: 34px; height: 34px; border-radius: 8px; object-fit: cover;
+            background: var(--surface-2); flex: none;
+        }
+        .name .meta { display: flex; flex-direction: column; }
+        .name .meta small { color: var(--muted); }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .status.ok { color: var(--ok); }
+        .status.fail { color: var(--fail); }
+        .status.pending { color: var(--pending); }
+        .status.checking { color: var(--checking); }
+        .status.skip { color: var(--skip); }
+
+        .url {
+            color: var(--muted);
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 12px;
+            max-width: 380px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+        }
+        .detail { color: var(--muted); font-size: 12px; }
+        a { color: #7fb0ff; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Monitor de Radios</h1>
+    <p class="subtitle">Comprueba el estado de cada stream de <code>/api/web.json</code> intentando reproducirlo en el navegador.</p>
+
+    <div class="toolbar">
+        <button id="check-all" class="primary">Comprobar todas</button>
+        <button id="stop" disabled>Detener</button>
+        <button id="recheck-failed" disabled>Reintentar fallidas</button>
+        <label class="field">Concurrencia
+            <input type="number" id="concurrency" value="6" min="1" max="20">
+        </label>
+        <label class="field">Timeout (s)
+            <input type="number" id="timeout" value="12" min="3" max="60">
+        </label>
+        <input type="search" id="search" placeholder="Buscar por nombre, país...">
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="progress-wrap"><div class="progress-bar" id="progress"></div></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th data-sort="index">#</th>
+                <th data-sort="nombre">Radio</th>
+                <th data-sort="pais">País</th>
+                <th data-sort="type">Tipo</th>
+                <th data-sort="status">Estado</th>
+                <th data-sort="detail">Detalle</th>
+                <th>Stream</th>
+            </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+    </table>
+
+    <script src="/monitor.js?v=1"></script>
+</body>
+</html>
