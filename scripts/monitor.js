@@ -81,6 +81,75 @@
     let statusFilter = null;    // null = todas
     let searchQuery = '';
 
+    /*
+     * Persistencia de resultados de verificación en localStorage.
+     * Guardamos solo estados terminales (ok/fail) indexados por una clave
+     * estable derivada de la radio (independiente del orden o del id de build).
+     * Si la medialiveUrl cambia, el resultado guardado se descarta.
+     */
+    const RESULTS_KEY = 'monitor-check-results-v1';
+    let resultsCache = loadResultsCache();
+
+    // Clave estable por radio, sin depender del id (que lo genera el build)
+    function stationKey(raw) {
+        return [raw.nombre, raw.region, raw.dial].map(v => v || '').join('|');
+    }
+
+    function loadResultsCache() {
+        try {
+            const raw = localStorage.getItem(RESULTS_KEY);
+            const parsed = raw ? JSON.parse(raw) : {};
+            return (parsed && typeof parsed === 'object') ? parsed : {};
+        } catch (_) {
+            return {};
+        }
+    }
+
+    function persistResultsCache() {
+        try {
+            localStorage.setItem(RESULTS_KEY, JSON.stringify(resultsCache));
+        } catch (_) { /* storage lleno o no disponible: ignoramos */ }
+    }
+
+    // Guarda el resultado terminal de una estación
+    function saveResult(s) {
+        if (s.status !== STATUS.OK && s.status !== STATUS.FAIL) return;
+        resultsCache[stationKey(s.raw)] = {
+            status: s.status,
+            detail: s.detail,
+            url: s.url,          // para invalidar si cambia la URL
+            ts: Date.now(),
+        };
+        persistResultsCache();
+    }
+
+    // Devuelve el resultado guardado si sigue siendo válido (misma URL)
+    function getSavedResult(raw, url) {
+        const entry = resultsCache[stationKey(raw)];
+        if (!entry) return null;
+        if (entry.url !== url) return null; // la URL cambió: el resultado ya no aplica
+        if (entry.status !== STATUS.OK && entry.status !== STATUS.FAIL) return null;
+        return entry;
+    }
+
+    function clearResultsCache() {
+        resultsCache = {};
+        try { localStorage.removeItem(RESULTS_KEY); } catch (_) {}
+    }
+
+    // Formatea una marca de tiempo relativa breve (p. ej. "hace 5 min")
+    function relativeTime(ts) {
+        if (!ts) return '';
+        const diff = Date.now() - ts;
+        const min = Math.round(diff / 60000);
+        if (min < 1) return 'recién';
+        if (min < 60) return `hace ${min} min`;
+        const h = Math.round(min / 60);
+        if (h < 24) return `hace ${h} h`;
+        const d = Math.round(h / 24);
+        return `hace ${d} d`;
+    }
+
     // --- Referencias DOM ---
     const els = {};
     document.addEventListener('DOMContentLoaded', () => {
@@ -111,11 +180,26 @@
         els.temporalFields = document.getElementById('temporal-fields');
         els.langList = document.getElementById('lang-list');
 
+        els.clearResults = document.getElementById('clear-results');
+
         els.checkAll.addEventListener('click', () => runChecks(stations.filter(isCheckable)));
         els.stop.addEventListener('click', () => { aborted = true; });
         els.recheckFailed.addEventListener('click', () =>
             runChecks(stations.filter(s => s.status === STATUS.FAIL && isCheckable(s)))
         );
+        els.clearResults.addEventListener('click', () => {
+            if (running) return;
+            clearResultsCache();
+            stations.forEach(s => {
+                if (isCheckable(s)) {
+                    s.status = STATUS.PENDING;
+                    s.detail = '';
+                    s.fromCache = false;
+                }
+            });
+            render();
+            toast('Resultados guardados borrados.', 'ok', 3000);
+        });
         els.search.addEventListener('input', (e) => {
             searchQuery = e.target.value.trim().toLowerCase();
             render();
@@ -177,7 +261,7 @@
         const isHttp = url.startsWith('http://');
         const mixedContent = pageIsHttps && isHttp;
 
-        return {
+        const station = {
             index: i + 1,
             raw: { ...s },
             id: s.id,
@@ -199,6 +283,18 @@
             status: mixedContent || !url ? STATUS.SKIP : STATUS.PENDING,
             detail: mixedContent ? 'Stream HTTP (mixed content)' : (url ? '' : 'Sin URL de stream'),
         };
+
+        // Restaurar resultado previo desde localStorage (si aplica y la URL no cambió)
+        if (isCheckable(station)) {
+            const saved = getSavedResult(s, url);
+            if (saved) {
+                station.status = saved.status;
+                station.detail = `${saved.detail || ''}${saved.ts ? ` · ${relativeTime(saved.ts)}` : ''}`.trim();
+                station.fromCache = true;
+            }
+        }
+
+        return station;
     }
 
     function isCheckable(s) {
@@ -229,8 +325,10 @@
                 if (i >= total) break;
                 const s = targets[i];
                 s.status = STATUS.CHECKING;
+                s.fromCache = false;
                 render();
                 await checkStation(s, timeoutMs);
+                saveResult(s);   // persiste el resultado terminal en localStorage
                 done++;
                 updateProgress(done, total);
                 render();

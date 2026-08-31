@@ -1452,9 +1452,8 @@
       "region": "",
       "dial": "",
       "web": "https://yonkodoradio.com/",
-      "medialiveUrl": "https://radio.yonkodoradio.com/listen/yonkodoradio/radio.mp3",
+      "medialiveUrl": "https://yonkodoradio.com/api/stream",
       "imgMobile": "https://adventistplayer.org/assets/logos/yonkodo.webp",
-      "celularContacto": "",
       "bandera": "https://adventistplayer.org/assets/banderas/Internet.webp",
       "temporal": false
     },
