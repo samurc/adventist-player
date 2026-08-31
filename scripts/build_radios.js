@@ -13,11 +13,19 @@ try {
   }
 
   const rawData = fs.readFileSync(RAW_FILE, 'utf8');
-  const estaciones = JSON.parse(rawData);
+  const allStations = JSON.parse(rawData);
 
-  if (!Array.isArray(estaciones)) {
+  if (!Array.isArray(allStations)) {
     console.error('Error: The content of radios_list.json must be an array.');
     process.exit(1);
+  }
+
+  // Excluir las estaciones marcadas con desactivar: true. No se publican en
+  // api/web.json, ni generan páginas SEO ni entradas de sitemap.
+  const excluded = allStations.filter((s) => s && s.desactivar === true).length;
+  const estaciones = allStations.filter((s) => !(s && s.desactivar === true));
+  if (excluded > 0) {
+    console.log(`Excluding ${excluded} station(s) marked with "desactivar: true".`);
   }
 
   const slugify = (text) => {
@@ -53,9 +61,12 @@ try {
     
     generatedIds.add(finalSlug);
 
+    // "desactivar" es solo un flag de administración; no se publica en web.json
+    const { desactivar, ...publicFields } = station;
+
     return {
       id: finalSlug,
-      ...station,
+      ...publicFields,
     };
   }).sort((a, b) => 
     a.pais.localeCompare(b.pais) || a.nombre.localeCompare(b.nombre)

@@ -188,6 +188,12 @@
         .badge.ok { color: var(--ok); border-color: var(--ok); }
         .badge.bad { color: var(--fail); border-color: var(--fail); }
 
+        .tag-off {
+            display: inline-block; font-size: 10px; text-transform: uppercase;
+            letter-spacing: .04em; color: var(--fail); border: 1px solid var(--fail);
+            border-radius: 4px; padding: 1px 5px; margin-left: 6px; vertical-align: middle;
+        }
+
         /* Toast de notificaciones */
         .toast {
             position: fixed; top: 16px; right: 16px; z-index: 1200;
@@ -259,7 +265,7 @@
             <input type="number" id="concurrency" value="6" min="1" max="20">
         </label>
         <label class="field">Timeout (s)
-            <input type="number" id="timeout" value="12" min="3" max="60">
+            <input type="number" id="timeout" value="25" min="3" max="60">
         </label>
         <input type="search" id="search" placeholder="Buscar por nombre, país...">
     </div>
@@ -340,6 +346,10 @@
                     <label class="form-field form-field--check">
                         <input type="checkbox" id="f-temporal">
                         <span>Temporal (stream que caduca y se resuelve por proveedor)</span>
+                    </label>
+                    <label class="form-field form-field--check">
+                        <input type="checkbox" id="f-desactivar">
+                        <span>Desactivar (excluir de api/web.json al compilar)</span>
                     </label>
                 </div>
 

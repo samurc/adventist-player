@@ -10,7 +10,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/redenovotempo.webp",
     "celularContacto": "5512982448383",
     "bandera": "https://adventistplayer.org/assets/banderas/Internet.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -23,7 +24,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntargentina.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Argentina.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -36,7 +38,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntbolivia.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Bolivia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -49,7 +52,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntchile.webp",
     "celularContacto": "56964808088",
     "bandera": "https://adventistplayer.org/assets/banderas/Chile.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -62,7 +66,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntecuador.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Ecuador.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -75,7 +80,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntparaguay.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Paraguay.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -88,7 +94,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntperu.webp",
     "celularContacto": "51989013278",
     "bandera": "https://adventistplayer.org/assets/banderas/Perú.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -101,7 +108,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/nturuguay.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Uruguay.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -114,7 +122,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/unach.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Chile.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -128,6 +137,7 @@
     "celularContacto": "573160176946",
     "bandera": "https://adventistplayer.org/assets/banderas/Colombia.webp",
     "temporal": true,
+    "desactivar": false,
     "proveedor": "https://api.teveo.com.co/1.1/node/stream",
     "nodo": "AgAwAAOA",
     "pwd": "9G56deBmhc2cQ6MW"
@@ -143,7 +153,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/awrcolombia.webp",
     "celularContacto": "3117395032",
     "bandera": "https://adventistplayer.org/assets/banderas/Colombia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -156,7 +167,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -169,7 +181,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/unionradio.webp",
     "celularContacto": "50232403176",
     "bandera": "https://adventistplayer.org/assets/banderas/Guatemala.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -182,7 +195,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/orionstereo.webp",
     "celularContacto": "50244764457",
     "bandera": "https://adventistplayer.org/assets/banderas/Guatemala.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -195,7 +209,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radiolira.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Costa Rica.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -208,7 +223,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioadventista965.webp",
     "celularContacto": "50373194060",
     "bandera": "https://adventistplayer.org/assets/banderas/El Salvador.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -221,7 +237,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/stereofe.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Honduras.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -234,7 +251,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopehonduras.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Honduras.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -247,7 +265,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/centinela.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Nicaragua.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -260,7 +279,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntnicaragua.webp",
     "celularContacto": "‪505 8883 6805‬",
     "bandera": "https://adventistplayer.org/assets/banderas/Nicaragua.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -273,7 +293,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/mnt.webp",
     "celularContacto": "‪505 8608 6540‬",
     "bandera": "https://adventistplayer.org/assets/banderas/Nicaragua.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -286,7 +307,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopepanama.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Panamá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -299,7 +321,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioparaiso.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Puerto Rico.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -312,7 +335,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radiosol.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Puerto Rico.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -325,7 +349,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioamanecer.webp",
     "celularContacto": "18296885600",
     "bandera": "https://adventistplayer.org/assets/banderas/República Dominicana.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -338,7 +363,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/esperanzamexico.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/México.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -351,7 +377,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioadventistaalicante.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/España.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -364,7 +391,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioadventistaelche.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/España.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -377,7 +405,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopeespana.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/España.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -390,7 +419,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/3abnlatino.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -403,7 +433,8 @@
     "imgMobile": "https://cdn-profiles.tunein.com/s334099/images/logod.png?t=638635539730000000",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -416,7 +447,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radionovotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -429,7 +461,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -442,7 +475,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -455,7 +489,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -468,7 +503,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -481,7 +517,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -494,7 +531,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -507,7 +545,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -520,7 +559,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -533,7 +573,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -546,7 +587,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -559,7 +601,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -572,7 +615,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -585,7 +629,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -598,7 +643,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -611,7 +657,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -624,7 +671,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -637,7 +685,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/novotempo.webp",
     "celularContacto": "5512981510081",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -650,7 +699,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/faithfm.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Australia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -663,7 +713,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/sid.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Sudáfrica.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -676,7 +727,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopefm.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Reino Unido.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -689,7 +741,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/joyfm.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -702,7 +755,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/3abnradioen.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -715,7 +769,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/3abnmusic.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -728,7 +783,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/3abnaustralia.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Australia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Ruso",
@@ -741,7 +797,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/3abnrussia.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Rusia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Francés",
@@ -754,7 +811,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/adventlife.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Francia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -767,7 +825,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioadvento.webp",
     "celularContacto": "5571981747427",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -780,7 +839,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/adventistradiolondon.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Reino Unido.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -793,7 +853,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioaltiplano.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Bolivia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -806,7 +867,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioadvenir.webp",
     "celularContacto": "59164088800",
     "bandera": "https://adventistplayer.org/assets/banderas/Bolivia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -819,7 +881,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/secondadventistradio.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Antigua y Barbuda.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -832,7 +895,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/amigosdejesus.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -845,7 +909,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ret.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -858,7 +923,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/sdaradio.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Canadá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -871,7 +937,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/loudcryradio.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Francés",
@@ -882,9 +949,9 @@
     "web": "https://fastcast4u.com/player/loudcrymedia-loudcrymedia10/",
     "medialiveUrl": "https://usa15.fastcast4u.com/proxy/loudcrymedia10?mp=/1",
     "imgMobile": "https://adventistplayer.org/assets/logos/lumiere.webp",
-    "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Canadá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": true
   },
   {
     "idioma": "English",
@@ -897,7 +964,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/nature.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Canadá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -910,7 +978,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/nativehoperadio.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Canadá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -923,7 +992,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/kidschristian.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Canadá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -936,7 +1006,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/amazingfacts.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -949,7 +1020,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/alfayomega.webp",
     "celularContacto": "529671155311",
     "bandera": "https://adventistplayer.org/assets/banderas/México.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -962,7 +1034,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/advenred7.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Perú.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -975,7 +1048,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/buscandoesperanza.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Uruguay.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Papiamento",
@@ -988,7 +1062,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/rabonaire.webp",
     "celularContacto": "5997960911",
     "bandera": "https://adventistplayer.org/assets/banderas/Bonaire.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1001,7 +1076,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/cristovienepronto.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1014,7 +1090,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioconexionadventista.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/México.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1027,7 +1104,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/esperanza7.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/México.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1040,7 +1118,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/esperanza7.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/México.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1053,7 +1132,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/elohim.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1066,7 +1146,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radiouap.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Argentina.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1079,7 +1160,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/faithfmbelize.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Belice.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Serbio",
@@ -1092,7 +1174,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/glasnade.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Serbia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Serbio",
@@ -1105,7 +1188,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/glasnade.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Serbia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Serbio",
@@ -1118,7 +1202,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/glasnade.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Serbia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1131,7 +1216,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/gfn.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Granada.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Japonés",
@@ -1144,7 +1230,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hitsujikai.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Japón.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Italiano",
@@ -1157,7 +1244,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/rvs.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Italia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1170,7 +1258,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/rja.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1183,7 +1272,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ktsy.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1196,7 +1286,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ksgn.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1209,7 +1300,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ksgn.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Francés",
@@ -1222,7 +1314,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/voixdelesperance.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Haití.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1235,7 +1328,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/tresangeles.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Guatemala.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1248,7 +1342,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/lifetalk.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1261,7 +1356,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radiomaranata.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1274,7 +1370,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/plenitudlaradio.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Suajili",
@@ -1287,7 +1384,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/awrtanzania.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Tanzania.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1300,7 +1398,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ntguatemala.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Guatemala.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1313,7 +1412,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/ncu fm.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Jamaica.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1324,9 +1424,9 @@
     "web": "https://radionuevageneracion.com/",
     "medialiveUrl": "https://cloudstream2032.conectarhosting.com/8046/stream",
     "imgMobile": "https://adventistplayer.org/assets/logos/radionuevageneracion.webp",
-    "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": true
   },
   {
     "idioma": "Español",
@@ -1339,7 +1439,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radionuevageneracionadventista.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1352,7 +1453,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radionuevodia.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1365,7 +1467,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radiooasis7day.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Papiamento",
@@ -1378,7 +1481,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/korsou.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Curazao.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1391,7 +1495,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/promise.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1404,7 +1509,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/proclamadradio.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1417,7 +1523,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/plr.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1430,7 +1537,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/wjou.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1441,9 +1549,9 @@
     "web": "https://adventisthopefmpng.webradiosite.com/pwa/#/home",
     "medialiveUrl": "https://servidor30-3.brlogic.com:7020/live",
     "imgMobile": "https://adventistplayer.org/assets/logos/png.webp",
-    "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Papúa Nueva Guinea.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": true
   },
   {
     "idioma": "Português",
@@ -1456,7 +1564,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radio-rcs.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Portugal.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1469,7 +1578,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radiorenaceradventista.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/República Dominicana.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1482,7 +1592,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/lavozdelaverdad.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -1495,7 +1606,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/sete.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1508,7 +1620,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/shine.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1521,7 +1634,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/stereomision.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/México.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1534,7 +1648,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/stereoadventista.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Honduras.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Francés",
@@ -1547,7 +1662,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/rta.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Francia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -1560,7 +1676,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/anjo.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Brasil.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Rumano",
@@ -1573,7 +1690,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/voceasperantei.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Rumania.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "English",
@@ -1586,7 +1704,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/lighthouse.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Canadá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1599,7 +1718,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/vuelve.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Francés",
@@ -1612,7 +1732,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radiovie.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Francia.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1625,7 +1746,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/stereofe.webp",
     "celularContacto": "+50766112228",
     "bandera": "https://adventistplayer.org/assets/banderas/Panamá.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": true
   },
   {
     "idioma": "English",
@@ -1638,7 +1760,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/wgts.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Japonés",
@@ -1650,7 +1773,8 @@
     "medialiveUrl": "https://yonkodoradio.com/api/stream",
     "imgMobile": "https://adventistplayer.org/assets/logos/yonkodo.webp",
     "bandera": "https://adventistplayer.org/assets/banderas/Internet.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1663,7 +1787,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/radioconexionusa.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1676,7 +1801,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/cuartoangel.webp",
     "celularContacto": "50246481999",
     "bandera": "https://adventistplayer.org/assets/banderas/Guatemala.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1690,6 +1816,7 @@
     "celularContacto": "573160176946",
     "bandera": "https://adventistplayer.org/assets/banderas/Colombia.webp",
     "temporal": true,
+    "desactivar": false,
     "proveedor": "https://api.teveo.com.co/1.1/node/stream",
     "nodo": "AgBDAAAG",
     "pwd": "ihVzBB106phjs1RE"
@@ -1706,6 +1833,7 @@
     "celularContacto": "573160176946",
     "bandera": "https://adventistplayer.org/assets/banderas/Colombia.webp",
     "temporal": true,
+    "desactivar": false,
     "proveedor": "https://api.teveo.com.co/1.1/node/stream",
     "nodo": "AgAwAA5D",
     "pwd": "wmc64Tr93XB3pJgk"
@@ -1722,6 +1850,7 @@
     "celularContacto": "573160176946",
     "bandera": "https://adventistplayer.org/assets/banderas/Colombia.webp",
     "temporal": true,
+    "desactivar": false,
     "proveedor": "https://api.teveo.com.co/1.1/node/stream",
     "nodo": "AgAwAA5F",
     "pwd": "5XYK7s35VuVx19Bz"
@@ -1738,6 +1867,7 @@
     "celularContacto": "573160176946",
     "bandera": "https://adventistplayer.org/assets/banderas/Colombia.webp",
     "temporal": true,
+    "desactivar": false,
     "proveedor": "https://api.teveo.com.co/1.1/node/stream",
     "nodo": "AgAwAA5G",
     "pwd": "I69lz8m0zm6fLv5b"
@@ -1753,7 +1883,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/rsa.webp",
     "celularContacto": "50376956388",
     "bandera": "https://adventistplayer.org/assets/banderas/El Salvador.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1766,7 +1897,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1779,7 +1911,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1792,7 +1925,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1805,7 +1939,8 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
     "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
   },
   {
     "idioma": "Español",
@@ -1816,9 +1951,9 @@
     "web": "https://hoperadiovenezuela.com/7maestacion953",
     "medialiveUrl": "https://server.hoperadiovenezuela.com:8010/7maestacionsantabarbara953.mp3",
     "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
-    "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": true
   },
   {
     "idioma": "Español",
@@ -1831,6 +1966,94 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/rsa.webp",
     "celularContacto": "50376956388",
     "bandera": "https://adventistplayer.org/assets/banderas/El Salvador.webp",
-    "temporal": false
+    "temporal": false,
+    "desactivar": false
+  },
+  {
+    "idioma": "Español",
+    "nombre": "Advent Stereo",
+    "pais": "Nicaragua",
+    "region": "",
+    "dial": "92.7 FM",
+    "web": "http://adventstereofm.org/",
+    "medialiveUrl": "https://s12.myradiostream.com/18108/listen.mp3",
+    "imgMobile": "https://adventistplayer.org/assets/logos/adventstereo.webp",
+    "celularContacto": "50587034686",
+    "temporal": false,
+    "desactivar": false
+  },
+  {
+    "idioma": "English",
+    "nombre": "Country Gospel Radio",
+    "pais": "Canadá",
+    "region": "",
+    "dial": "",
+    "web": "https://countrygospelradio.org/",
+    "medialiveUrl": "https://usa18.fastcast4u.com/proxy/loudcrymedia1?mp=/1",
+    "imgMobile": "https://adventistplayer.org/assets/logos/countrygospelradio.webp",
+    "temporal": false,
+    "desactivar": false
+  },
+  {
+    "idioma": "Español",
+    "nombre": "El Fuerte Pregón",
+    "pais": "México",
+    "region": "Chiapas",
+    "dial": "88.7 FM & 92.1 FM",
+    "web": "https://fuertepregon.com.mx/",
+    "medialiveUrl": "https://mediastreamm.com/8302/stream",
+    "imgMobile": "https://adventistplayer.org/assets/logos/fuertepregon.webp",
+    "temporal": false,
+    "desactivar": false
+  },
+  {
+    "idioma": "Español",
+    "nombre": "Fuerte Pregón del Sureste",
+    "pais": "México",
+    "region": "Chiapas",
+    "dial": "",
+    "web": "https://www.facebook.com/radiofuertepregondelsureste/",
+    "medialiveUrl": "https://stream-178.surfernetwork.com/cevz2h1rkm0uv",
+    "imgMobile": "https://adventistplayer.org/assets/logos/fuertepregon.webp",
+    "temporal": false,
+    "desactivar": false
+  },
+  {
+    "idioma": "Español",
+    "nombre": "Esperanza Radio",
+    "pais": "Guatemala",
+    "region": "",
+    "dial": "",
+    "web": "https://www.medios.gt/esperanzaradiogt",
+    "medialiveUrl": "https://stream-175.surfernetwork.com/ae7ghbd83mruv",
+    "imgMobile": "https://adventistplayer.org/assets/logos/esperanzaguatemala.webp",
+    "celularContacto": "50231272192",
+    "temporal": false,
+    "desactivar": false
+  },
+  {
+    "idioma": "Español",
+    "nombre": "Hope Radio - Atlantica",
+    "pais": "Honduras",
+    "region": "",
+    "dial": "",
+    "web": "https://www.hopemedia.hn/radioatlantica/",
+    "medialiveUrl": "https://sc10.conectarhosting.com/proxy/hoperadi/stream",
+    "imgMobile": "https://adventistplayer.org/assets/logos/hoperadiohonduras.webp",
+    "celularContacto": "50495947194",
+    "temporal": false,
+    "desactivar": false
+  },
+  {
+    "idioma": "Español",
+    "nombre": "Hope Radio – Islas",
+    "pais": "Honduras",
+    "region": "Islas de la Bahía",
+    "dial": "",
+    "web": "https://www.hopemedia.hn/hope-radio-islas/",
+    "medialiveUrl": "https://cloudstream2030.conectarhosting.com/9966/stream",
+    "imgMobile": "https://adventistplayer.org/assets/logos/hoperadiohonduras.webp",
+    "temporal": false,
+    "desactivar": false
   }
 ]

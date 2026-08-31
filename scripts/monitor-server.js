@@ -47,9 +47,11 @@ const MIME = {
 // Campos permitidos en cada estación. Todo lo demás se descarta al guardar.
 const ALLOWED_FIELDS = [
     'idioma', 'nombre', 'pais', 'region', 'dial', 'web', 'medialiveUrl',
-    'imgMobile', 'celularContacto', 'bandera', 'temporal',
+    'imgMobile', 'celularContacto', 'bandera', 'temporal', 'desactivar',
     'proveedor', 'nodo', 'pwd',
 ];
+// Campos booleanos: se normalizan a true/false en vez de String()
+const BOOLEAN_FIELDS = ['temporal', 'desactivar'];
 const REQUIRED_FIELDS = ['idioma', 'nombre', 'pais', 'medialiveUrl'];
 
 // CORS para uso local: el panel puede servirse desde otro origen (p. ej. el
@@ -102,13 +104,14 @@ function sanitizeStations(input) {
         const clean = {};
         ALLOWED_FIELDS.forEach((k) => {
             if (raw[k] === undefined || raw[k] === null) return;
-            if (k === 'temporal') clean[k] = !!raw[k];
+            if (BOOLEAN_FIELDS.includes(k)) clean[k] = !!raw[k];
             else clean[k] = String(raw[k]);
         });
         // Defaults para mantener el esquema consistente
         if (clean.dial === undefined) clean.dial = '';
         if (clean.region === undefined) clean.region = '';
         if (clean.temporal === undefined) clean.temporal = false;
+        if (clean.desactivar === undefined) clean.desactivar = false;
 
         REQUIRED_FIELDS.forEach((k) => {
             if (!clean[k] || !String(clean[k]).trim()) {

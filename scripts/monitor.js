@@ -177,6 +177,7 @@
         els.form = document.getElementById('radio-form');
         els.formError = document.getElementById('form-error');
         els.fTemporal = document.getElementById('f-temporal');
+        els.fDesactivar = document.getElementById('f-desactivar');
         els.temporalFields = document.getElementById('temporal-fields');
         els.langList = document.getElementById('lang-list');
 
@@ -277,6 +278,7 @@
             mixedContent,
             hasUrl: !!url,
             temporal: !!s.temporal,
+            desactivar: !!s.desactivar,
             proveedor: s.proveedor || '',
             nodo: s.nodo || '',
             pwd: s.pwd || '',
@@ -601,6 +603,7 @@
         setVal('f-celularContacto', raw.celularContacto);
         setVal('f-bandera', raw.bandera);
         els.fTemporal.checked = !!raw.temporal;
+        els.fDesactivar.checked = !!raw.desactivar;
         setVal('f-proveedor', raw.proveedor);
         setVal('f-nodo', raw.nodo);
         setVal('f-pwd', raw.pwd);
@@ -629,6 +632,7 @@
             celularContacto: getVal('f-celularContacto'),
             bandera: getVal('f-bandera'),
             temporal: els.fTemporal.checked,
+            desactivar: els.fDesactivar.checked,
         };
         if (raw.temporal) {
             raw.proveedor = getVal('f-proveedor');
@@ -796,7 +800,7 @@
                         <div class="meta">
                             <span>${s.web
                                 ? `<a href="${escapeAttr(s.web)}" target="_blank" rel="noopener" title="${escapeAttr(s.web)}">${escapeHtml(s.nombre)}</a>`
-                                : escapeHtml(s.nombre)}</span>
+                                : escapeHtml(s.nombre)}${s.desactivar ? ' <span class="tag-off">desactivada</span>' : ''}</span>
                             <small>${escapeHtml(s.dial ? (s.region + ' - ' + s.dial) : s.region)}</small>
                         </div>
                     </div>
