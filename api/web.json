@@ -715,20 +715,6 @@
       "temporal": false
     },
     {
-      "id": "radio-stereo-adventista-san-miguel-1069-fm-1",
-      "idioma": "Español",
-      "nombre": "Radio Stereo Adventista",
-      "pais": "El Salvador",
-      "region": "San Miguel",
-      "dial": "106.9 FM",
-      "web": "https://www.radioadventista.org.sv/",
-      "medialiveUrl": "https://s12.myradiostream.com/19854/listen.mp3",
-      "imgMobile": "https://adventistplayer.org/assets/logos/rsa.webp",
-      "celularContacto": "50376956388",
-      "bandera": "https://adventistplayer.org/assets/banderas/El Salvador.webp",
-      "temporal": false
-    },
-    {
       "id": "radio-adventista",
       "idioma": "Español",
       "nombre": "Radio Adventista",
@@ -1670,6 +1656,19 @@
       "temporal": false
     },
     {
+      "id": "adventist-hope-radio-png-morobe-1075-fm",
+      "idioma": "English",
+      "nombre": "Adventist Hope Radio PNG",
+      "pais": "Papúa Nueva Guinea",
+      "region": "Morobe",
+      "dial": "107.5 FM",
+      "web": "https://adventisthopefmpng.webradiosite.com/pwa/#/home",
+      "medialiveUrl": "https://servidor30-3.brlogic.com:7020/live",
+      "imgMobile": "https://adventistplayer.org/assets/logos/png.webp",
+      "bandera": "https://adventistplayer.org/assets/banderas/Papúa Nueva Guinea.webp",
+      "temporal": false
+    },
+    {
       "id": "nuevo-tiempo-paraguay-asuncion-979-fm",
       "idioma": "Español",
       "nombre": "Nuevo Tiempo Paraguay",
@@ -1986,20 +1985,6 @@
       "dial": "89.5 FM",
       "web": "https://hoperadiovenezuela.com/lavozpinal895",
       "medialiveUrl": "https://server.hoperadiovenezuela.com:8210/lavozelpinal895.mp3",
-      "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
-      "celularContacto": "",
-      "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
-      "temporal": false
-    },
-    {
-      "id": "viene-socopo-1073-fm",
-      "idioma": "Español",
-      "nombre": "Viene",
-      "pais": "Venezuela",
-      "region": "Socopó",
-      "dial": "107.3 FM",
-      "web": "https://hoperadiovenezuela.com/viene1073",
-      "medialiveUrl": "https://server.hoperadiovenezuela.com:8140/vienesocopo1073.mp3",
       "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
       "celularContacto": "",
       "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",

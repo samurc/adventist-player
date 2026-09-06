@@ -1551,7 +1551,7 @@
     "imgMobile": "https://adventistplayer.org/assets/logos/png.webp",
     "bandera": "https://adventistplayer.org/assets/banderas/Papúa Nueva Guinea.webp",
     "temporal": false,
-    "desactivar": true
+    "desactivar": false
   },
   {
     "idioma": "Português",
@@ -1937,10 +1937,9 @@
     "web": "https://hoperadiovenezuela.com/viene1073",
     "medialiveUrl": "https://server.hoperadiovenezuela.com:8140/vienesocopo1073.mp3",
     "imgMobile": "https://adventistplayer.org/assets/logos/hopevenezuela.webp",
-    "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Venezuela.webp",
     "temporal": false,
-    "desactivar": false
+    "desactivar": true
   },
   {
     "idioma": "Español",
@@ -1967,7 +1966,7 @@
     "celularContacto": "50376956388",
     "bandera": "https://adventistplayer.org/assets/banderas/El Salvador.webp",
     "temporal": false,
-    "desactivar": false
+    "desactivar": true
   },
   {
     "idioma": "Español",
