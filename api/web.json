@@ -981,20 +981,6 @@
       "temporal": false
     },
     {
-      "id": "radio-conexion",
-      "idioma": "Español",
-      "nombre": "Radio Conexión",
-      "pais": "Estados Unidos",
-      "region": "",
-      "dial": "",
-      "web": "https://radioconexionoficial.com/",
-      "medialiveUrl": "https://sonicpanel.streaming10.net:8130/stream",
-      "imgMobile": "https://adventistplayer.org/assets/logos/radioconexionusa.webp",
-      "celularContacto": "",
-      "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
-      "temporal": false
-    },
-    {
       "id": "radio-elohim",
       "idioma": "Español",
       "nombre": "Radio ELOHIM",

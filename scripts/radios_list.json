@@ -1785,10 +1785,9 @@
     "web": "https://radioconexionoficial.com/",
     "medialiveUrl": "https://sonicpanel.streaming10.net:8130/stream",
     "imgMobile": "https://adventistplayer.org/assets/logos/radioconexionusa.webp",
-    "celularContacto": "",
     "bandera": "https://adventistplayer.org/assets/banderas/Estados Unidos.webp",
     "temporal": false,
-    "desactivar": false
+    "desactivar": true
   },
   {
     "idioma": "Español",
